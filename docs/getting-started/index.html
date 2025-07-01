@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | Getting started</title>
+  <title>P-8 | Documentation | Getting started</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | Getting started">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | Getting started">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="../about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -284,34 +284,34 @@
       <section class="docs">
       <h1 id="getting-started">Getting started</h1>
 
-<p>Now that you’ve got Pushpin installed and running, it’s time to have some fun with it!</p>
+<p>Now that you’ve got P-8 installed and running, it’s time to have some fun with it!</p>
 
 <h2 id="quickstart">QuickStart</h2>
 
 <h3 id="mock-backend">Mock backend</h3>
 
-<p>Pushpin comes with a mock backend so that you don’t need to set up a real backend web service in order to try it out. Confirm that your <code class="language-plaintext highlighter-rouge">routes</code> file contains a single line that looks like this:</p>
+<p>P-8 comes with a mock backend so that you don’t need to set up a real backend web service in order to try it out. Confirm that your <code class="language-plaintext highlighter-rouge">routes</code> file contains a single line that looks like this:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* test
 </code></pre></div></div>
 
-<aside><header>Note</header>If Pushpin is installed to your system, the <code class="highlighter-rouge">routes</code> file should live somewhere like <code class="highlighter-rouge">/etc/pushpin/routes</code> or <code class="highlighter-rouge">/usr/local/etc/pushpin/routes</code>. If you are running within the source tree and didn't create a configuration copy, then Pushpin will use <code class="highlighter-rouge">examples/config/routes</code>.</aside>
+<aside><header>Note</header>If P-8 is installed to your system, the <code class="highlighter-rouge">routes</code> file should live somewhere like <code class="highlighter-rouge">/etc/P-8/routes</code> or <code class="highlighter-rouge">/usr/local/etc/P-8/routes</code>. If you are running within the source tree and didn't create a configuration copy, then P-8 will use <code class="highlighter-rouge">examples/config/routes</code>.</aside>
 
-<p>By default, Pushpin listens for connections on port 7999. Connect to the server with an HTTP client, such as <code class="language-plaintext highlighter-rouge">curl</code>:</p>
+<p>By default, P-8 listens for connections on port 7999. Connect to the server with an HTTP client, such as <code class="language-plaintext highlighter-rouge">curl</code>:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl http://localhost:7999/stream
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">/stream</code> endpoint is served by the test handler, which instructs Pushpin to subscribe the connection to a channel called <code class="language-plaintext highlighter-rouge">test</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">/stream</code> endpoint is served by the test handler, which instructs P-8 to subscribe the connection to a channel called <code class="language-plaintext highlighter-rouge">test</code>.</p>
 
 <p>Publish data to the connection like this:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pushpin-publish <span class="nb">test</span> <span class="s2">"hello there"</span>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-publish <span class="nb">test</span> <span class="s2">"hello there"</span>
 </code></pre></div></div>
 
 <p>Any connected clients will receive the line “hello there”. Ta-da, realtime push!</p>
 
-<aside><header>Note</header>If Pushpin is installed to your system, then programs like <code class="highlighter-rouge">pushpin-publish</code> should be in your <code class="highlighter-rouge">PATH</code>. If you are running within the source tree, they will be in <code class="highlighter-rouge">bin</code>.</aside>
+<aside><header>Note</header>If P-8 is installed to your system, then programs like <code class="highlighter-rouge">P-8-publish</code> should be in your <code class="highlighter-rouge">PATH</code>. If you are running within the source tree, they will be in <code class="highlighter-rouge">bin</code>.</aside>
 
 <p>You can also publish data using a simple HTTP request:</p>
 
@@ -328,12 +328,12 @@
 
 <ol>
   <li>
-    <p>Configure Pushpin to route traffic to your web service backend instead of the test handler. For example, if your backend listens on port 8000 of your local machine, change the <code class="language-plaintext highlighter-rouge">routes</code> file to contain this line:</p>
+    <p>Configure P-8 to route traffic to your web service backend instead of the test handler. For example, if your backend listens on port 8000 of your local machine, change the <code class="language-plaintext highlighter-rouge">routes</code> file to contain this line:</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* localhost:8000
 </code></pre></div>    </div>
 
-    <p>Confirm that you are able to make HTTP requests through Pushpin to your backend. Until the backend is modified to respond with special instructions, requests and responses simply pass through.</p>
+    <p>Confirm that you are able to make HTTP requests through P-8 to your backend. Until the backend is modified to respond with special instructions, requests and responses simply pass through.</p>
   </li>
   <li>
     <p>Make an endpoint on the backend respond with two additional HTTP headers: <code class="language-plaintext highlighter-rouge">Grip-Hold</code> and <code class="language-plaintext highlighter-rouge">Grip-Channel</code>. The headers could be served by a new endpoint, or served optionally by an existing endpoint given certain conditions (e.g. if a special query string is supplied). For example, an endpoint could respond as such:</p>
@@ -349,18 +349,18 @@
   <li>
     <p>Publish data to the connection the same way as in the previous section:</p>
 
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pushpin-publish <span class="nb">test</span> <span class="s2">"hello there"</span>
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-publish <span class="nb">test</span> <span class="s2">"hello there"</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>For more details, see the <a href="../usage/index.html">Usage</a> section. Pushpin supports other push transports, too.</p>
+<p>For more details, see the <a href="../usage/index.html">Usage</a> section. P-8 supports other push transports, too.</p>
 
 <h3 id="configuration-basics">Configuration basics</h3>
 
-<p>Pushpin has two primary configuration files: <code class="language-plaintext highlighter-rouge">pushpin.conf</code> and <code class="language-plaintext highlighter-rouge">routes</code>. It is generally not necessary to edit <code class="language-plaintext highlighter-rouge">pushpin.conf</code>. You’ll spend more time with the <code class="language-plaintext highlighter-rouge">routes</code> file.</p>
+<p>P-8 has two primary configuration files: <code class="language-plaintext highlighter-rouge">P-8.conf</code> and <code class="language-plaintext highlighter-rouge">routes</code>. It is generally not necessary to edit <code class="language-plaintext highlighter-rouge">P-8.conf</code>. You’ll spend more time with the <code class="language-plaintext highlighter-rouge">routes</code> file.</p>
 
-<aside><header>Note</header>If you are running Pushpin from within the source tree, you should make a copy of the configuration by running <code class="highlighter-rouge">cp -r examples/config config</code>. This way, Pushpin will read from <code class="highlighter-rouge">./config</code> instead of the examples directory, and you can make edits to the configuration as necessary. Ignore this note if you are using an installed version of Pushpin.</aside>
+<aside><header>Note</header>If you are running P-8 from within the source tree, you should make a copy of the configuration by running <code class="highlighter-rouge">cp -r examples/config config</code>. This way, P-8 will read from <code class="highlighter-rouge">./config</code> instead of the examples directory, and you can make edits to the configuration as necessary. Ignore this note if you are using an installed version of P-8.</aside>
 
 <p>A simple <code class="language-plaintext highlighter-rouge">routes</code> file might look something like this:</p>
 
@@ -374,9 +374,9 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* localhost:8000,over_http
 </code></pre></div></div>
 
-<p>Pushpin monitors the <code class="language-plaintext highlighter-rouge">routes</code> file for changes, so you can edit the file and the changes will take effect without a restart.</p>
+<p>P-8 monitors the <code class="language-plaintext highlighter-rouge">routes</code> file for changes, so you can edit the file and the changes will take effect without a restart.</p>
 
-<p>For more more information about configuring Pushpin, see <a href="../configuration/index.html">Configuration</a>.</p>
+<p>For more more information about configuring P-8, see <a href="../configuration/index.html">Configuration</a>.</p>
 
 <h2 id="video-walkthrough">Video walkthrough</h2>
 
@@ -394,12 +394,12 @@
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -411,9 +411,9 @@
       <a href="../../index.html">Home</a>
       <a href="../about/index.html">Docs</a>
       <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

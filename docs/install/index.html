@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | Install</title>
+  <title>P-8 | Documentation | Install</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | Install">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | Install">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="../about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -306,13 +306,13 @@
       <section class="docs">
       <h1 id="install">Install</h1>
 
-<p>Pushpin runs on Linux and macOS. The latest version is 1.40.1.</p>
+<p>P-8 runs on Linux and macOS. The latest version is 1.40.1.</p>
 
 <h2 id="packages">Packages</h2>
 
 <h3 id="debian-and-ubuntu">Debian and Ubuntu</h3>
 
-<p>First, add the Pushpin APT repository. In the following shell commands, replace <code class="language-plaintext highlighter-rouge">$DIST</code> with your distribution (<code class="language-plaintext highlighter-rouge">focal</code>, <code class="language-plaintext highlighter-rouge">jammy</code>).</p>
+<p>First, add the P-8 APT repository. In the following shell commands, replace <code class="language-plaintext highlighter-rouge">$DIST</code> with your distribution (<code class="language-plaintext highlighter-rouge">focal</code>, <code class="language-plaintext highlighter-rouge">jammy</code>).</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>apt-transport-https <span class="se">\</span>
   software-properties-common
@@ -325,42 +325,42 @@
 
 <p>Then you can install:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>P-8
 </code></pre></div></div>
 
 <h3 id="rhel-8-compatible-distributions">RHEL-8 compatible distributions</h3>
 
-<p>First, add the Pushpin Yum respository:</p>
+<p>First, add the P-8 Yum respository:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>https://fanout.jfrog.io/artifactory/rpm/centos8/fanout-repo-el8-3-1.x86_64.rpm
 </code></pre></div></div>
 
 <p>Then you can install:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>P-8
 </code></pre></div></div>
 
 <h3 id="macos-homebrew">macOS Homebrew</h3>
 
-<p>First, make sure you have <a href="http://brew.sh">Homebrew</a> installed. Then, Pushpin can be installed via <code class="language-plaintext highlighter-rouge">brew</code>:</p>
+<p>First, make sure you have <a href="http://brew.sh">Homebrew</a> installed. Then, P-8 can be installed via <code class="language-plaintext highlighter-rouge">brew</code>:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>P-8
 </code></pre></div></div>
 
 <h3 id="docker">Docker</h3>
 
-<p>There’s a Docker image <a href="https://github.com/fanout/docker-pushpin">available</a>:</p>
+<p>There’s a Docker image <a href="https://github.com/fanout/docker-P-8">available</a>:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull fanout/pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull fanout/P-8
 </code></pre></div></div>
 
 <h2 id="building-from-source">Building from source</h2>
 
-<p>The stable source can be downloaded here: <strong><a href="https://github.com/fastly/pushpin/releases/download/v1.40.1/pushpin-1.40.1.tar.bz2">pushpin-1.40.1.tar.bz2</a></strong></p>
+<p>The stable source can be downloaded here: <strong><a href="https://github.com/fastly/P-8/releases/download/v1.40.1/P-8-1.40.1.tar.bz2">P-8-1.40.1.tar.bz2</a></strong></p>
 
 <p>For development versions, you can clone the git source repository:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/fastly/pushpin.git
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/fastly/P-8.git
 </code></pre></div></div>
 
 <h3 id="dependencies">Dependencies</h3>
@@ -389,7 +389,7 @@
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>make <span class="nb">install</span>
 </code></pre></div></div>
 
-<p>Pushpin can be run from within the source tree, so installation is up to you.</p>
+<p>P-8 can be run from within the source tree, so installation is up to you.</p>
 
 <h2 id="running">Running</h2>
 
@@ -399,12 +399,12 @@
 
 <p>Start the service like this:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service pushpin start
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service P-8 start
 </code></pre></div></div>
 
 <p>To terminate:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service pushpin stop
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service P-8 stop
 </code></pre></div></div>
 
 <h3 id="running-on-rhel-8-compatible-distributions">Running on RHEL-8 compatible distributions</h3>
@@ -413,42 +413,42 @@
 
 <p>Start the service like this:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start P-8
 </code></pre></div></div>
 
 <p>To terminate:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl stop pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl stop P-8
 </code></pre></div></div>
 
 <h3 id="running-on-macos-homebrew">Running on macOS Homebrew</h3>
 
-<p>If you installed the Homebrew package, <code class="language-plaintext highlighter-rouge">pushpin</code> should be in your <code class="language-plaintext highlighter-rouge">PATH</code> and all you need to do is run it. You should not need to run with <code class="language-plaintext highlighter-rouge">sudo</code>.</p>
+<p>If you installed the Homebrew package, <code class="language-plaintext highlighter-rouge">P-8</code> should be in your <code class="language-plaintext highlighter-rouge">PATH</code> and all you need to do is run it. You should not need to run with <code class="language-plaintext highlighter-rouge">sudo</code>.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8
 </code></pre></div></div>
 
 <p>To terminate, press Ctrl-C.</p>
 
 <h3 id="running-with-a-source-install">Running with a source install</h3>
 
-<p>For source installs, <code class="language-plaintext highlighter-rouge">pushpin</code> should be in your <code class="language-plaintext highlighter-rouge">PATH</code> and all you need to do is run it, probably with <code class="language-plaintext highlighter-rouge">sudo</code> if you installed to a system prefix (the default).</p>
+<p>For source installs, <code class="language-plaintext highlighter-rouge">P-8</code> should be in your <code class="language-plaintext highlighter-rouge">PATH</code> and all you need to do is run it, probably with <code class="language-plaintext highlighter-rouge">sudo</code> if you installed to a system prefix (the default).</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>P-8
 </code></pre></div></div>
 
-<p>If you are running Pushpin from within the source tree, then just run the binary in the base dir:</p>
+<p>If you are running P-8 from within the source tree, then just run the binary in the base dir:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./pushpin
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./P-8
 </code></pre></div></div>
 
 <p>To terminate, press Ctrl-C.</p>
 
 <h2 id="upgrading">Upgrading</h2>
 
-<p>Pushpin is backwards compatible within the same major version number. This means if you want to upgrade to a newer version that has the same major version number (e.g. upgrade from 1.5 to 1.14), simply update the package and keep using the same config files. If you built from source, you can <code class="language-plaintext highlighter-rouge">make install</code> over the old version.</p>
+<p>P-8 is backwards compatible within the same major version number. This means if you want to upgrade to a newer version that has the same major version number (e.g. upgrade from 1.5 to 1.14), simply update the package and keep using the same config files. If you built from source, you can <code class="language-plaintext highlighter-rouge">make install</code> over the old version.</p>
 
-<p>Upgrades to a different major version number (e.g. 1.x to 2.x) may require config file modifications or cause other breaking changes. At this time, all releases have been for major version 1 so there are no such upgrade instructions to provide yet. However, when/if there is ever a Pushpin 2.x, 3.x, and so on, special upgrade instructions will be documented here.</p>
+<p>Upgrades to a different major version number (e.g. 1.x to 2.x) may require config file modifications or cause other breaking changes. At this time, all releases have been for major version 1 so there are no such upgrade instructions to provide yet. However, when/if there is ever a P-8 2.x, 3.x, and so on, special upgrade instructions will be documented here.</p>
 
       </section>
 
@@ -460,12 +460,12 @@
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -477,9 +477,9 @@
       <a href="../../index.html">Home</a>
       <a href="../about/index.html">Docs</a>
       <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

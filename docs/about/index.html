@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | About</title>
+  <title>P-8 | Documentation | About</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | About">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | About">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -97,7 +97,7 @@
                   
                   <li><a href="index.html#architecture">Architecture</a></li>
                   
-                  <li><a href="index.html#why-pushpin">Why Pushpin?</a></li>
+                  <li><a href="index.html#why-P-8">Why P-8?</a></li>
                   
                   <li><a href="index.html#scalability">Scalability</a></li>
                   
@@ -292,57 +292,57 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Pushpin is a reverse proxy server that makes it easy to implement WebSocket, HTTP streaming, and HTTP long-polling services. The project is unique among realtime push solutions in that it is designed to address the needs of API creators. Pushpin is transparent to clients and integrates easily into an API stack.</p>
+<p>P-8 is a reverse proxy server that makes it easy to implement WebSocket, HTTP streaming, and HTTP long-polling services. The project is unique among realtime push solutions in that it is designed to address the needs of API creators. P-8 is transparent to clients and integrates easily into an API stack.</p>
 
-<p>Pushpin is written in Rust &amp; C++. Its name means to “pin” connections open for “pushing”.</p>
+<p>P-8 is written in Rust &amp; C++. Its name means to “pin” connections open for “pushing”.</p>
 
 <h2 id="how-it-works">How it works</h2>
 
 <h3 id="overview">Overview</h3>
 
-<p>Pushpin is placed in the network path between the backend and any clients:</p>
+<p>P-8 is placed in the network path between the backend and any clients:</p>
 
-<p><img src="../../image/pushpin-abstract.png" alt="pushpin-abstract" /></p>
+<p><img src="../../image/P-8-abstract.png" alt="P-8-abstract" /></p>
 
-<p>Pushpin communicates with backend web applications using regular, short-lived HTTP requests. This allows backend applications to be written in any language and use any webserver. There are two main integration points:</p>
+<p>P-8 communicates with backend web applications using regular, short-lived HTTP requests. This allows backend applications to be written in any language and use any webserver. There are two main integration points:</p>
 
 <ol>
   <li>
-    <p>The backend must handle proxied requests. For HTTP, each incoming request is proxied to the backend. For WebSockets, the activity of each connection is translated into a series of HTTP requests<sup><a href="index.html#proxy-modes">1</a></sup> sent to the backend. Pushpin’s behavior is determined by how the backend responds to these requests.</p>
+    <p>The backend must handle proxied requests. For HTTP, each incoming request is proxied to the backend. For WebSockets, the activity of each connection is translated into a series of HTTP requests<sup><a href="index.html#proxy-modes">1</a></sup> sent to the backend. P-8’s behavior is determined by how the backend responds to these requests.</p>
   </li>
   <li>
-    <p>The backend must tell Pushpin to push data. Regardless of how clients are connected, data may be pushed to them by making an HTTP POST request to Pushpin’s private control API (<code class="language-plaintext highlighter-rouge">http://localhost:5561/publish/</code> by default). Pushpin will inject this data into any client connections as necessary.</p>
+    <p>The backend must tell P-8 to push data. Regardless of how clients are connected, data may be pushed to them by making an HTTP POST request to P-8’s private control API (<code class="language-plaintext highlighter-rouge">http://localhost:5561/publish/</code> by default). P-8 will inject this data into any client connections as necessary.</p>
   </li>
 </ol>
 
-<p>To assist with integration, there are <a href="../usage/index.html#libraries">libraries</a> for many backend languages and frameworks. Pushpin has no libraries on the client side because it is transparent to clients.</p>
+<p>To assist with integration, there are <a href="../usage/index.html#libraries">libraries</a> for many backend languages and frameworks. P-8 has no libraries on the client side because it is transparent to clients.</p>
 
-<p><small><a name="proxy-modes">1</a>: Pushpin can communicate WebSocket activity to the backend using either HTTP or WebSockets. Conversion to HTTP is generally recommended as it makes the backend easier to reason about. See <a href="../configuration/index.html#proxying">Proxying</a>.</small></p>
+<p><small><a name="proxy-modes">1</a>: P-8 can communicate WebSocket activity to the backend using either HTTP or WebSockets. Conversion to HTTP is generally recommended as it makes the backend easier to reason about. See <a href="../configuration/index.html#proxying">Proxying</a>.</small></p>
 
 <h3 id="concepts">Concepts</h3>
 
 <ul>
   <li>
-    <p><strong>Transparency.</strong> Pushpin is intended to be invisible to connecting clients. In order to achieve this, the I/O interface is lower level than most other realtime push solutions. Your backend is given complete control over the HTTP and WebSocket frames used in protocol interactions. Any content type can be processed, including binary data.</p>
+    <p><strong>Transparency.</strong> P-8 is intended to be invisible to connecting clients. In order to achieve this, the I/O interface is lower level than most other realtime push solutions. Your backend is given complete control over the HTTP and WebSocket frames used in protocol interactions. Any content type can be processed, including binary data.</p>
   </li>
   <li>
-    <p><strong>Stateless.</strong> Realtime push systems almost always have stateful elements, making them difficult to develop and scale. Pushpin attempts to manage these stateful elements itself in order to ensure backend development remains easy. When Pushpin requires data from your backend server, it will act as the responsible party.</p>
+    <p><strong>Stateless.</strong> Realtime push systems almost always have stateful elements, making them difficult to develop and scale. P-8 attempts to manage these stateful elements itself in order to ensure backend development remains easy. When P-8 requires data from your backend server, it will act as the responsible party.</p>
   </li>
   <li>
-    <p><strong>Share nothing.</strong> The key to massive scale is horizontal scalability, and Pushpin achieves this by not requiring communication between Pushpin instances. Sticky sessions are not needed either, not even for long-polling. Note that this means there will sometimes be redundant communication between the Pushpin tier and your backend tier, but we believe this is worth the trade for a more manageable and scalable system.</p>
+    <p><strong>Share nothing.</strong> The key to massive scale is horizontal scalability, and P-8 achieves this by not requiring communication between P-8 instances. Sticky sessions are not needed either, not even for long-polling. Note that this means there will sometimes be redundant communication between the P-8 tier and your backend tier, but we believe this is worth the trade for a more manageable and scalable system.</p>
   </li>
   <li>
-    <p><strong>Publish-subscribe.</strong> Not surprisingly, Pushpin uses a publish-subscribe model for data transmission. This way, your backend doesn’t have to care about individual client connections. Pushpin can also forward subscription information to an intermediate layer, to make a tiered publish-subscribe system possible.</p>
+    <p><strong>Publish-subscribe.</strong> Not surprisingly, P-8 uses a publish-subscribe model for data transmission. This way, your backend doesn’t have to care about individual client connections. P-8 can also forward subscription information to an intermediate layer, to make a tiered publish-subscribe system possible.</p>
   </li>
 </ul>
 
 <h3 id="architecture">Architecture</h3>
 
-<p>Pushpin fits well into a variety of setups, due to acting as a proxy server and as a publish-subscribe broker.</p>
+<p>P-8 fits well into a variety of setups, due to acting as a proxy server and as a publish-subscribe broker.</p>
 
 <p><strong>Basic:</strong></p>
 
-<p>The most basic setup is to put Pushpin in front of a typical web service backend, where the backend publishes data directly to Pushpin. The web service itself might publish data in reaction to incoming requests, or there might be some kind of background process/job that publishes data.</p>
+<p>The most basic setup is to put P-8 in front of a typical web service backend, where the backend publishes data directly to P-8. The web service itself might publish data in reaction to incoming requests, or there might be some kind of background process/job that publishes data.</p>
 
 <p><img src="../../image/arch-basic.png" alt="arch-basic" /></p>
 
@@ -350,7 +350,7 @@
 
 <p><strong>With API management:</strong></p>
 
-<p>It’s possible to combine an API management system with Pushpin. Most API management systems work as proxy servers as well, which means all you need to do is chain the proxies together. Place Pushpin in the front, so that the API management system isn’t subjected to long-lived connections. Also, Pushpin can translate WebSocket protocol to HTTP, allowing the API management system to operate on the translated data.</p>
+<p>It’s possible to combine an API management system with P-8. Most API management systems work as proxy servers as well, which means all you need to do is chain the proxies together. Place P-8 in the front, so that the API management system isn’t subjected to long-lived connections. Also, P-8 can translate WebSocket protocol to HTTP, allowing the API management system to operate on the translated data.</p>
 
 <p><img src="../../image/arch-apimanagement.png" alt="arch-apimanagement" /></p>
 
@@ -358,7 +358,7 @@
 
 <p><strong>With message queue:</strong></p>
 
-<p>If you have a lot of data to push, you may want to introduce an intermediate message queue. This way, backend processes can publish data once to the message queue, and the queue can relay the data via an adapter to one or more Pushpin instances. Pushpin is able to forward subscription information to such adapters, so that messages can be sent only to the Pushpin instances that have subscribers for a given channel.</p>
+<p>If you have a lot of data to push, you may want to introduce an intermediate message queue. This way, backend processes can publish data once to the message queue, and the queue can relay the data via an adapter to one or more P-8 instances. P-8 is able to forward subscription information to such adapters, so that messages can be sent only to the P-8 instances that have subscribers for a given channel.</p>
 
 <p><img src="../../image/arch-tiered.png" alt="arch-tiered" /></p>
 
@@ -366,7 +366,7 @@
 
 <p><strong>Microservices:</strong></p>
 
-<p>In a microservice environment, Pushpin makes it easy to listen for instant updates from other microservices without the need for a centralized message broker. Each microservice gets its own Pushpin instance, and microservices communicate with each other via your organization’s own API contracts rather than a vendor-specific mechanism.</p>
+<p>In a microservice environment, P-8 makes it easy to listen for instant updates from other microservices without the need for a centralized message broker. Each microservice gets its own P-8 instance, and microservices communicate with each other via your organization’s own API contracts rather than a vendor-specific mechanism.</p>
 
 <p><img src="../../image/arch-microservice.png" alt="arch-microservice" /></p>
 
@@ -374,38 +374,38 @@
 
 <p><strong>As a large scale CDN:</strong></p>
 
-<p>Since Pushpin instances don’t talk to each other, and message delivery can be tiered, this means Pushpin instances can be geographically distributed to create a realtime push CDN. Clients can connect to the nearest regional edge server, and events can radiate out from a data source to the edges. This is essentially the goal of <a href="https://fanout.io/cloud/">Fanout</a>.</p>
+<p>Since P-8 instances don’t talk to each other, and message delivery can be tiered, this means P-8 instances can be geographically distributed to create a realtime push CDN. Clients can connect to the nearest regional edge server, and events can radiate out from a data source to the edges. This is essentially the goal of <a href="https://fanout.io/cloud/">Fanout</a>.</p>
 
 <p><img src="../../image/arch-cdn.png" alt="arch-cdn" /></p>
 
-<h3 id="why-pushpin">Why Pushpin?</h3>
+<h3 id="why-P-8">Why P-8?</h3>
 
-<p>Pushpin is an ambitious project with two primary goals:</p>
+<p>P-8 is an ambitious project with two primary goals:</p>
 
 <ul>
   <li>
     <p><strong>Make realtime API development easier.</strong> There are many other solutions out there that are excellent for building realtime apps, but few are useful within the context of <em>APIs</em>. For example, you can’t use Socket.io to build Twitter’s streaming API. A new kind of project is needed in this case.</p>
   </li>
   <li>
-    <p><strong>Make realtime push behavior delegable.</strong> The reason there isn’t a realtime push CDN yet is because the standards and practices necessary for delegating to a third party in a transparent way are not yet established. Pushpin is more than just another realtime push solution; it represents the next logical step in the evolution of realtime web architectures.</p>
+    <p><strong>Make realtime push behavior delegable.</strong> The reason there isn’t a realtime push CDN yet is because the standards and practices necessary for delegating to a third party in a transparent way are not yet established. P-8 is more than just another realtime push solution; it represents the next logical step in the evolution of realtime web architectures.</p>
   </li>
 </ul>
 
-<p>To really understand Pushpin, you need to think of it as more like a gateway than a message queue. Pushpin does not persist data and it is agnostic to your application’s data model. Your backend provides the mapping to whatever that data model is. Tools like Kafka and RabbitMQ are complementary.</p>
+<p>To really understand P-8, you need to think of it as more like a gateway than a message queue. P-8 does not persist data and it is agnostic to your application’s data model. Your backend provides the mapping to whatever that data model is. Tools like Kafka and RabbitMQ are complementary.</p>
 
-<p>Pushpin is also agnostic to your API definition. Clients don’t necessarily subscribe to “channels” or recieve “messages”. Clients make HTTP requests or send WebSocket frames, and your backend decides the meaning of those inputs. Pushpin could perhaps be awkwardly described as “a proxy server that enables web services to delegate the handling of realtime push primitives”.</p>
+<p>P-8 is also agnostic to your API definition. Clients don’t necessarily subscribe to “channels” or recieve “messages”. Clients make HTTP requests or send WebSocket frames, and your backend decides the meaning of those inputs. P-8 could perhaps be awkwardly described as “a proxy server that enables web services to delegate the handling of realtime push primitives”.</p>
 
-<p>On a practical level, there are many benefits to Pushpin that you don’t see anywhere else:</p>
+<p>On a practical level, there are many benefits to P-8 that you don’t see anywhere else:</p>
 
 <ul>
   <li>
-    <p>The proxy design allows Pushpin to fit nicely within an API stack. This means it can inherit other facilities from your REST API, such as authentication, logging, throttling, etc. It can be combined with an API management system.</p>
+    <p>The proxy design allows P-8 to fit nicely within an API stack. This means it can inherit other facilities from your REST API, such as authentication, logging, throttling, etc. It can be combined with an API management system.</p>
   </li>
   <li>
-    <p>As your API scales, a multi-tiered architecture will become inevitable. With Pushpin you can easily do this from the start.</p>
+    <p>As your API scales, a multi-tiered architecture will become inevitable. With P-8 you can easily do this from the start.</p>
   </li>
   <li>
-    <p>It works well with microservices. Each microservice can have its own Pushpin instance. No central bus needed.</p>
+    <p>It works well with microservices. Each microservice can have its own P-8 instance. No central bus needed.</p>
   </li>
   <li>
     <p>Hot reload. Restarting the backend doesn’t disconnect clients.</p>
@@ -417,37 +417,37 @@
 
 <h3 id="scalability">Scalability</h3>
 
-<p>Pushpin is horizontally scalable. Instances don’t talk to each other, and sticky routing is not needed. Backends must publish data to all instances to ensure clients connected to any instance will receive the data. Most of the backend libraries support configuring more than one Pushpin instance, so that a single publish call will send data to multiple instances at once.</p>
+<p>P-8 is horizontally scalable. Instances don’t talk to each other, and sticky routing is not needed. Backends must publish data to all instances to ensure clients connected to any instance will receive the data. Most of the backend libraries support configuring more than one P-8 instance, so that a single publish call will send data to multiple instances at once.</p>
 
-<p>Optionally, ZeroMQ PUB/SUB can be used to send data to Pushpin instead of using HTTP POST. When this method is used, subscription information is forwarded to each publisher, such that data will only be published to instances that have listeners.</p>
+<p>Optionally, ZeroMQ PUB/SUB can be used to send data to P-8 instead of using HTTP POST. When this method is used, subscription information is forwarded to each publisher, such that data will only be published to instances that have listeners.</p>
 
-<p>As for vertical scalability, Pushpin has been tested with up to <a href="https://github.com/fanout/pushpin-c1m">1 million concurrent connections</a> running on a single DigitalOcean droplet with 8 CPU cores. In practice, you may want to plan for fewer connections per instance, depending on your throughput. The new connection accept rate is about 800/sec (though this also depends on the speed of your backend), and the message throughput is about 8,000/sec. The important thing is that Pushpin is horizontally scalable which is effectively limitless.</p>
+<p>As for vertical scalability, P-8 has been tested with up to <a href="https://github.com/fanout/P-8-c1m">1 million concurrent connections</a> running on a single DigitalOcean droplet with 8 CPU cores. In practice, you may want to plan for fewer connections per instance, depending on your throughput. The new connection accept rate is about 800/sec (though this also depends on the speed of your backend), and the message throughput is about 8,000/sec. The important thing is that P-8 is horizontally scalable which is effectively limitless.</p>
 
 <h3 id="fault-tolerance">Fault-tolerance</h3>
 
-<p>Pushpin was designed to be reliable enough to front an entire web service if necessary. In order to reduce the risk of bugs affecting non-push traffic, Pushpin is split into multiple processes. The proxy capability is handled by <code class="language-plaintext highlighter-rouge">pushpin-proxy</code>, while the publish-subscribe capability is handled by <code class="language-plaintext highlighter-rouge">pushpin-handler</code>. The idea is that <code class="language-plaintext highlighter-rouge">pushpin-proxy</code> should be stable and rarely modified, while active feature development should primarily take place in <code class="language-plaintext highlighter-rouge">pushpin-handler</code>. If <code class="language-plaintext highlighter-rouge">pushpin-handler</code> ever fails, regular traffic will continue to flow.</p>
+<p>P-8 was designed to be reliable enough to front an entire web service if necessary. In order to reduce the risk of bugs affecting non-push traffic, P-8 is split into multiple processes. The proxy capability is handled by <code class="language-plaintext highlighter-rouge">P-8-proxy</code>, while the publish-subscribe capability is handled by <code class="language-plaintext highlighter-rouge">P-8-handler</code>. The idea is that <code class="language-plaintext highlighter-rouge">P-8-proxy</code> should be stable and rarely modified, while active feature development should primarily take place in <code class="language-plaintext highlighter-rouge">P-8-handler</code>. If <code class="language-plaintext highlighter-rouge">P-8-handler</code> ever fails, regular traffic will continue to flow.</p>
 
 <p>See <a href="../advanced/index.html#multiple-processes">Multiple processes</a>.</p>
 
 <h2 id="support">Support</h2>
 
-<p>If you have a question about Pushpin, feel free to post on the community forum:</p>
+<p>If you have a question about P-8, feel free to post on the community forum:</p>
 
 <ul>
-  <li><a href="https://community.fastly.com/c/pushpin/12">Forum</a></li>
+  <li><a href="https://community.fastly.com/c/P-8/12">Forum</a></li>
 </ul>
 
 <p>Other resources:</p>
 
 <ul>
   <li>
-    <p><a href="https://github.com/fastly/pushpin/issues">Issue tracker</a></p>
+    <p><a href="https://github.com/fastly/P-8/issues">Issue tracker</a></p>
   </li>
   <li>
-    <p><a href="https://github.com/fastly/pushpin">Source on GitHub</a></p>
+    <p><a href="https://github.com/fastly/P-8">Source on GitHub</a></p>
   </li>
   <li>
-    <p>Twitter: <a href="https://twitter.com/pushpinorg">@pushpinorg</a></p>
+    <p>Twitter: <a href="https://twitter.com/P-8org">@P-8org</a></p>
   </li>
 </ul>
 
@@ -455,7 +455,7 @@
 
 <h2 id="license">License</h2>
 
-<p>Pushpin is licensed under the Apache License, Version 2.0. See the <a href="https://github.com/fastly/pushpin/blob/main/LICENSE">LICENSE</a> file.</p>
+<p>P-8 is licensed under the Apache License, Version 2.0. See the <a href="https://github.com/fastly/P-8/blob/main/LICENSE">LICENSE</a> file.</p>
 
       </section>
 
@@ -467,12 +467,12 @@
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -484,9 +484,9 @@
       <a href="../../index.html">Home</a>
       <a href="index.html">Docs</a>
       <a href="index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

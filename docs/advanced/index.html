@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | Advanced topics</title>
+  <title>P-8 | Documentation | Advanced topics</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | Advanced topics">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | Advanced topics">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="../about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -276,9 +276,9 @@
 
 <h2 id="sequence-ids">Sequence IDs</h2>
 
-<p>Published messages are delivered in the order they are received (per channel), so if you want clients to receive messages in-order then all you need to do is publish messages to Pushpin in-order.</p>
+<p>Published messages are delivered in the order they are received (per channel), so if you want clients to receive messages in-order then all you need to do is publish messages to P-8 in-order.</p>
 
-<p>However, publishing messages to Pushpin in-order may not be easy if you publish from multiple threads or servers. To make in-order delivery easier in those situations, Pushpin can reorder messages for you, if you include sequence IDs in your messages:</p>
+<p>However, publishing messages to P-8 in-order may not be easy if you publish from multiple threads or servers. To make in-order delivery easier in those situations, P-8 can reorder messages for you, if you include sequence IDs in your messages:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mychannel"</span><span class="p">,</span><span class="w">
@@ -290,13 +290,13 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">prev-id</code> values of a message are arbitrary strings, that Pushpin uses to sort out the ordering of messages. If Pushpin receives a message with a <code class="language-plaintext highlighter-rouge">prev-id</code> that it doesn’t recognize, then it buffers it until it receives a message whose <code class="language-plaintext highlighter-rouge">id</code> matches the value, at which point it sends out both messages in the right order. If the expected message is never received, the buffered message will eventually be delivered anyway (around 5-10 seconds later).</p>
+<p>The <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">prev-id</code> values of a message are arbitrary strings, that P-8 uses to sort out the ordering of messages. If P-8 receives a message with a <code class="language-plaintext highlighter-rouge">prev-id</code> that it doesn’t recognize, then it buffers it until it receives a message whose <code class="language-plaintext highlighter-rouge">id</code> matches the value, at which point it sends out both messages in the right order. If the expected message is never received, the buffered message will eventually be delivered anyway (around 5-10 seconds later).</p>
 
-<p>Note that while using sequence IDs can improve the in-order delivery of messages that Pushpin receives out of order, they alone do not guarantee in-order delivery. The first message received for a newly subscribed channel is always delivered immediately, regardless of <code class="language-plaintext highlighter-rouge">prev-id</code> value. Also, as mentioned above, if expected messages aren’t received in time then buffered out-of-order messages will be sent anyway.</p>
+<p>Note that while using sequence IDs can improve the in-order delivery of messages that P-8 receives out of order, they alone do not guarantee in-order delivery. The first message received for a newly subscribed channel is always delivered immediately, regardless of <code class="language-plaintext highlighter-rouge">prev-id</code> value. Also, as mentioned above, if expected messages aren’t received in time then buffered out-of-order messages will be sent anyway.</p>
 
 <p>To absolutely guarantee in-order delivery without any gaps, you need to use sequence IDs along with <a href="index.html#reliability">Reliability</a>.</p>
 
-<p>If you are already publishing messages in-order to Pushpin and are only concerned about gaps, then you may want to disable sequence buffering by setting <code class="language-plaintext highlighter-rouge">no-seq</code> to <code class="language-plaintext highlighter-rouge">true</code>:</p>
+<p>If you are already publishing messages in-order to P-8 and are only concerned about gaps, then you may want to disable sequence buffering by setting <code class="language-plaintext highlighter-rouge">no-seq</code> to <code class="language-plaintext highlighter-rouge">true</code>:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mychannel"</span><span class="p">,</span><span class="w">
@@ -313,13 +313,13 @@
 
 <h2 id="message-de-duping">Message de-duping</h2>
 
-<p>By default, Pushpin caches message IDs for a short period of time, and will drop a message if its ID is found in the cache. To use this feature, all you need to do is set an ID on each message (see <a href="index.html#sequence-ids">Sequence IDs</a>). It is not necessary to set a Previous ID.</p>
+<p>By default, P-8 caches message IDs for a short period of time, and will drop a message if its ID is found in the cache. To use this feature, all you need to do is set an ID on each message (see <a href="index.html#sequence-ids">Sequence IDs</a>). It is not necessary to set a Previous ID.</p>
 
-<p>This feature is mainly useful if you have an architecture with redundant publish paths. For example, you could set up two message brokers behind Pushpin and send each message through both brokers for high availability. Pushpin would receive each message twice, but only process each message once. If one of the brokers fails, messages would still be received from the other.</p>
+<p>This feature is mainly useful if you have an architecture with redundant publish paths. For example, you could set up two message brokers behind P-8 and send each message through both brokers for high availability. P-8 would receive each message twice, but only process each message once. If one of the brokers fails, messages would still be received from the other.</p>
 
 <h2 id="keep-alives">Keep-alives</h2>
 
-<p>For HTTP streaming and WebSocket connections, it is usually desirable to send keep-alive packets periodically, so that idle connections aren’t timed out by clients or routers. Pushpin has built-in support for sending such packets.</p>
+<p>For HTTP streaming and WebSocket connections, it is usually desirable to send keep-alive packets periodically, so that idle connections aren’t timed out by clients or routers. P-8 has built-in support for sending such packets.</p>
 
 <p>For HTTP streaming, include a <code class="language-plaintext highlighter-rouge">Grip-Keep-Alive</code> response header:</p>
 
@@ -329,7 +329,7 @@
 <span class="na">Grip-Keep-Alive</span><span class="p">:</span> <span class="s">\n; format=cstring; timeout=30</span>
 </code></pre></div></div>
 
-<p>For example, the above response would tell Pushpin to send a newline whenever the stream has been idle for 30 seconds. The <code class="language-plaintext highlighter-rouge">format</code> field can be set to <code class="language-plaintext highlighter-rouge">raw</code> (data sent as-is; this is the default if omitted), <code class="language-plaintext highlighter-rouge">cstring</code> (data is backslash-escaped, useful for sending lines or multi-lines), or <code class="language-plaintext highlighter-rouge">base64</code> (data is Base64 encoded, useful for sending binary data).</p>
+<p>For example, the above response would tell P-8 to send a newline whenever the stream has been idle for 30 seconds. The <code class="language-plaintext highlighter-rouge">format</code> field can be set to <code class="language-plaintext highlighter-rouge">raw</code> (data sent as-is; this is the default if omitted), <code class="language-plaintext highlighter-rouge">cstring</code> (data is backslash-escaped, useful for sending lines or multi-lines), or <code class="language-plaintext highlighter-rouge">base64</code> (data is Base64 encoded, useful for sending binary data).</p>
 
 <aside><header>Note</header>When <code class="highlighter-rouge">cstring</code> format is used from a language that itself uses C-like strings, be sure to escape the backslash when using a string literal (e.g. <code class="highlighter-rouge">"\\n"</code>).</aside>
 
@@ -338,7 +338,7 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:{"type": "keep-alive", "content": "{}", "timeout": 30}
 </code></pre></div></div>
 
-<p>For example, the above control message would tell Pushpin to send a message containing <code class="language-plaintext highlighter-rouge">{}</code> whenever the connection has been idle for 30 seconds. To send binary content, set <code class="language-plaintext highlighter-rouge">content-bin</code> to a Base64-encoded value instead of setting <code class="language-plaintext highlighter-rouge">content</code>. To send message types other than <code class="language-plaintext highlighter-rouge">TEXT</code>, set <code class="language-plaintext highlighter-rouge">message-type</code> to <code class="language-plaintext highlighter-rouge">binary</code>, <code class="language-plaintext highlighter-rouge">ping</code>, or <code class="language-plaintext highlighter-rouge">pong</code>. To turn keep-alives off, send the control message with the <code class="language-plaintext highlighter-rouge">content</code> and <code class="language-plaintext highlighter-rouge">content-bin</code> parameters omitted.</p>
+<p>For example, the above control message would tell P-8 to send a message containing <code class="language-plaintext highlighter-rouge">{}</code> whenever the connection has been idle for 30 seconds. To send binary content, set <code class="language-plaintext highlighter-rouge">content-bin</code> to a Base64-encoded value instead of setting <code class="language-plaintext highlighter-rouge">content</code>. To send message types other than <code class="language-plaintext highlighter-rouge">TEXT</code>, set <code class="language-plaintext highlighter-rouge">message-type</code> to <code class="language-plaintext highlighter-rouge">binary</code>, <code class="language-plaintext highlighter-rouge">ping</code>, or <code class="language-plaintext highlighter-rouge">pong</code>. To turn keep-alives off, send the control message with the <code class="language-plaintext highlighter-rouge">content</code> and <code class="language-plaintext highlighter-rouge">content-bin</code> parameters omitted.</p>
 
 <p>Keep-alives can also be sent on an interval, regardless of whether the connection has been idle or not. To enable this, set the <code class="language-plaintext highlighter-rouge">mode</code> parameter to <code class="language-plaintext highlighter-rouge">interval</code>.</p>
 
@@ -357,15 +357,15 @@
 
 <h2 id="commands">Commands</h2>
 
-<p>Publishing is just one of several commands supported by Pushpin. Commands are available over ZeroMQ and/or HTTP.</p>
+<p>Publishing is just one of several commands supported by P-8. Commands are available over ZeroMQ and/or HTTP.</p>
 
-<p>To call commands over ZeroMQ, connect to Pushpin’s REP command socket (port 5563 by default). Requests are tnetstring-encoded, containing a <code class="language-plaintext highlighter-rouge">method</code> field. If a command requires arguments, set them using the <code class="language-plaintext highlighter-rouge">args</code> field (containing an object of named arguments). If you may make multiple requests over the same connection using a DEALER socket, then you should also set the <code class="language-plaintext highlighter-rouge">id</code> field so that it is possible to match replies.</p>
+<p>To call commands over ZeroMQ, connect to P-8’s REP command socket (port 5563 by default). Requests are tnetstring-encoded, containing a <code class="language-plaintext highlighter-rouge">method</code> field. If a command requires arguments, set them using the <code class="language-plaintext highlighter-rouge">args</code> field (containing an object of named arguments). If you may make multiple requests over the same connection using a DEALER socket, then you should also set the <code class="language-plaintext highlighter-rouge">id</code> field so that it is possible to match replies.</p>
 
 <h3 id="publish">Publish</h3>
 
 <p>As a command, publishing is supported over HTTP or ZeroMQ.</p>
 
-<p>Note that the typical way to publish via ZeroMQ is to connect to Pushpin’s PULL or SUB sockets. These inputs are not considered to be “commands” because they are not request/response. See <a href="../usage/index.html#publishing">Publishing</a>.</p>
+<p>Note that the typical way to publish via ZeroMQ is to connect to P-8’s PULL or SUB sockets. These inputs are not considered to be “commands” because they are not request/response. See <a href="../usage/index.html#publishing">Publishing</a>.</p>
 
 <p>However, it is possible to publish via ZeroMQ as an acknowledged command if you really want to:</p>
 
@@ -392,9 +392,9 @@
 
 <h3 id="get-zeromq-uris">Get ZeroMQ URIs</h3>
 
-<p>Discover Pushpin’s ZeroMQ socket addresses. This command is supported over ZeroMQ only.</p>
+<p>Discover P-8’s ZeroMQ socket addresses. This command is supported over ZeroMQ only.</p>
 
-<p>Pushpin binds on many ZeroMQ socket addresses, and having to configure your application with all of them can be cumbersome. With this command, your application only needs to know the address of the command socket, which it can then use to discover the others.</p>
+<p>P-8 binds on many ZeroMQ socket addresses, and having to configure your application with all of them can be cumbersome. With this command, your application only needs to know the address of the command socket, which it can then use to discover the others.</p>
 
 <p>Request:</p>
 
@@ -482,8 +482,8 @@ Updated
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conncheck"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"m2zhttp_45517:pushpin-m2-7999_1_0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"m2zhttp_45517:pushpin-m2-7999_2_0"</span><span class="w">
+      </span><span class="s2">"m2zhttp_45517:P-8-m2-7999_1_0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"m2zhttp_45517:P-8-m2-7999_2_0"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -494,18 +494,18 @@ Updated
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"m2zhttp_45517:pushpin-m2-7999_1_0"</span><span class="w">
+    </span><span class="s2">"m2zhttp_45517:P-8-m2-7999_1_0"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="stats-socket">Stats socket</h2>
 
-<p>Pushpin exposes various events using a ZeroMQ PUB socket. Each message is prefixed with an event type followed by a space, then a tnetstring-encoded payload prefixed with the letter <code class="language-plaintext highlighter-rouge">T</code>. By default, the stats socket is at <code class="language-plaintext highlighter-rouge">ipc://{rundir}/pushpin-stats</code>, but this can be changed using the <code class="language-plaintext highlighter-rouge">stats_spec</code> configuration option.</p>
+<p>P-8 exposes various events using a ZeroMQ PUB socket. Each message is prefixed with an event type followed by a space, then a tnetstring-encoded payload prefixed with the letter <code class="language-plaintext highlighter-rouge">T</code>. By default, the stats socket is at <code class="language-plaintext highlighter-rouge">ipc://{rundir}/P-8-stats</code>, but this can be changed using the <code class="language-plaintext highlighter-rouge">stats_spec</code> configuration option.</p>
 
 <p>For example, a received message might look like this: (lines wrapped for readability)</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message T88:4:from,21:pushpin-handler_18537,7:channel,4:test,
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message T88:4:from,21:P-8-handler_18537,7:channel,4:test,
 9:transport,11:http-stream,5:count,1:1#}
 </code></pre></div></div>
 
@@ -517,7 +517,7 @@ Updated
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">pushpin-handler_{pid}</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">id</code>: The connection ID.</p>
@@ -542,7 +542,7 @@ Updated
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">pushpin-handler_{pid}</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">mode</code>: The type of subscription. Either <code class="language-plaintext highlighter-rouge">stream</code>, <code class="language-plaintext highlighter-rouge">response</code>, or <code class="language-plaintext highlighter-rouge">ws</code>.</p>
@@ -567,7 +567,7 @@ Updated
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">pushpin-handler_{pid}</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">channel</code>: The channel that was sent to.</p>
@@ -589,7 +589,7 @@ Updated
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">pushpin-handler_{pid}</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">count</code>: The number of activities being reported.</p>
@@ -602,7 +602,7 @@ Updated
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">pushpin-handler_{pid}</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">connections</code>: The maximum concurrent connections measured since the last report.</p>
@@ -674,7 +674,7 @@ Updated
 
 <span class="n">ctx</span> <span class="o">=</span> <span class="n">zmq</span><span class="p">.</span><span class="n">Context</span><span class="p">()</span>
 <span class="n">sock</span> <span class="o">=</span> <span class="n">ctx</span><span class="p">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="p">.</span><span class="n">SUB</span><span class="p">)</span>
-<span class="n">sock</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'ipc:///var/run/pushpin/pushpin-stats'</span><span class="p">)</span>
+<span class="n">sock</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="s">'ipc:///var/run/P-8/P-8-stats'</span><span class="p">)</span>
 <span class="n">sock</span><span class="p">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">zmq</span><span class="p">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
@@ -691,7 +691,7 @@ Updated
 
 <h2 id="message-filtering">Message filtering</h2>
 
-<p>Pushpin contains filtering algorithms that can be used to modify or drop published messages depending on certain conditions. Filters can be assigned to subscriptions, and metadata can be assigned to subscriptions and published messages which filters use as input.</p>
+<p>P-8 contains filtering algorithms that can be used to modify or drop published messages depending on certain conditions. Filters can be assigned to subscriptions, and metadata can be assigned to subscriptions and published messages which filters use as input.</p>
 
 <p>The following filters are available:</p>
 
@@ -709,7 +709,7 @@ Updated
     <p><code class="language-plaintext highlighter-rouge">var-subst</code>: Modify published message content with subscriber metadata. Any instances of <code class="language-plaintext highlighter-rouge">%(var)s</code> are replaced with the value of subscriber meta <code class="language-plaintext highlighter-rouge">var</code>. To send <code class="language-plaintext highlighter-rouge">%</code> in message content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
   </li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">build-id</code>: Modify published message content and response content to include ID strings generated by Pushpin. The content is searched for <code class="language-plaintext highlighter-rouge">%I</code> or <code class="language-plaintext highlighter-rouge">%(format)I</code> directives and replaced with generated IDs based on the specified format (for <code class="language-plaintext highlighter-rouge">%I</code>, the format is the subscriber <code class="language-plaintext highlighter-rouge">id_format</code> meta value). The format may contain channel previous ID directives using the form <code class="language-plaintext highlighter-rouge">%(channel)s</code>. For example, if the format is <code class="language-plaintext highlighter-rouge">foo:%(mychannel)s:bar</code>, and the known previous ID of channel <code class="language-plaintext highlighter-rouge">mychannel</code> is <code class="language-plaintext highlighter-rouge">banana</code>, then Pushpin would generate the ID <code class="language-plaintext highlighter-rouge">foo:banana:bar</code>. Optionally, IDs can be encoded by setting the subscriber <code class="language-plaintext highlighter-rouge">id_encoding</code> meta value to an encoding algorithm. Currently the only supported encoding algorithm is <code class="language-plaintext highlighter-rouge">hex</code>, in which case the generated ID is hex-encoded. To send <code class="language-plaintext highlighter-rouge">%</code> in message or response content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">build-id</code>: Modify published message content and response content to include ID strings generated by P-8. The content is searched for <code class="language-plaintext highlighter-rouge">%I</code> or <code class="language-plaintext highlighter-rouge">%(format)I</code> directives and replaced with generated IDs based on the specified format (for <code class="language-plaintext highlighter-rouge">%I</code>, the format is the subscriber <code class="language-plaintext highlighter-rouge">id_format</code> meta value). The format may contain channel previous ID directives using the form <code class="language-plaintext highlighter-rouge">%(channel)s</code>. For example, if the format is <code class="language-plaintext highlighter-rouge">foo:%(mychannel)s:bar</code>, and the known previous ID of channel <code class="language-plaintext highlighter-rouge">mychannel</code> is <code class="language-plaintext highlighter-rouge">banana</code>, then P-8 would generate the ID <code class="language-plaintext highlighter-rouge">foo:banana:bar</code>. Optionally, IDs can be encoded by setting the subscriber <code class="language-plaintext highlighter-rouge">id_encoding</code> meta value to an encoding algorithm. Currently the only supported encoding algorithm is <code class="language-plaintext highlighter-rouge">hex</code>, in which case the generated ID is hex-encoded. To send <code class="language-plaintext highlighter-rouge">%</code> in message or response content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
   </li>
 </ul>
 
@@ -745,7 +745,7 @@ c:{"type": "subscribe", "channel": "test", "filters": ["skip-self"]}
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">pushpin-publish</code> tool has <code class="language-plaintext highlighter-rouge">--sender</code> and <code class="language-plaintext highlighter-rouge">--meta</code> options for easy experimenting.</p>
+<p>The <code class="language-plaintext highlighter-rouge">P-8-publish</code> tool has <code class="language-plaintext highlighter-rouge">--sender</code> and <code class="language-plaintext highlighter-rouge">--meta</code> options for easy experimenting.</p>
 
 <p>It is possible to limit delivery to subscriptions that have a particular message content filter set, by specifying <code class="language-plaintext highlighter-rouge">content-filters</code> on the format. For example:</p>
 
@@ -766,7 +766,7 @@ c:{"type": "subscribe", "channel": "test", "filters": ["skip-self"]}
 
 <h2 id="paged-streaming">Paged streaming</h2>
 
-<p>If the backend needs to return a lot of initial content for an HTTP streaming request, then it can return a portion of the content and have Pushpin make a new request to fetch the next part. This is done by providing a <code class="language-plaintext highlighter-rouge">Grip-Link</code> header:</p>
+<p>If the backend needs to return a lot of initial content for an HTTP streaming request, then it can return a portion of the content and have P-8 make a new request to fetch the next part. This is done by providing a <code class="language-plaintext highlighter-rouge">Grip-Link</code> header:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: text/plain
@@ -775,19 +775,19 @@ Grip-Link: &lt;/stream/?after=nextID&gt;; rel=next
 {... first part of content ...}
 </code></pre></div></div>
 
-<aside><header>Note</header>The header is called <code class="highlighter-rouge">Grip-Link</code> rather than reusing <code class="highlighter-rouge">Link</code>, so that Pushpin can remove the header before relaying to the client (as Pushpin does with all such <code class="highlighter-rouge">Grip-*</code> headers).</aside>
+<aside><header>Note</header>The header is called <code class="highlighter-rouge">Grip-Link</code> rather than reusing <code class="highlighter-rouge">Link</code>, so that P-8 can remove the header before relaying to the client (as P-8 does with all such <code class="highlighter-rouge">Grip-*</code> headers).</aside>
 
-<p>Once Pushpin has finished sending the current response data to the client, it will request the next link and send that response to the client as well (body only). This process will repeat until a response from the backend either omits a next link or sets <code class="language-plaintext highlighter-rouge">Grip-Hold</code>. If the response contains both <code class="language-plaintext highlighter-rouge">Grip-Hold</code> and a next link, then the request will enter a hold state and the next link may be used for data recovery (see <a href="index.html#reliability">Reliability</a>).</p>
+<p>Once P-8 has finished sending the current response data to the client, it will request the next link and send that response to the client as well (body only). This process will repeat until a response from the backend either omits a next link or sets <code class="language-plaintext highlighter-rouge">Grip-Hold</code>. If the response contains both <code class="language-plaintext highlighter-rouge">Grip-Hold</code> and a next link, then the request will enter a hold state and the next link may be used for data recovery (see <a href="index.html#reliability">Reliability</a>).</p>
 
 <p>There is a <a href="http://blog.fanout.io/2016/09/10/streaming-historical-data/">blog post</a> that walks through this feature.</p>
 
 <h2 id="reliability">Reliability</h2>
 
-<p>Publish-subscribe systems are unreliable by design. However, because Pushpin interfaces with a backend server that likely has access to durable storage, it is possible for Pushpin to leverage the backend in order to provide reliable transmission.</p>
+<p>Publish-subscribe systems are unreliable by design. However, because P-8 interfaces with a backend server that likely has access to durable storage, it is possible for P-8 to leverage the backend in order to provide reliable transmission.</p>
 
 <p>Currently, this feature works for HTTP streaming and long-polling, but not WebSockets. Also, the way it is used depends on the transport. See below for per-transport details.</p>
 
-<p>There is a <a href="http://blog.fanout.io/2017/01/22/pushpin-reliable-streaming/">blog post</a> that walks through this feature.</p>
+<p>There is a <a href="http://blog.fanout.io/2017/01/22/P-8-reliable-streaming/">blog post</a> that walks through this feature.</p>
 
 <h3 id="reliable-http-streaming">Reliable HTTP streaming</h3>
 
@@ -802,7 +802,7 @@ Grip-Link: &lt;/fruit/?after=3&gt;; rel=next
 {... initial response ...}
 </code></pre></div></div>
 
-<p>Pushpin will enter a hold state, and may request the next link in order to repair the data stream under the following conditions:</p>
+<p>P-8 will enter a hold state, and may request the next link in order to repair the data stream under the following conditions:</p>
 
 <ul>
   <li>
@@ -823,7 +823,7 @@ Grip-Link: &lt;/fruit/?after=3&gt;; rel=next
 
 <p>When the next link is requested, the behavior is similar to <a href="index.html#paged-streaming">Paged streaming</a>, in that subsequent next links will be followed if provided, until a response contains <code class="language-plaintext highlighter-rouge">Grip-Hold</code> at which point the connection returns to a hold state.</p>
 
-<p>In each request, Pushpin will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID received on a given channel. This should take precedence over whatever checkpoint information may have been encoded in the link.</p>
+<p>In each request, P-8 will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID received on a given channel. This should take precedence over whatever checkpoint information may have been encoded in the link.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /fruit/?after=3 HTTP/1.1
 Grip-Last: fruit; last-id=7
@@ -845,7 +845,7 @@ Grip-Channel: fruit; prev-id=3
 
 <aside><header>Note</header>The <code class="highlighter-rouge">Grip-Link</code> header is not used in long-polling mode, since in practice the URI of a long-polling request is always usable for recovery.</aside>
 
-<p>Pushpin will enter a hold state, and may retry the request with the backend in order to repair the data stream under the following conditions:</p>
+<p>P-8 will enter a hold state, and may retry the request with the backend in order to repair the data stream under the following conditions:</p>
 
 <ul>
   <li>
@@ -861,7 +861,7 @@ Grip-Channel: fruit; prev-id=3
 
 <p>If a published message’s <code class="language-plaintext highlighter-rouge">prev-id</code> matches the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription, then the message is delivered. If it does not match, then the message is dropped and the request is retried.</p>
 
-<p>In each retried request, Pushpin will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID set on each channel.</p>
+<p>In each retried request, P-8 will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID set on each channel.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /fruit/?after=3 HTTP/1.1
 Grip-Last: fruit; last-id=3
@@ -869,27 +869,27 @@ Grip-Last: fruit; last-id=3
 
 <h2 id="message-queues">Message queues</h2>
 
-<p>In advanced architectures, you may want to route your messages through a message queue/broker, such as Redis, RabbitMQ, Kafka, etc. Perhaps you have a message queue already, and you want to expose the data it provides. Message queues also make it easier to relay data to multiple Pushpin instances.</p>
+<p>In advanced architectures, you may want to route your messages through a message queue/broker, such as Redis, RabbitMQ, Kafka, etc. Perhaps you have a message queue already, and you want to expose the data it provides. Message queues also make it easier to relay data to multiple P-8 instances.</p>
 
 <p><img src="../../image/arch-tiered.png" alt="arch-tiered" /></p>
 
-<p>When using a queue, your data sources would send messages to the queue rather than sending directly to Pushpin, and you’d want Pushpin to receive messages from the queue.</p>
+<p>When using a queue, your data sources would send messages to the queue rather than sending directly to P-8, and you’d want P-8 to receive messages from the queue.</p>
 
-<p>Pushpin has no built-in support for connecting to specific queues/brokers. Instead, you can write a small worker program that runs alongside Pushpin, to receive from the queue and send to Pushpin. Often you’ll need to transform the data as well, and you can write any data transformation code in the same worker program.</p>
+<p>P-8 has no built-in support for connecting to specific queues/brokers. Instead, you can write a small worker program that runs alongside P-8, to receive from the queue and send to P-8. Often you’ll need to transform the data as well, and you can write any data transformation code in the same worker program.</p>
 
 <p>For inspiration, have a look at the <a href="https://github.com/fanout/kafka-sse-example">Kafka SSE Example</a>. It’s a Python/Django app that uses a background process to receive from Kafka.</p>
 
 <h2 id="subscription-forwarding">Subscription forwarding</h2>
 
-<p>If you have more than one Pushpin instance, an issue arises: how do you know which Pushpin instances to publish data to?</p>
+<p>If you have more than one P-8 instance, an issue arises: how do you know which P-8 instances to publish data to?</p>
 
-<p>The simplest answer is to publish every message to every Pushpin instance. If a Pushpin instance receives a message for which it has no subscribers, it will simply drop the message. However, this won’t scale if you need to publish lots of messages. Ideally, you’d want to send messages only to the Pushpin instances that have applicable subscribers.</p>
+<p>The simplest answer is to publish every message to every P-8 instance. If a P-8 instance receives a message for which it has no subscribers, it will simply drop the message. However, this won’t scale if you need to publish lots of messages. Ideally, you’d want to send messages only to the P-8 instances that have applicable subscribers.</p>
 
-<p>The easiest way to achieve this is by publishing to Pushpin’s ZeroMQ SUB socket using a PUB socket. Behind the scenes, Pushpin’s SUB socket forwards its subscription information to the publishing process. The ZeroMQ library on the PUB side keeps track of the subscriptions of each peer and filters messages locally. See <a href="../usage/index.html#publishing">Publishing</a> for details about publishing via ZeroMQ.</p>
+<p>The easiest way to achieve this is by publishing to P-8’s ZeroMQ SUB socket using a PUB socket. Behind the scenes, P-8’s SUB socket forwards its subscription information to the publishing process. The ZeroMQ library on the PUB side keeps track of the subscriptions of each peer and filters messages locally. See <a href="../usage/index.html#publishing">Publishing</a> for details about publishing via ZeroMQ.</p>
 
-<p>If you have a tiered architecture with a message queue/broker, and you want to forward subscriptions upstream, you can use an XPUB socket to monitor Pushpin subscriptions. Then you can use that information to adjust subscriptions with the queue.</p>
+<p>If you have a tiered architecture with a message queue/broker, and you want to forward subscriptions upstream, you can use an XPUB socket to monitor P-8 subscriptions. Then you can use that information to adjust subscriptions with the queue.</p>
 
-<p>For example, here’s some Python code that connects to Pushpin’s SUB socket and prints out the subscriptions:</p>
+<p>For example, here’s some Python code that connects to P-8’s SUB socket and prints out the subscriptions:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">zmq</span>
 
@@ -916,27 +916,27 @@ Grip-Last: fruit; last-id=3
 
 <h2 id="multiple-processes">Multiple processes</h2>
 
-<p>Pushpin consists of four processes: <code class="language-plaintext highlighter-rouge">pushpin-connmgr</code>, <code class="language-plaintext highlighter-rouge">pushpin-proxy</code>, <code class="language-plaintext highlighter-rouge">pushpin-handler</code>, and <code class="language-plaintext highlighter-rouge">pushpin</code> (the “runner”). In a basic setup you don’t really need to think about this. Just run <code class="language-plaintext highlighter-rouge">pushpin</code> to start everything up, and terminate the process (or Ctrl-C) to shut everything down.</p>
+<p>P-8 consists of four processes: <code class="language-plaintext highlighter-rouge">P-8-connmgr</code>, <code class="language-plaintext highlighter-rouge">P-8-proxy</code>, <code class="language-plaintext highlighter-rouge">P-8-handler</code>, and <code class="language-plaintext highlighter-rouge">P-8</code> (the “runner”). In a basic setup you don’t really need to think about this. Just run <code class="language-plaintext highlighter-rouge">P-8</code> to start everything up, and terminate the process (or Ctrl-C) to shut everything down.</p>
 
-<p>If you’d prefer to individually manage any of these processes yourself, then adjust the <code class="language-plaintext highlighter-rouge">services</code> field in <a href="../configuration/index.html#pushpinconf-file">pushpin.conf</a>. You can even choose to not use the runner at all. In that case, Pushpin’s own processes can be launched as follows:</p>
+<p>If you’d prefer to individually manage any of these processes yourself, then adjust the <code class="language-plaintext highlighter-rouge">services</code> field in <a href="../configuration/index.html#P-8conf-file">P-8.conf</a>. You can even choose to not use the runner at all. In that case, P-8’s own processes can be launched as follows:</p>
 
 <p>Proxy process:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pushpin-proxy <span class="nt">--config</span><span class="o">=</span>/path/to/pushpin.conf
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-proxy <span class="nt">--config</span><span class="o">=</span>/path/to/P-8.conf
 </code></pre></div></div>
 
 <p>Handler process:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pushpin-handler <span class="nt">--config</span><span class="o">=</span>/path/to/pushpin.conf
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-handler <span class="nt">--config</span><span class="o">=</span>/path/to/P-8.conf
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">pushpin-connmgr</code> program takes its configuration via command line arguments. To find out what arguments ought to be used, first run <code class="language-plaintext highlighter-rouge">pushpin</code> normally with debug-level logging to see the invocation used by the runner. Then run the program directly with the same arguments.</p>
+<p>The <code class="language-plaintext highlighter-rouge">P-8-connmgr</code> program takes its configuration via command line arguments. To find out what arguments ought to be used, first run <code class="language-plaintext highlighter-rouge">P-8</code> normally with debug-level logging to see the invocation used by the runner. Then run the program directly with the same arguments.</p>
 
 <h2 id="proxy-chaining">Proxy chaining</h2>
 
-<p>Pushpin (or Pushpin/GRIP-compatible proxies) can be chained such that the proxy closest to the receiver handles the subscription and the remaining proxies act as passthroughs. This feature is mainly useful for performing a zero downtime migration between a self-hosted Pushpin deployment and a Pushpin/GRIP-compatible service provider such as <a href="https://fanout.io/cloud/">Fanout Cloud</a>.</p>
+<p>P-8 (or P-8/GRIP-compatible proxies) can be chained such that the proxy closest to the receiver handles the subscription and the remaining proxies act as passthroughs. This feature is mainly useful for performing a zero downtime migration between a self-hosted P-8 deployment and a P-8/GRIP-compatible service provider such as <a href="https://fanout.io/cloud/">Fanout Cloud</a>.</p>
 
-<p>For example, if you have Pushpin running on your own server to power a realtime API, and later on you want to delegate connection handling to a provider, you can add the service provider to the network path without needing to remove Pushpin. Connections made directly to Pushpin will still be handled by Pushpin. Connections made to the service provider will be handled by the provider. As long as you publish messages to both services, clients connected to either one will receive messages. The diagram below shows what a multiple proxy setup might look like:</p>
+<p>For example, if you have P-8 running on your own server to power a realtime API, and later on you want to delegate connection handling to a provider, you can add the service provider to the network path without needing to remove P-8. Connections made directly to P-8 will still be handled by P-8. Connections made to the service provider will be handled by the provider. As long as you publish messages to both services, clients connected to either one will receive messages. The diagram below shows what a multiple proxy setup might look like:</p>
 
 <p><img src="../../image/grip-chain.png" alt="grip-chain" /></p>
 
@@ -944,9 +944,9 @@ Grip-Last: fruit; last-id=3
 
 <p>The effect is analogous to caching layers and caching CDNs. Your server might have its own caching layer, but if you put a CDN in front of it then the CDN will end up being the preferred cache, and you can switch back and forth between using the CDN or not without downtime.</p>
 
-<p>The way Pushpin proxy chaining works is a proxy authenticates itself to the service behind it by providing a <code class="language-plaintext highlighter-rouge">Grip-Sig</code> request header. If that service is a second proxy, then the second proxy may delegate any GRIP instructions to the first proxy if it considers the first proxy authorized to handle GRIP instructions.</p>
+<p>The way P-8 proxy chaining works is a proxy authenticates itself to the service behind it by providing a <code class="language-plaintext highlighter-rouge">Grip-Sig</code> request header. If that service is a second proxy, then the second proxy may delegate any GRIP instructions to the first proxy if it considers the first proxy authorized to handle GRIP instructions.</p>
 
-<p>Pushpin generates <code class="language-plaintext highlighter-rouge">Grip-Sig</code> headers using the key specified by the <code class="language-plaintext highlighter-rouge">sig_key</code> option. To authorize GRIP instruction delegation to a proxy in front of Pushpin, set <code class="language-plaintext highlighter-rouge">upstream_key</code> with the key of that proxy. In the case of delegating to Fanout Cloud, the the key to use is the “realm key” in Base64 format. Set <code class="language-plaintext highlighter-rouge">upstream_key=base64:{realm-key}</code>.</p>
+<p>P-8 generates <code class="language-plaintext highlighter-rouge">Grip-Sig</code> headers using the key specified by the <code class="language-plaintext highlighter-rouge">sig_key</code> option. To authorize GRIP instruction delegation to a proxy in front of P-8, set <code class="language-plaintext highlighter-rouge">upstream_key</code> with the key of that proxy. In the case of delegating to Fanout Cloud, the the key to use is the “realm key” in Base64 format. Set <code class="language-plaintext highlighter-rouge">upstream_key=base64:{realm-key}</code>.</p>
 
       </section>
 
@@ -958,12 +958,12 @@ Grip-Last: fruit; last-id=3
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -975,9 +975,9 @@ Grip-Last: fruit; last-id=3
       <a href="../../index.html">Home</a>
       <a href="../about/index.html">Docs</a>
       <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | Configuration</title>
+  <title>P-8 | Documentation | Configuration</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | Configuration">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | Configuration">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="../about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -142,7 +142,7 @@
               
                 <ul>
                   
-                  <li><a href="index.html#pushpinconf-file">pushpin.conf file</a></li>
+                  <li><a href="index.html#P-8conf-file">P-8.conf file</a></li>
                   
                   <li><a href="index.html#routes-file">routes file</a></li>
                   
@@ -300,26 +300,26 @@
 
 <h2 id="config-files">Config files</h2>
 
-<p>Pushpin has two primary configuration files: <code class="language-plaintext highlighter-rouge">pushpin.conf</code> and <code class="language-plaintext highlighter-rouge">routes</code>. The <code class="language-plaintext highlighter-rouge">pushpin.conf</code> file refers to the <code class="language-plaintext highlighter-rouge">routes</code> file via the <code class="language-plaintext highlighter-rouge">routesfile</code> field:</p>
+<p>P-8 has two primary configuration files: <code class="language-plaintext highlighter-rouge">P-8.conf</code> and <code class="language-plaintext highlighter-rouge">routes</code>. The <code class="language-plaintext highlighter-rouge">P-8.conf</code> file refers to the <code class="language-plaintext highlighter-rouge">routes</code> file via the <code class="language-plaintext highlighter-rouge">routesfile</code> field:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[proxy]
 routesfile=routes
 </code></pre></div></div>
 
-<p>If a relative path is used, then the file is looked up relative to the location of <code class="language-plaintext highlighter-rouge">pushpin.conf</code>.</p>
+<p>If a relative path is used, then the file is looked up relative to the location of <code class="language-plaintext highlighter-rouge">P-8.conf</code>.</p>
 
-<h3 id="pushpinconf-file">pushpin.conf file</h3>
+<h3 id="P-8conf-file">P-8.conf file</h3>
 
-<p>It is generally not necessary to edit <code class="language-plaintext highlighter-rouge">pushpin.conf</code>. You’ll spend more time with the <a href="index.html#routes-file">routes file</a>. However, if you need to change bind addresses or ports, or global settings that affect all routes, then this is the file to work with.</p>
+<p>It is generally not necessary to edit <code class="language-plaintext highlighter-rouge">P-8.conf</code>. You’ll spend more time with the <a href="index.html#routes-file">routes file</a>. However, if you need to change bind addresses or ports, or global settings that affect all routes, then this is the file to work with.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">pushpin.conf</code> file is an INI-style formatted config file with four sections: <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">runner</code>, <code class="language-plaintext highlighter-rouge">proxy</code>, and <code class="language-plaintext highlighter-rouge">handler</code>. Below are descriptions of the public fields:</p>
+<p>The <code class="language-plaintext highlighter-rouge">P-8.conf</code> file is an INI-style formatted config file with four sections: <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">runner</code>, <code class="language-plaintext highlighter-rouge">proxy</code>, and <code class="language-plaintext highlighter-rouge">handler</code>. Below are descriptions of the public fields:</p>
 
 <p><strong>Global:</strong></p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">libdir={path}</code>: Path to pushpin library files (e.g. /usr/lib/pushpin). If unspecified, the libdir will be derived relatively (to allow launching Pushpin from within the source tree without installation).</li>
+  <li><code class="language-plaintext highlighter-rouge">libdir={path}</code>: Path to P-8 library files (e.g. /usr/lib/P-8). If unspecified, the libdir will be derived relatively (to allow launching P-8 from within the source tree without installation).</li>
   <li><code class="language-plaintext highlighter-rouge">rundir={path}</code>: Where the runner should place runtime files such as pid files.</li>
-  <li><code class="language-plaintext highlighter-rouge">include=internal.conf</code>: Tells Pushpin to find additional configuration in a separate file called internal.conf. These contain “private” settings used by Pushpin components that may change between releases. You can override them in pushpin.conf at your own risk.</li>
+  <li><code class="language-plaintext highlighter-rouge">include=internal.conf</code>: Tells P-8 to find additional configuration in a separate file called internal.conf. These contain “private” settings used by P-8 components that may change between releases. You can override them in P-8.conf at your own risk.</li>
   <li><code class="language-plaintext highlighter-rouge">ipc_prefix={string}</code>: Prefix all ZeroMQ IPC filenames. Normally not used directly. Pass <code class="language-plaintext highlighter-rouge">--id</code> to the runner instead.</li>
   <li><code class="language-plaintext highlighter-rouge">port_offset={N}</code>: Increment all ZeroMQ TCP ports and the HTTP control server port. Normally not used directly. Pass <code class="language-plaintext highlighter-rouge">--id</code> to the runner instead.</li>
   <li><code class="language-plaintext highlighter-rouge">stats_connection_ttl={N}</code>: TTL (seconds) to use in connection stats messages.</li>
@@ -328,16 +328,16 @@ routesfile=routes
 
 <p><strong>Runner:</strong></p>
 
-<p>When you run the <code class="language-plaintext highlighter-rouge">pushpin</code> executable, you’re invoking a runner that simply runs other programs. The runner program uses the runner section of pushpin.conf to know what to launch and how.</p>
+<p>When you run the <code class="language-plaintext highlighter-rouge">P-8</code> executable, you’re invoking a runner that simply runs other programs. The runner program uses the runner section of P-8.conf to know what to launch and how.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">services={stringlist}</code>: Comma-delimited list of services to run. If you want to run any of the services independently from the runner, you can remove them from this list. For example, if you are debugging <code class="language-plaintext highlighter-rouge">pushpin-proxy</code>, you can remove it from the services list, run <code class="language-plaintext highlighter-rouge">pushpin</code> to launch everything <em>except</em> <code class="language-plaintext highlighter-rouge">pushpin-proxy</code>, and then run the <code class="language-plaintext highlighter-rouge">pushpin-proxy</code> executable manually (perhaps with gdb or valgrind or such). Technically you can run each process manually and not use the runner at all!</li>
+  <li><code class="language-plaintext highlighter-rouge">services={stringlist}</code>: Comma-delimited list of services to run. If you want to run any of the services independently from the runner, you can remove them from this list. For example, if you are debugging <code class="language-plaintext highlighter-rouge">P-8-proxy</code>, you can remove it from the services list, run <code class="language-plaintext highlighter-rouge">P-8</code> to launch everything <em>except</em> <code class="language-plaintext highlighter-rouge">P-8-proxy</code>, and then run the <code class="language-plaintext highlighter-rouge">P-8-proxy</code> executable manually (perhaps with gdb or valgrind or such). Technically you can run each process manually and not use the runner at all!</li>
   <li><code class="language-plaintext highlighter-rouge">http_port={port}</code>: Port to listen on for non-SSL HTTP/WebSocket client connections. Prefix with <code class="language-plaintext highlighter-rouge">{address}:</code> to bind to a specific interface, e.g. <code class="language-plaintext highlighter-rouge">http_port=127.0.0.1:7999</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">https_ports={ports}</code>: Comma-delimited list of ports to listen on for SSL HTTP/WebSocket client connections. Prefix with <code class="language-plaintext highlighter-rouge">{address}:</code> to bind a specific interface. See the <a href="index.html#ssl">SSL</a> section.</li>
-  <li><code class="language-plaintext highlighter-rouge">local_ports={ports}</code>: Unix paths to listen on for HTTP/WebSocket client connections. Each port may contain parameters <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">group</code>, and <code class="language-plaintext highlighter-rouge">mode</code> for setting the permissions of the socket file, for example: <code class="language-plaintext highlighter-rouge">local_ports=/tmp/pushpin.sock?user=pushpin&amp;mode=777</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">local_ports={ports}</code>: Unix paths to listen on for HTTP/WebSocket client connections. Each port may contain parameters <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">group</code>, and <code class="language-plaintext highlighter-rouge">mode</code> for setting the permissions of the socket file, for example: <code class="language-plaintext highlighter-rouge">local_ports=/tmp/P-8.sock?user=P-8&amp;mode=777</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">configdir={path}</code>: Path to runner config dir. This is where service config template files live, among other things.</li>
   <li><code class="language-plaintext highlighter-rouge">logdir={path}</code>: Where the runner should write logfiles.</li>
-  <li><code class="language-plaintext highlighter-rouge">log_level={N}</code>: Comma-separate list of log levels. Entries can be either a number by itself (to specify the default log level) or using the form <code class="language-plaintext highlighter-rouge">name:level</code> (to specify the level of a specific process). For example, <code class="language-plaintext highlighter-rouge">log_level=2</code> means set the default log level to 2, which would be used by all processes, whereas <code class="language-plaintext highlighter-rouge">log_level=2,pushpin-handler:3</code> would mean use log level 3 for the <code class="language-plaintext highlighter-rouge">pushpin-handler</code> process and log level 2 for all other processes.</li>
+  <li><code class="language-plaintext highlighter-rouge">log_level={N}</code>: Comma-separate list of log levels. Entries can be either a number by itself (to specify the default log level) or using the form <code class="language-plaintext highlighter-rouge">name:level</code> (to specify the level of a specific process). For example, <code class="language-plaintext highlighter-rouge">log_level=2</code> means set the default log level to 2, which would be used by all processes, whereas <code class="language-plaintext highlighter-rouge">log_level=2,P-8-handler:3</code> would mean use log level 3 for the <code class="language-plaintext highlighter-rouge">P-8-handler</code> process and log level 2 for all other processes.</li>
   <li><code class="language-plaintext highlighter-rouge">client_buffer_size={N}</code>: Buffer size for each client connection. The full request header from the client must fit in this buffer. Default is 8192.</li>
   <li><code class="language-plaintext highlighter-rouge">client_maxconn={N}</code>: Maximum number of client connections. Default is 50000.</li>
   <li><code class="language-plaintext highlighter-rouge">allow_compression={true|false}</code>: Whether connections can use compression.</li>
@@ -348,33 +348,33 @@ routesfile=routes
 
 <p><strong>Proxy:</strong></p>
 
-<p>Configuration used by the <code class="language-plaintext highlighter-rouge">pushpin-proxy</code> program.</p>
+<p>Configuration used by the <code class="language-plaintext highlighter-rouge">P-8-proxy</code> program.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">workers={N}</code>: Number of worker threads to run. Default is 1.</li>
-  <li><code class="language-plaintext highlighter-rouge">routesfile={path}</code>: Path to the “routes” file. If a relative path is used, then the file is looked up relative to the location of pushpin.conf.</li>
-  <li><code class="language-plaintext highlighter-rouge">debug={true|false}</code>: Pushpin error responses are normally vague, in order to not leak any internal information. However this can make debugging difficult. If debug mode is enabled, then error responses will be more informative.</li>
+  <li><code class="language-plaintext highlighter-rouge">routesfile={path}</code>: Path to the “routes” file. If a relative path is used, then the file is looked up relative to the location of P-8.conf.</li>
+  <li><code class="language-plaintext highlighter-rouge">debug={true|false}</code>: P-8 error responses are normally vague, in order to not leak any internal information. However this can make debugging difficult. If debug mode is enabled, then error responses will be more informative.</li>
   <li><code class="language-plaintext highlighter-rouge">auto_cross_origin={true|false}</code>: If true, enable auto cross-origin mode, which provides automatic CORS and JSONP wrapping as-needed. See <a href="../usage/index.html#auto-cross-origin">Auto Cross-Origin</a>.</li>
   <li><code class="language-plaintext highlighter-rouge">accept_x_forwarded_protocol={true|false}</code>: If true, then process <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> or <code class="language-plaintext highlighter-rouge">X-Forwarded-Protocol</code> on incoming requests.</li>
   <li><code class="language-plaintext highlighter-rouge">set_x_forwarded_protocol={proto-only|true|false}</code>: If <code class="language-plaintext highlighter-rouge">proto-only</code>, set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> header when proxying. If true (deprecated), set the <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> header and the non-standard <code class="language-plaintext highlighter-rouge">X-Forwarded-Protocol</code> header.</li>
   <li><code class="language-plaintext highlighter-rouge">x_forwarded_for={instructions}</code>: Comma-delimited list of instructions for handling <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> headers. See the <a href="index.html#x-forwarded-headers">X-Forwarded headers</a> section.</li>
   <li><code class="language-plaintext highlighter-rouge">x_forwarded_for_trusted={instructions}</code>: Comma-delimited list of instructions for handling <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> headers from senders verified with <code class="language-plaintext highlighter-rouge">upstream_key</code>. See the <a href="index.html#x-forwarded-headers">X-Forwarded headers</a> section.</li>
   <li><code class="language-plaintext highlighter-rouge">orig_headers_need_mark={header list}</code>: Magic parameter to help enable perfect header preservation across proxying. You almost certainly don’t need this, but if you think you do, then ask about it on the mailing list. Used by <a href="http://webhookinbox.com/">WebhookInbox</a>.</li>
-  <li><code class="language-plaintext highlighter-rouge">accept_pushpin_route={true|false}</code>: If true, then allow route selection via the <code class="language-plaintext highlighter-rouge">Pushpin-Route</code> header. For example, if a request contains <code class="language-plaintext highlighter-rouge">Pushpin-Route: foo</code>, and there is a route with <code class="language-plaintext highlighter-rouge">id=foo</code> in the routes file, then that route should be selected.</li>
+  <li><code class="language-plaintext highlighter-rouge">accept_P-8_route={true|false}</code>: If true, then allow route selection via the <code class="language-plaintext highlighter-rouge">P-8-Route</code> header. For example, if a request contains <code class="language-plaintext highlighter-rouge">P-8-Route: foo</code>, and there is a route with <code class="language-plaintext highlighter-rouge">id=foo</code> in the routes file, then that route should be selected.</li>
   <li><code class="language-plaintext highlighter-rouge">cdn_loop={value}</code>: Value to append to the CDN-Loop header.</li>
   <li><code class="language-plaintext highlighter-rouge">log_from={true|false}</code>: Include client IP address in request logs.</li>
   <li><code class="language-plaintext highlighter-rouge">log_user_agent={true|false}</code>: Include client User-Agent header in request logs.</li>
-  <li><code class="language-plaintext highlighter-rouge">sig_iss={issuer}</code>: When signing outbound requests, use as the JWT <code class="language-plaintext highlighter-rouge">iss</code> claim field. Default is “pushpin”.</li>
+  <li><code class="language-plaintext highlighter-rouge">sig_iss={issuer}</code>: When signing outbound requests, use as the JWT <code class="language-plaintext highlighter-rouge">iss</code> claim field. Default is “P-8”.</li>
   <li><code class="language-plaintext highlighter-rouge">sig_key={key}</code>: When signing outbound requests, use as the JWT key. Prepend value with <code class="language-plaintext highlighter-rouge">base64:</code> to use a Base64-encoded binary key. Prepend value with <code class="language-plaintext highlighter-rouge">file:</code> to read the key from a file.</li>
-  <li><code class="language-plaintext highlighter-rouge">upstream_key={key}</code>: Used to chain multiple Pushpin instances on a network path, which enables subscription forwarding. Set to the key used by the instance in front of this one. Prepend value with <code class="language-plaintext highlighter-rouge">base64:</code> to use a Base64-encoded binary key.</li>
+  <li><code class="language-plaintext highlighter-rouge">upstream_key={key}</code>: Used to chain multiple P-8 instances on a network path, which enables subscription forwarding. Set to the key used by the instance in front of this one. Prepend value with <code class="language-plaintext highlighter-rouge">base64:</code> to use a Base64-encoded binary key.</li>
   <li><code class="language-plaintext highlighter-rouge">sockjs_url={url}</code>: URL of SockJS client. Needed for the SockJS iframe transport to work. This only applies to routes with SockJS capability enabled.</li>
-  <li><code class="language-plaintext highlighter-rouge">updates_check={report|check|off}</code>: Periodically check the updates.fanout.io server for a new version of Pushpin, and log a message when a new version is available. If set to <code class="language-plaintext highlighter-rouge">report</code>, also pass along anonymous usage information. No personally identifiable information is sent.</li>
-  <li><code class="language-plaintext highlighter-rouge">organization_name={string}</code>: A voluntary way to send identifying information during the updates check. This helps the Pushpin developers understand who is using the software. If you enjoy this software, set this field to your company name! :)</li>
+  <li><code class="language-plaintext highlighter-rouge">updates_check={report|check|off}</code>: Periodically check the updates.fanout.io server for a new version of P-8, and log a message when a new version is available. If set to <code class="language-plaintext highlighter-rouge">report</code>, also pass along anonymous usage information. No personally identifiable information is sent.</li>
+  <li><code class="language-plaintext highlighter-rouge">organization_name={string}</code>: A voluntary way to send identifying information during the updates check. This helps the P-8 developers understand who is using the software. If you enjoy this software, set this field to your company name! :)</li>
 </ul>
 
 <p><strong>Handler:</strong></p>
 
-<p>Configuration used by the <code class="language-plaintext highlighter-rouge">pushpin-handler</code> program.</p>
+<p>Configuration used by the <code class="language-plaintext highlighter-rouge">P-8-handler</code> program.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">push_in_spec={spec}</code>: ZeroMQ spec (bind PULL) for receiving publish commands.</li>
@@ -396,13 +396,13 @@ routesfile=routes
   <li><code class="language-plaintext highlighter-rouge">stats_subscription_ttl={N}</code>: TTL (seconds) to use in subscription stats messages.</li>
   <li><code class="language-plaintext highlighter-rouge">stats_report_interval={N}</code>: Interval (seconds) to send report stats.</li>
   <li><code class="language-plaintext highlighter-rouge">stats_format={tnetstring|json}</code>: Output format for stats socket. Default is tnetstring.</li>
-  <li><code class="language-plaintext highlighter-rouge">prometheus_port={port}</code>: Port to listen on for serving Prometheus metrics. Prefix with <code class="language-plaintext highlighter-rouge">{address}:</code> to bind to a specific interface, e.g. <code class="language-plaintext highlighter-rouge">prometheus_port=127.0.0.1:9000</code>. Prefix with <code class="language-plaintext highlighter-rouge">ipc://</code> to bind to a Unix path, e.g. <code class="language-plaintext highlighter-rouge">prometheus_port=ipc:///tmp/pushpin-metrics</code>.</li>
-  <li><code class="language-plaintext highlighter-rouge">prometheus_prefix={string}</code>: String to prefix Prometheus metric names with. For example: <code class="language-plaintext highlighter-rouge">prometheus_prefix=pushpin_</code>. Default is no prefix, i.e. an empty string.</li>
+  <li><code class="language-plaintext highlighter-rouge">prometheus_port={port}</code>: Port to listen on for serving Prometheus metrics. Prefix with <code class="language-plaintext highlighter-rouge">{address}:</code> to bind to a specific interface, e.g. <code class="language-plaintext highlighter-rouge">prometheus_port=127.0.0.1:9000</code>. Prefix with <code class="language-plaintext highlighter-rouge">ipc://</code> to bind to a Unix path, e.g. <code class="language-plaintext highlighter-rouge">prometheus_port=ipc:///tmp/P-8-metrics</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">prometheus_prefix={string}</code>: String to prefix Prometheus metric names with. For example: <code class="language-plaintext highlighter-rouge">prometheus_prefix=P-8_</code>. Default is no prefix, i.e. an empty string.</li>
 </ul>
 
 <p><strong>Spec templating:</strong></p>
 
-<p>For IPC specs, you can use template parameter <code class="language-plaintext highlighter-rouge">{rundir}</code> to be substituted with the Pushpin run directory. For example, if the run directory is <code class="language-plaintext highlighter-rouge">/var/run/pushpin</code>, and you specify an IPC spec as <code class="language-plaintext highlighter-rouge">ipc://{rundir}/foo</code>, then it will be resolved to <code class="language-plaintext highlighter-rouge">ipc:///var/run/pushpin/foo</code> during use.</p>
+<p>For IPC specs, you can use template parameter <code class="language-plaintext highlighter-rouge">{rundir}</code> to be substituted with the P-8 run directory. For example, if the run directory is <code class="language-plaintext highlighter-rouge">/var/run/P-8</code>, and you specify an IPC spec as <code class="language-plaintext highlighter-rouge">ipc://{rundir}/foo</code>, then it will be resolved to <code class="language-plaintext highlighter-rouge">ipc:///var/run/P-8/foo</code> during use.</p>
 
 <h3 id="routes-file">routes file</h3>
 
@@ -422,13 +422,13 @@ example.net 192.168.1.101:80
 example.net 192.168.1.101:80
 </code></pre></div></div>
 
-<p>Further, there is only ever one possible route for a given incoming request, and Pushpin will prefer more-specific routes over less-specific routes. If two or more routes conflict with each other, then only the first will be used and the rest will be ignored.</p>
+<p>Further, there is only ever one possible route for a given incoming request, and P-8 will prefer more-specific routes over less-specific routes. If two or more routes conflict with each other, then only the first will be used and the rest will be ignored.</p>
 
 <p>To understand how to write routes, see <a href="index.html#routes">Routes</a>.</p>
 
 <h2 id="routes">Routes</h2>
 
-<p>The format of a Pushpin route is a condition and then one or more routing targets, all separated by spaces.</p>
+<p>The format of a P-8 route is a condition and then one or more routing targets, all separated by spaces.</p>
 
 <p>For example, here’s a simple routes file containing one line:</p>
 
@@ -490,14 +490,14 @@ example.net 192.168.1.101:80
 * localhost:8000
 </code></pre></div></div>
 
-<p>In addition to normal HTTP/WebSocket targets (indicated using the form <code class="language-plaintext highlighter-rouge">host:port</code>), Pushpin can route to ZeroMQ targets as well. The protocol used is <a href="https://rfc.zeromq.org/spec:33/ZHTTP/">ZHTTP</a>, which supports PULL/SUB and REQ/REP modes. Use a target of the form <code class="language-plaintext highlighter-rouge">zhttp/spec</code> for PULL/SUB and <code class="language-plaintext highlighter-rouge">zhttpreq/spec</code> for REQ/REP.</p>
+<p>In addition to normal HTTP/WebSocket targets (indicated using the form <code class="language-plaintext highlighter-rouge">host:port</code>), P-8 can route to ZeroMQ targets as well. The protocol used is <a href="https://rfc.zeromq.org/spec:33/ZHTTP/">ZHTTP</a>, which supports PULL/SUB and REQ/REP modes. Use a target of the form <code class="language-plaintext highlighter-rouge">zhttp/spec</code> for PULL/SUB and <code class="language-plaintext highlighter-rouge">zhttpreq/spec</code> for REQ/REP.</p>
 
 <p>For example, here’s how to route via REQ/REP:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* zhttpreq/ipc://httphandler
 </code></pre></div></div>
 
-<p>Pushpin binds to the address spec. Handlers connect to it. ZeroMQ targets can be useful if you want to implement a push service without a web server.</p>
+<p>P-8 binds to the address spec. Handlers connect to it. ZeroMQ targets can be useful if you want to implement a push service without a web server.</p>
 
 <h3 id="condition-parameters">Condition Parameters</h3>
 
@@ -508,13 +508,13 @@ example.net 192.168.1.101:80
   <li><code class="language-plaintext highlighter-rouge">path_rem={N}</code>: Remove N bytes from the beginning of the request URI before proxying. For example, if you want requests to <code class="language-plaintext highlighter-rouge">/mypath</code> to route to the target server’s root, then you could do <code class="language-plaintext highlighter-rouge">path_beg=/mypath,path_rem=7</code>.</li>
   <li><code class="language-plaintext highlighter-rouge">replace_beg={string}</code>: Replace the beginning part of the request URI matched by <code class="language-plaintext highlighter-rouge">path_beg</code>. If <code class="language-plaintext highlighter-rouge">path_beg</code> is not specified, then prepend the value to the request URI. If <code class="language-plaintext highlighter-rouge">replace_beg</code> is set to an empty value, then remove the matched part.</li>
   <li><code class="language-plaintext highlighter-rouge">as_host={hostname}</code>: Override the Host header of the incoming request.</li>
-  <li><code class="language-plaintext highlighter-rouge">sig_iss={issuer}</code>: When signing outbound requests, use as the JWT <code class="language-plaintext highlighter-rouge">iss</code> claim field. Overrides <code class="language-plaintext highlighter-rouge">sig_iss</code> in pushpin.conf.</li>
-  <li><code class="language-plaintext highlighter-rouge">sig_key={key}</code>: When signing outbound requests, use as the JWT key. Prepend value with <code class="language-plaintext highlighter-rouge">base64:</code> to use a Base64-encoded binary key. Prepend value with <code class="language-plaintext highlighter-rouge">file:</code> to read the key from a file. Overrides <code class="language-plaintext highlighter-rouge">sig_key</code> in pushpin.conf.</li>
-  <li><code class="language-plaintext highlighter-rouge">id</code>: Set an optional identifier for the route. The id will be included in data emitted from Pushpin’s stats socket.</li>
+  <li><code class="language-plaintext highlighter-rouge">sig_iss={issuer}</code>: When signing outbound requests, use as the JWT <code class="language-plaintext highlighter-rouge">iss</code> claim field. Overrides <code class="language-plaintext highlighter-rouge">sig_iss</code> in P-8.conf.</li>
+  <li><code class="language-plaintext highlighter-rouge">sig_key={key}</code>: When signing outbound requests, use as the JWT key. Prepend value with <code class="language-plaintext highlighter-rouge">base64:</code> to use a Base64-encoded binary key. Prepend value with <code class="language-plaintext highlighter-rouge">file:</code> to read the key from a file. Overrides <code class="language-plaintext highlighter-rouge">sig_key</code> in P-8.conf.</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code>: Set an optional identifier for the route. The id will be included in data emitted from P-8’s stats socket.</li>
   <li><code class="language-plaintext highlighter-rouge">prefix</code>: Prepend this value to all subscribed channel names. For example, if <code class="language-plaintext highlighter-rouge">prefix=app1-</code> is set for a route, and the target server uses a GRIP instruction to subscribe a client to channel “foo”, then the client becomes subscribed to “app1-foo” instead.</li>
   <li><code class="language-plaintext highlighter-rouge">debug</code>: Enable debug mode. Requests to this route that result in an error will receive more informative error responses.</li>
-  <li><code class="language-plaintext highlighter-rouge">aco</code>: Enable auto cross-origin mode, which provides automatic CORS and JSONP wrapping as-needed. See <a href="../usage/index.html#auto-cross-origin">Auto Cross-Origin</a>. Overrides <code class="language-plaintext highlighter-rouge">auto_cross_origin=false</code> in pushpin.conf.</li>
-  <li><code class="language-plaintext highlighter-rouge">jsonp_mode={basic|extended}</code>: In basic mode, the HTTP response body is wrapped in the JSONP callback. In extended mode, the entire HTTP response (headers and all) are encoded in JSON and then wrapped in the JSONP callback. The extended format is the same as expected by <a href="https://pushpin.org/fanout/pollymer">Pollymer</a>. Default is extended.</li>
+  <li><code class="language-plaintext highlighter-rouge">aco</code>: Enable auto cross-origin mode, which provides automatic CORS and JSONP wrapping as-needed. See <a href="../usage/index.html#auto-cross-origin">Auto Cross-Origin</a>. Overrides <code class="language-plaintext highlighter-rouge">auto_cross_origin=false</code> in P-8.conf.</li>
+  <li><code class="language-plaintext highlighter-rouge">jsonp_mode={basic|extended}</code>: In basic mode, the HTTP response body is wrapped in the JSONP callback. In extended mode, the entire HTTP response (headers and all) are encoded in JSON and then wrapped in the JSONP callback. The extended format is the same as expected by <a href="https://P-8.org/fanout/pollymer">Pollymer</a>. Default is extended.</li>
   <li><code class="language-plaintext highlighter-rouge">json_cb={param}</code>: Specify the query parameter that specifies the JSONP callback to use. Default is “callback”.</li>
   <li><code class="language-plaintext highlighter-rouge">json_body={param}</code>: Specify a query parameter that contains a JSON body for a JSONP request. If a client provides this query parameter, then the request body will be the query parameter’s value with Content-Type application/json. The presence of this parameter is enough for the request to be considered a JSONP request, as long as <code class="language-plaintext highlighter-rouge">json_defcb</code> is also specified for the route. Otherwise, the client will need to supply a callback query parameter.</li>
   <li><code class="language-plaintext highlighter-rouge">json_defcb={name}</code>: The default JSONP callback name to used. This only comes into play if the query parameter specified by <code class="language-plaintext highlighter-rouge">json_body</code> is detected in a request but without a callback parameter.</li>
@@ -543,7 +543,7 @@ example.net 192.168.1.101:80
 
 <h3 id="x-forwarded-headers">X-Forwarded headers</h3>
 
-<p>Pushpin lets you manipulate the <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> header using instructions specified in the <code class="language-plaintext highlighter-rouge">x_forwarded_for</code> and <code class="language-plaintext highlighter-rouge">x_forwarded_for_trusted</code> fields in the proxy section of pushpin.conf. Each field contains a comma-delimited list of instructions. If the request is determined to be from a trusted client (because the request’s <code class="language-plaintext highlighter-rouge">Grip-Sig</code> header validates with the configured <code class="language-plaintext highlighter-rouge">upstream_key</code>) then the <code class="language-plaintext highlighter-rouge">x_forwarded_for_trusted</code> field is used for the request. Otherwise, the <code class="language-plaintext highlighter-rouge">x_forwarded_for</code> field is used.</p>
+<p>P-8 lets you manipulate the <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> header using instructions specified in the <code class="language-plaintext highlighter-rouge">x_forwarded_for</code> and <code class="language-plaintext highlighter-rouge">x_forwarded_for_trusted</code> fields in the proxy section of P-8.conf. Each field contains a comma-delimited list of instructions. If the request is determined to be from a trusted client (because the request’s <code class="language-plaintext highlighter-rouge">Grip-Sig</code> header validates with the configured <code class="language-plaintext highlighter-rouge">upstream_key</code>) then the <code class="language-plaintext highlighter-rouge">x_forwarded_for_trusted</code> field is used for the request. Otherwise, the <code class="language-plaintext highlighter-rouge">x_forwarded_for</code> field is used.</p>
 
 <p>There are two instructions available. The order they appear doesn’t matter.</p>
 
@@ -552,7 +552,7 @@ example.net 192.168.1.101:80
   <li><code class="language-plaintext highlighter-rouge">append</code>: Append the IP address of the current request to <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code>.</li>
 </ul>
 
-<p>For example, if you set up Pushpin so that clients can directly access it, but you want to know the IP addresses of incoming clients, then you might want to use a configuration like this:</p>
+<p>For example, if you set up P-8 so that clients can directly access it, but you want to know the IP addresses of incoming clients, then you might want to use a configuration like this:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[proxy]
 x_forwarded_for=truncate:0,append
@@ -560,7 +560,7 @@ x_forwarded_for=truncate:0,append
 
 <p>This will completely replace the <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> header to contain just the requesting client’s true IP address. The reason for the truncate is because we cannot trust this header if the client provides it.</p>
 
-<p>On the other hand, if you set up Pushpin behind a layer 7 load balancer (such as HAProxy) that already manipulates the <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> header in a similar fashion, then you can trust its value and simply append to it:</p>
+<p>On the other hand, if you set up P-8 behind a layer 7 load balancer (such as HAProxy) that already manipulates the <code class="language-plaintext highlighter-rouge">X-Forwarded-For</code> header in a similar fashion, then you can trust its value and simply append to it:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[proxy]
 x_forwarded_for=append
@@ -568,28 +568,28 @@ x_forwarded_for=append
 
 <p>You could also not bother appending to it, since usually only the leftmost IP address is interesting to backends anyway.</p>
 
-<p>Pushpin can also interpret <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> as well as set it when proxying, depending on the <code class="language-plaintext highlighter-rouge">accept_x_forwarded_protocol</code> and <code class="language-plaintext highlighter-rouge">set_x_forwarded_protocol</code> settings.</p>
+<p>P-8 can also interpret <code class="language-plaintext highlighter-rouge">X-Forwarded-Proto</code> as well as set it when proxying, depending on the <code class="language-plaintext highlighter-rouge">accept_x_forwarded_protocol</code> and <code class="language-plaintext highlighter-rouge">set_x_forwarded_protocol</code> settings.</p>
 
 <h3 id="websocket-over-http">WebSocket-over-HTTP</h3>
 
-<p>When Pushpin receives a WebSocket connection, it can proxy to the backend using a WebSocket connection, or it can send a series of HTTP requests that wrap WebSocket events. When using WebSockets, it is recommended to convert to HTTP so that the backend can service the connection statelessly. This is activated using the <code class="language-plaintext highlighter-rouge">over_http</code> target parameter.</p>
+<p>When P-8 receives a WebSocket connection, it can proxy to the backend using a WebSocket connection, or it can send a series of HTTP requests that wrap WebSocket events. When using WebSockets, it is recommended to convert to HTTP so that the backend can service the connection statelessly. This is activated using the <code class="language-plaintext highlighter-rouge">over_http</code> target parameter.</p>
 
 <p>Also see the <a href="../protocols/websocket-over-http/index.html">WebSocket-over-HTTP spec</a>.</p>
 
 <h2 id="ssl">SSL</h2>
 
-<p>Incoming client connections are handled by Condure (or Mongrel2 in older setups). To listen for SSL connections, set the <code class="language-plaintext highlighter-rouge">https_ports</code> field in the runner section of <code class="language-plaintext highlighter-rouge">pushpin.conf</code>. For example:</p>
+<p>Incoming client connections are handled by Condure (or Mongrel2 in older setups). To listen for SSL connections, set the <code class="language-plaintext highlighter-rouge">https_ports</code> field in the runner section of <code class="language-plaintext highlighter-rouge">P-8.conf</code>. For example:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[runner]
 http_port=8000
 https_ports=4430
 </code></pre></div></div>
 
-<p>The above configuration will instruct Pushpin to configure Condure to use two ports, one for SSL and one for non-SSL. Additionally, you need to provide default certificate files for each SSL port being listened on. In the above case, Condure will expect the files <code class="language-plaintext highlighter-rouge">default_4430.crt</code> and <code class="language-plaintext highlighter-rouge">default_4430.key</code> to exist in the <code class="language-plaintext highlighter-rouge">runner/certs</code> directory. Both files should use PEM format, with the first file containing a concatenation of all certificates in the chain (minus the root cert) and the second file containing the private key of the primary certificate.</p>
+<p>The above configuration will instruct P-8 to configure Condure to use two ports, one for SSL and one for non-SSL. Additionally, you need to provide default certificate files for each SSL port being listened on. In the above case, Condure will expect the files <code class="language-plaintext highlighter-rouge">default_4430.crt</code> and <code class="language-plaintext highlighter-rouge">default_4430.key</code> to exist in the <code class="language-plaintext highlighter-rouge">runner/certs</code> directory. Both files should use PEM format, with the first file containing a concatenation of all certificates in the chain (minus the root cert) and the second file containing the private key of the primary certificate.</p>
 
 <p>Server Name Indication (SNI) is supported. You can add additional certs named after the domains of the certs. For example, to support “example.com” via SNI, you’d want to put <code class="language-plaintext highlighter-rouge">example.com.crt</code> and <code class="language-plaintext highlighter-rouge">example.com.key</code> in the <code class="language-plaintext highlighter-rouge">runner/certs</code> directory. For wildcard subdomains, put files named <code class="language-plaintext highlighter-rouge">_.example.com.crt</code> and <code class="language-plaintext highlighter-rouge">_.example.com.key</code> in the directory.</p>
 
-<p>When proxying to targets, Pushpin will connect using SSL if the route has the <code class="language-plaintext highlighter-rouge">ssl</code> target parameter set.</p>
+<p>When proxying to targets, P-8 will connect using SSL if the route has the <code class="language-plaintext highlighter-rouge">ssl</code> target parameter set.</p>
 
       </section>
 
@@ -601,12 +601,12 @@ https_ports=4430
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -618,9 +618,9 @@ https_ports=4430
       <a href="../../index.html">Home</a>
       <a href="../about/index.html">Docs</a>
       <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

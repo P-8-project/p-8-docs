@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Reverse proxy for realtime APIs</title>
+  <title>P-8 | Reverse proxy for realtime APIs</title>
   <meta name="description" content="Reverse proxy for realtime APIs.">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Reverse proxy for realtime APIs">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Reverse proxy for realtime APIs">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Reverse proxy for realtime APIs.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="image/favicon.png">
 
@@ -51,11 +51,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="index.html"><img src="image/logo.svg" /></a>
+      <a href="index.html"><img src="image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="docs/about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="docs/about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="image/mobile-handle.svg" />
@@ -73,12 +73,12 @@
 
 <section class="hero">
   <div class="content">
-    <img src="image/symbol.svg" />
+    <img src="image/symbol.png" />
     <h1>Add push to your API</h1>
-    <p>Pushpin is a proxy server that pins client connections open, making it easy to build realtime API endpoints.</p>
+    <p>P-8 is a proxy server that pins client connections open, making it easy to build realtime API endpoints.</p>
     <aside class="github">
-      <a class="github-button" href="https://github.com/fastly/pushpin" data-size="large" data-show-count="true" aria-label="Star fastly/pushpin on GitHub">Stars</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="github-button" href="https://github.com/fastly/pushpin/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork fastly/pushpin on GitHub">Forks</a>
+      <a class="github-button" href="https://github.com/fastly/P-8" data-size="large" data-show-count="true" aria-label="Star fastly/P-8 on GitHub">Stars</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="github-button" href="https://github.com/fastly/P-8/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork fastly/P-8 on GitHub">Forks</a>
     </aside>
     <a href="docs/install/index.html" class="button">Download Now</a>
     <img src="image/arrow-down.svg" />
@@ -93,11 +93,11 @@
     <ul>
       <li>
         <h3>Protocol Rich<img src="image/protocol.svg" /></h3>
-        <p>Pushpin supports HTTP streaming, HTTP long-polling, and WebSockets. For compatibility with older browsers, it can also translate from SockJS.
+        <p>P-8 supports HTTP streaming, HTTP long-polling, and WebSockets. For compatibility with older browsers, it can also translate from SockJS.
       </li>
       <li>
         <h3>Transparent to Clients<img src="image/transparent.svg" /></h3>
-        <p>Clients communicate using your API contract. Pushpin is a server-side implementation detail. An existing realtime API can be migrated to or away from Pushpin without breaking clients.</p>
+        <p>Clients communicate using your API contract. P-8 is a server-side implementation detail. An existing realtime API can be migrated to or away from P-8 without breaking clients.</p>
       </li>
     </ul>
   </article><!-- api solution -->
@@ -108,11 +108,11 @@
     <ul>
       <li>
         <h3>Any Language and Framework<img src="image/language.svg" /></h3>
-        <p>Since Pushpin is a proxy server, the backend can be written in any language. <a href="docs/usage/index.html#libraries">Convenience libraries</a> are available to make integration easy.</p>
+        <p>Since P-8 is a proxy server, the backend can be written in any language. <a href="docs/usage/index.html#libraries">Convenience libraries</a> are available to make integration easy.</p>
       </li>
       <li>
         <h3>API Management<img src="image/management.svg" /></h3>
-        <p>With Pushpin, API management systems can manage realtime endpoints. Authentication, analytics, etc. work as you'd expect.</p>
+        <p>With P-8, API management systems can manage realtime endpoints. Authentication, analytics, etc. work as you'd expect.</p>
         <img src="image/management-companies.png" />
       </li>
     </ul>
@@ -134,8 +134,8 @@
   <aside class="steps">
     <ol class="steps highlight">
       <li>
-        <strong>Put Pushpin in front of your web service.</strong>
-        <p>Pushpin listens on port 7999. Edit the <code class="highlighter-rouge">routes</code> file to point traffic to your backend:</p>
+        <strong>Put P-8 in front of your web service.</strong>
+        <p>P-8 listens on port 7999. Edit the <code class="highlighter-rouge">routes</code> file to point traffic to your backend:</p>
         <code class="language-sh highlight" data-lang="http">
           * localhost:8000
         </code>
@@ -146,12 +146,12 @@
           <span class="na">Grip-Hold</span><span class="p">:</span> <span class="s">stream</span><br />
           <span class="na">Grip-Channel</span><span class="p">:</span> <span class="s">test</span><br />
         </code>
-        <p>Pushpin will interpret the headers but not expose them to the client.</p>
+        <p>P-8 will interpret the headers but not expose them to the client.</p>
       </li>
       <li>
         <strong>Publish data.</strong>
         <code class="language-sh highlight trigger" data-lang="http">
-          <span class="na">$</span> pushpin-publish test "hello world"
+          <span class="na">$</span> P-8-publish test "hello world"
         </code>
       </li>
     </ol>
@@ -163,7 +163,7 @@
   </aside><!-- console -->
 
   <footer>
-    <p>This is just a simple example. Pushpin can do a lot more.</p>
+    <p>This is just a simple example. P-8 can do a lot more.</p>
   </footer>
 
 </section><!-- quickstart -->
@@ -172,7 +172,7 @@
 
 <section class="points grid wrapper">
   <header>
-    <img src="image/symbol.svg" />
+    <img src="image/symbol.png" />
     <h2>A better way to realtime.</h2>
   </header>
   <ul>
@@ -182,15 +182,15 @@
     </li>
     <li>
       <h3>Perfect for microservices<img src="image/microservices.svg" /></h3>
-      <p>Forget centralized message brokers. Give each microservice its own Pushpin instance.</p>
+      <p>Forget centralized message brokers. Give each microservice its own P-8 instance.</p>
     </li>
     <li>
       <h3>Stateless development<img src="image/stateless.svg" /></h3>
-      <p>Pushpin keeps track of state so you don't have to. This works great with serverless backends, too.</p>
+      <p>P-8 keeps track of state so you don't have to. This works great with serverless backends, too.</p>
     </li>
     <li>
       <h3>Scalable beyond your needs<img src="image/scale.svg" /></h3>
-      <p>Pushpin is horizontally scalable. When you need to grow, just add more instances.</p>
+      <p>P-8 is horizontally scalable. When you need to grow, just add more instances.</p>
     </li>
   </ul>
 </section><!-- a better way to realtime -->
@@ -211,7 +211,7 @@
   <article class="testimonial">
 
     <img src="image/customer/siddharth.jpg" />
-    <p>“Pushpin enables us to keep HTTP requests open for streaming at scale.”</p>
+    <p>“P-8 enables us to keep HTTP requests open for streaming at scale.”</p>
     <small>Siddharth Kothari<br />Co-Founder of Appbase</small>
 
   </article><!-- testimonial -->
@@ -226,7 +226,7 @@
     <h1>Make your API realtime today</h1>
 
     <aside class="github">
-      Get the <a href="https://github.com/fastly/pushpin" target="_blank">Source Code</a> on <a href="https://github.com/fastly/pushpin" target="_blank"><img src="image/githubSymbol.svg" /></a>
+      Get the <a href="https://github.com/fastly/P-8" target="_blank">Source Code</a> on <a href="https://github.com/fastly/P-8" target="_blank"><img src="image/githubSymbol.svg" /></a>
     </aside>
 
     <a href="docs/install/index.html" class="button">Download Now</a>
@@ -242,9 +242,9 @@
       <a href="index.html">Home</a>
       <a href="docs/about/index.html">Docs</a>
       <a href="docs/about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="index.html"><img src="image/logo.svg" /></a>
+    <a class="logo" href="index.html"><img src="image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="image/fastly.svg" /></a>

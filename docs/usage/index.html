@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Pushpin | Documentation | Usage</title>
+  <title>P-8 | Documentation | Usage</title>
   <meta name="description" content="Get started with realtime using our developer guide. ">
   <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="Pushpin" href="../../feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- open graph info -->
-  <meta property="og:title" content="Pushpin | Documentation | Usage">
-  <meta property="og:site_name" content="Pushpin">
+  <meta property="og:title" content="P-8 | Documentation | Usage">
+  <meta property="og:site_name" content="P-8">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://pushpin.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://pushpin.org/image/icon-300x300.png" />
+  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
+  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
 
   <link rel="icon" type="image/png" href="../../image/favicon.png">
 
@@ -53,11 +53,11 @@
     <header class="primary wrapper">
   <nav class="primary" role="navigation" id="top">
     <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.svg" /></a>
+      <a href="../../index.html"><img src="../../image/logo.png" /></a>
     </aside>
     <aside class="links">
       <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/fastly/pushpin">Code</a>
+      <a href="https://github.com/fastly/P-8">Code</a>
       <a href="../about/index.html#support">Community</a>
     </aside>
     <img class="mobile-handle" src="../../image/mobile-handle.svg" />
@@ -306,7 +306,7 @@
 
 <h2 id="subscribing">Subscribing</h2>
 
-<p>When clients make HTTP requests or WebSocket connections to Pushpin, what happens next depends on the instructions provided by your backend web service. These instructions can include subscribing the client to one or more channels.</p>
+<p>When clients make HTTP requests or WebSocket connections to P-8, what happens next depends on the instructions provided by your backend web service. These instructions can include subscribing the client to one or more channels.</p>
 
 <p>For HTTP-based transports, this is typically done with response headers. For example:</p>
 
@@ -314,12 +314,12 @@
 Grip-Channel: mychannel
 </code></pre></div></div>
 
-<p>For the WebSocket transport, this is done using control messages sent by the backend to Pushpin. For example:</p>
+<p>For the WebSocket transport, this is done using control messages sent by the backend to P-8. For example:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:{"type": "subscribe", "channel": "mychannel"}
 </code></pre></div></div>
 
-<p>It’s important to understand that clients don’t assert their own subscriptions. Clients make arbitrary HTTP requests or send arbitrary WebSocket messages, and it is your backend that determines whether or not clients should be subscribed to anything. Your channel schema remains private between Pushpin and your backend server, and in fact clients may not even be aware that publish-subscribe activities are occurring.</p>
+<p>It’s important to understand that clients don’t assert their own subscriptions. Clients make arbitrary HTTP requests or send arbitrary WebSocket messages, and it is your backend that determines whether or not clients should be subscribed to anything. Your channel schema remains private between P-8 and your backend server, and in fact clients may not even be aware that publish-subscribe activities are occurring.</p>
 
 <p>See the <a href="index.html#transports">Transports</a> section below for transport-specific subscribing details.</p>
 
@@ -327,7 +327,7 @@ Grip-Channel: mychannel
 
 <h3 id="publishing-overview">Publishing Overview</h3>
 
-<p>Data is published to clients by making a request to Pushpin’s HTTP control API or input ZeroMQ sockets. There are four possible inputs:</p>
+<p>Data is published to clients by making a request to P-8’s HTTP control API or input ZeroMQ sockets. There are four possible inputs:</p>
 
 <ul>
   <li>
@@ -444,7 +444,7 @@ Grip-Channel: mychannel
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">close</code> action tells Pushpin to end/close the HTTP request or WebSocket connection with the subscriber. This works for HTTP streaming and WebSockets. It doesn’t work for HTTP long-polling, since publishing data ends the request anyway and it’s better to send something than nothing.</p>
+<p>The <code class="language-plaintext highlighter-rouge">close</code> action tells P-8 to end/close the HTTP request or WebSocket connection with the subscriber. This works for HTTP streaming and WebSockets. It doesn’t work for HTTP long-polling, since publishing data ends the request anyway and it’s better to send something than nothing.</p>
 
 <p>Example published close:</p>
 
@@ -492,9 +492,9 @@ Grip-Channel: mychannel
 
 <h3 id="binary-data">Binary data</h3>
 
-<p>Pushpin supports publishing binary data to subscribers.</p>
+<p>P-8 supports publishing binary data to subscribers.</p>
 
-<p>Internally, Pushpin treats all content as bytes, and if you publish data to the ZeroMQ PULL or SUB sockets using tnetstring format, then the payload is already binary. The issue of sending binary data only arises when JSON format is used, such as with the HTTP publish command.</p>
+<p>Internally, P-8 treats all content as bytes, and if you publish data to the ZeroMQ PULL or SUB sockets using tnetstring format, then the payload is already binary. The issue of sending binary data only arises when JSON format is used, such as with the HTTP publish command.</p>
 
 <p>To send binary data within a JSON-formatted item, the data must be Base64-encoded and set to an appropriate <code class="language-plaintext highlighter-rouge">-bin</code>-suffixed field. For <code class="language-plaintext highlighter-rouge">http-stream</code> and <code class="language-plaintext highlighter-rouge">ws-message</code> items, set <code class="language-plaintext highlighter-rouge">content-bin</code> with Base64 data and omit <code class="language-plaintext highlighter-rouge">content</code>. For <code class="language-plaintext highlighter-rouge">http-response</code>, set <code class="language-plaintext highlighter-rouge">body-bin</code> with Base64 data and omit <code class="language-plaintext highlighter-rouge">body</code>.</p>
 
@@ -504,9 +504,9 @@ Grip-Channel: mychannel
 
 <h3 id="http-streaming">HTTP streaming</h3>
 
-<p>When Pushpin receives an HTTP request from a client, Pushpin forwards it as-is to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. The origin server then tells Pushpin either to respond immediately with a normal HTTP response or to hold the HTTP connection open instead. If a connection is held open, then it can be used later on for data pushing.</p>
+<p>When P-8 receives an HTTP request from a client, P-8 forwards it as-is to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. The origin server then tells P-8 either to respond immediately with a normal HTTP response or to hold the HTTP connection open instead. If a connection is held open, then it can be used later on for data pushing.</p>
 
-<p>You can service incoming HTTP requests however you want. Normal responses sent to Pushpin will be relayed to clients as-is. To cause a request to be held open and subscribed to channels you need to include special instructions via headers. Include a <code class="language-plaintext highlighter-rouge">Grip-Hold</code> header to indicate that a request should be held open. For streaming, its value should be <code class="language-plaintext highlighter-rouge">stream</code> (for long-polling, see <a href="index.html#http-long-polling">HTTP long-polling</a>).</p>
+<p>You can service incoming HTTP requests however you want. Normal responses sent to P-8 will be relayed to clients as-is. To cause a request to be held open and subscribed to channels you need to include special instructions via headers. Include a <code class="language-plaintext highlighter-rouge">Grip-Hold</code> header to indicate that a request should be held open. For streaming, its value should be <code class="language-plaintext highlighter-rouge">stream</code> (for long-polling, see <a href="index.html#http-long-polling">HTTP long-polling</a>).</p>
 
 <p>For example, here’s how the origin server should respond to hold a request open as a stream, subscribed to <code class="language-plaintext highlighter-rouge">mychannel</code>:</p>
 
@@ -520,7 +520,7 @@ Stream opened, prepare yourself
 
 <aside><header>Note</header>To subscribe a request to multiple channels, respond with a comma-separated list of channels, or multiple <code class="highlighter-rouge">Grip-Channel</code> headers.</aside>
 
-<p>When Pushpin receives this response from your origin server, it will process it as an instruction. At this point, the HTTP request/response interaction between Pushpin and the origin server is complete, but the HTTP request/response interaction between the client and Pushpin remains.</p>
+<p>When P-8 receives this response from your origin server, it will process it as an instruction. At this point, the HTTP request/response interaction between P-8 and the origin server is complete, but the HTTP request/response interaction between the client and P-8 remains.</p>
 
 <p>Constructing a hold response is easy in your favorite language:</p>
 
@@ -589,7 +589,7 @@ Stream opened, prepare yourself!
 
 </div>
 
-<p>When a client makes a request through Pushpin and your origin server responds with a hold instruction in stream mode as shown above, then the client will immediately receive an initial response:</p>
+<p>When a client makes a request through P-8 and your origin server responds with a hold instruction in stream mode as shown above, then the client will immediately receive an initial response:</p>
 
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/plain</span>
@@ -695,7 +695,7 @@ Stream opened, prepare yourself!
 
 <h3 id="server-sent-events">Server-sent events</h3>
 
-<p>Pushpin makes it easy to implement Server-Sent Events. Simply use <a href="index.html#http-streaming">HTTP streaming</a>, with the following guidelines for holding and publishing.</p>
+<p>P-8 makes it easy to implement Server-Sent Events. Simply use <a href="index.html#http-streaming">HTTP streaming</a>, with the following guidelines for holding and publishing.</p>
 
 <p>On the origin server, respond with hold instructions using <code class="language-plaintext highlighter-rouge">stream</code> mode and content type <code class="language-plaintext highlighter-rouge">text/event-stream</code>:</p>
 
@@ -836,9 +836,9 @@ Stream opened, prepare yourself!
 
 <h3 id="http-long-polling">HTTP long-polling</h3>
 
-<p>When Pushpin receives an HTTP request from a client, Pushpin forwards it as-is to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. The origin server then tells Pushpin either to respond immediately with a normal HTTP response or to hold the HTTP connection open instead. If a connection is held open, then it can be used later on for data pushing. When data is to be pushed over a held connection, the complete HTTP response is specified, headers and all.</p>
+<p>When P-8 receives an HTTP request from a client, P-8 forwards it as-is to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. The origin server then tells P-8 either to respond immediately with a normal HTTP response or to hold the HTTP connection open instead. If a connection is held open, then it can be used later on for data pushing. When data is to be pushed over a held connection, the complete HTTP response is specified, headers and all.</p>
 
-<p>You can service incoming HTTP requests however you want. Normal responses sent to Pushpin will be relayed to clients as-is. To cause a request to be held open and subscribed to channels you need to include special instructions via headers. Include a <code class="language-plaintext highlighter-rouge">Grip-Hold</code> header to indicate that a request should be held open. For long-polling, its value should be <code class="language-plaintext highlighter-rouge">response</code> (for streaming, see <a href="index.html#http-streaming">HTTP streaming</a>).</p>
+<p>You can service incoming HTTP requests however you want. Normal responses sent to P-8 will be relayed to clients as-is. To cause a request to be held open and subscribed to channels you need to include special instructions via headers. Include a <code class="language-plaintext highlighter-rouge">Grip-Hold</code> header to indicate that a request should be held open. For long-polling, its value should be <code class="language-plaintext highlighter-rouge">response</code> (for streaming, see <a href="index.html#http-streaming">HTTP streaming</a>).</p>
 
 <p>For example, here’s how the origin server should respond to hold a request open as a long-poll, subscribed to <code class="language-plaintext highlighter-rouge">mychannel</code>:</p>
 
@@ -852,9 +852,9 @@ Stream opened, prepare yourself!
 
 <aside><header>Note</header>To subscribe a request to multiple channels, respond with a comma-separated list of channels, or multiple <code class="highlighter-rouge">Grip-Channel</code> headers.</aside>
 
-<p>When Pushpin receives this response from your origin server, it will process it as an instruction rather than relaying it to the client. At this point, the HTTP request/response interaction between Pushpin and the origin server is complete, but the HTTP request/response interaction between the client and Pushpin remains.</p>
+<p>When P-8 receives this response from your origin server, it will process it as an instruction rather than relaying it to the client. At this point, the HTTP request/response interaction between P-8 and the origin server is complete, but the HTTP request/response interaction between the client and P-8 remains.</p>
 
-<p>After 55 seconds pass (you can override this with <code class="language-plaintext highlighter-rouge">Grip-Timeout</code>), the request will time out and Pushpin will send the above response to the client with the <code class="language-plaintext highlighter-rouge">Grip-*</code> headers stripped. Here we are basically saying that if there is no data to publish on this channel before the request times out, then the client should receive an empty JSON object.</p>
+<p>After 55 seconds pass (you can override this with <code class="language-plaintext highlighter-rouge">Grip-Timeout</code>), the request will time out and P-8 will send the above response to the client with the <code class="language-plaintext highlighter-rouge">Grip-*</code> headers stripped. Here we are basically saying that if there is no data to publish on this channel before the request times out, then the client should receive an empty JSON object.</p>
 
 <p>For example, if the request times out, then the client would see something like this:</p>
 
@@ -1036,22 +1036,22 @@ Stream opened, prepare yourself!
 
 <h3 id="websockets">WebSockets</h3>
 
-<p>When an incoming WebSocket connection request is received, Pushpin opens a WebSocket connection (or uses an emulation over HTTP, see below) to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. Pushpin does not accept the incoming WebSocket connection from the client until its outbound WebSocket connection has been accepted by the origin. Once the connections are established, messages can flow end-to-end in either direction. Using special control messages, you can subscribe connections to channels and then publish WebSocket messages to be injected into those connections.</p>
+<p>When an incoming WebSocket connection request is received, P-8 opens a WebSocket connection (or uses an emulation over HTTP, see below) to the origin server that you specified in the <code class="language-plaintext highlighter-rouge">routes</code> file. P-8 does not accept the incoming WebSocket connection from the client until its outbound WebSocket connection has been accepted by the origin. Once the connections are established, messages can flow end-to-end in either direction. Using special control messages, you can subscribe connections to channels and then publish WebSocket messages to be injected into those connections.</p>
 
-<p>Pushpin communicates with the origin server in one of two modes:</p>
+<p>P-8 communicates with the origin server in one of two modes:</p>
 
 <ol>
   <li>
-    <p><strong>Normal WebSockets:</strong> For every WebSocket connection between a client and Pushpin, there will be a corresponding WebSocket connection between Pushpin and the origin server.</p>
+    <p><strong>Normal WebSockets:</strong> For every WebSocket connection between a client and P-8, there will be a corresponding WebSocket connection between P-8 and the origin server.</p>
   </li>
   <li>
-    <p><strong>WebSocket-over-HTTP protocol:</strong> Instead of using a WebSocket connection to the origin, Pushpin encodes WebSocket events into HTTP requests/responses. Events include <code class="language-plaintext highlighter-rouge">OPEN</code>, <code class="language-plaintext highlighter-rouge">TEXT</code>, <code class="language-plaintext highlighter-rouge">PING</code>, <code class="language-plaintext highlighter-rouge">PONG</code>, and <code class="language-plaintext highlighter-rouge">CLOSE</code>, and are encoded in a format similar to HTTP chunked encoding. You don’t really have to think about the encoding, though, as our server libraries take care of it for you. For details, see the <a href="../protocols/websocket-over-http/index.html">WebSocket-over-HTTP specification</a>.</p>
+    <p><strong>WebSocket-over-HTTP protocol:</strong> Instead of using a WebSocket connection to the origin, P-8 encodes WebSocket events into HTTP requests/responses. Events include <code class="language-plaintext highlighter-rouge">OPEN</code>, <code class="language-plaintext highlighter-rouge">TEXT</code>, <code class="language-plaintext highlighter-rouge">PING</code>, <code class="language-plaintext highlighter-rouge">PONG</code>, and <code class="language-plaintext highlighter-rouge">CLOSE</code>, and are encoded in a format similar to HTTP chunked encoding. You don’t really have to think about the encoding, though, as our server libraries take care of it for you. For details, see the <a href="../protocols/websocket-over-http/index.html">WebSocket-over-HTTP specification</a>.</p>
   </li>
 </ol>
 
 <p>We recommend using the WebSocket-over-HTTP protocol unless you have a good reason not to use it. The approach is great for stateless application protocols, and the origin server doesn’t have to maintain long-lived connections nor even support WebSockets. The one gotcha is that the origin server can only send spontaneous messages by publishing, but in a stateless protocol this should be expected. The WebSocket-over-HTTP mode is enabled by setting the <code class="language-plaintext highlighter-rouge">over_http</code> option on the target in the routes file.</p>
 
-<p>Having Pushpin proxy your WebSocket connections alone is not very interesting. In order to use publish-subscribe, the <code class="language-plaintext highlighter-rouge">grip</code> WebSocket extension must be negotiated. Pushpin will include a <code class="language-plaintext highlighter-rouge">Sec-WebSocket-Extensions</code> request header with this extension, which must be acknowledged in the origin response. You need to do this regardless of whether Pushpin is communicating with your server using a normal WebSocket or with the WebSocket-over-HTTP protocol.</p>
+<p>Having P-8 proxy your WebSocket connections alone is not very interesting. In order to use publish-subscribe, the <code class="language-plaintext highlighter-rouge">grip</code> WebSocket extension must be negotiated. P-8 will include a <code class="language-plaintext highlighter-rouge">Sec-WebSocket-Extensions</code> request header with this extension, which must be acknowledged in the origin response. You need to do this regardless of whether P-8 is communicating with your server using a normal WebSocket or with the WebSocket-over-HTTP protocol.</p>
 
 <p>For example, a WebSocket connection request might look like this:</p>
 
@@ -1072,7 +1072,7 @@ Stream opened, prepare yourself!
 <span class="na">Sec-WebSocket-Extensions</span><span class="p">:</span> <span class="s">grip</span>
 </code></pre></div></div>
 
-<p>If Pushpin is communicating to the origin server using the WebSocket-over-HTTP protocol, then a connection request might look like the example below. Note that the characters <code class="language-plaintext highlighter-rouge">\r\n</code> represent a two-byte sequence of carriage return and newline.</p>
+<p>If P-8 is communicating to the origin server using the WebSocket-over-HTTP protocol, then a connection request might look like the example below. Note that the characters <code class="language-plaintext highlighter-rouge">\r\n</code> represent a two-byte sequence of carriage return and newline.</p>
 
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/path</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Sec-WebSocket-Extensions</span><span class="p">:</span> <span class="s">grip</span>
@@ -1091,9 +1091,9 @@ OPEN\r\n
 OPEN\r\n
 </code></pre></div></div>
 
-<p>At this point, the proxied WebSocket session is established with GRIP activated. If Pushpin has a normal WebSocket connection with the origin server, then Pushpin and the origin server may exchange WebSocket messages normally. If Pushpin has a WebSocket-over-HTTP session with the origin server, then Pushpin and the origin server may exchange WebSocket “events” over HTTP.</p>
+<p>At this point, the proxied WebSocket session is established with GRIP activated. If P-8 has a normal WebSocket connection with the origin server, then P-8 and the origin server may exchange WebSocket messages normally. If P-8 has a WebSocket-over-HTTP session with the origin server, then P-8 and the origin server may exchange WebSocket “events” over HTTP.</p>
 
-<p>When a WebSocket session has GRIP mode activated, messages sent from the origin server to Pushpin must be prefixed with either <code class="language-plaintext highlighter-rouge">m:</code> (regular message) or <code class="language-plaintext highlighter-rouge">c:</code> (control message). <strong>A message without a prefix will be ignored by Pushpin.</strong> The prefixing is needed to disambiguate regular messages from control messages. When Pushpin receives a regular message in this way, the prefix is stripped before relaying the message to the client.</p>
+<p>When a WebSocket session has GRIP mode activated, messages sent from the origin server to P-8 must be prefixed with either <code class="language-plaintext highlighter-rouge">m:</code> (regular message) or <code class="language-plaintext highlighter-rouge">c:</code> (control message). <strong>A message without a prefix will be ignored by P-8.</strong> The prefixing is needed to disambiguate regular messages from control messages. When P-8 receives a regular message in this way, the prefix is stripped before relaying the message to the client.</p>
 
 <p>It is possible to override the regular message prefix by specifying the <code class="language-plaintext highlighter-rouge">message-prefix</code> parameter in the GRIP extension negotiation response. You can even set it to a blank string, allowing you to send normal messages without a prefix, if you’re sure that none of your regular messages will ever begin with <code class="language-plaintext highlighter-rouge">c:</code>. For example:</p>
 
@@ -1111,7 +1111,7 @@ OPEN\r\n
 <ul>
   <li><code class="language-plaintext highlighter-rouge">subscribe</code>: Subscribe connection to the channel specified by the <code class="language-plaintext highlighter-rouge">channel</code> field.</li>
   <li><code class="language-plaintext highlighter-rouge">unsubscribe</code>: Unsubscribe connection from the channel specified by the <code class="language-plaintext highlighter-rouge">channel</code> field.</li>
-  <li><code class="language-plaintext highlighter-rouge">detach</code>: Terminate the session between Pushpin and the origin server, but retain the connection between the client and Pushpin. Any messages Pushpin receives from the client will be dropped.</li>
+  <li><code class="language-plaintext highlighter-rouge">detach</code>: Terminate the session between P-8 and the origin server, but retain the connection between the client and P-8. Any messages P-8 receives from the client will be dropped.</li>
 </ul>
 
 <p>Here’s how the origin server would subscribe a connection to a channel called “mychannel”:</p>
@@ -1371,7 +1371,7 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
 
 <h2 id="libraries">Libraries</h2>
 
-<p>There are a number of convenience libraries available for working with Pushpin on the server side:</p>
+<p>There are a number of convenience libraries available for working with P-8 on the server side:</p>
 
 <ul>
   <li>Python (<a href="https://github.com/fanout/pygripcontrol">gripcontrol</a>, <a href="https://github.com/fanout/django-grip">django-grip</a>)</li>
@@ -1382,7 +1382,7 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
   <li>.NET (<a href="https://github.com/realcrowd/grip.net">grip.net</a>)</li>
 </ul>
 
-<p>If you’re wondering where the client side libraries are, there aren’t any, because Pushpin has no client protocol! Any client libraries would be your own to make.</p>
+<p>If you’re wondering where the client side libraries are, there aren’t any, because P-8 has no client protocol! Any client libraries would be your own to make.</p>
 
 <h2 id="browser-features">Browser features</h2>
 
@@ -1390,17 +1390,17 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
 
 <p>Many API developers don’t care about cross-origin restrictions. They build an API at <code class="language-plaintext highlighter-rouge">api.example.com</code>, and they just want it to be usable by anyone from anywhere.</p>
 
-<p>To help with this, Pushpin has a feature called Auto Cross-Origin. If enabled, Pushpin automatically provides CORS and JSONP wrapping on behalf of any backend servers.</p>
+<p>To help with this, P-8 has a feature called Auto Cross-Origin. If enabled, P-8 automatically provides CORS and JSONP wrapping on behalf of any backend servers.</p>
 
 <p><strong>Enabling:</strong></p>
 
-<p>To enable Auto Cross-Origin for all routes, set <code class="language-plaintext highlighter-rouge">auto_cross_origin=true</code> in the proxy section of <code class="language-plaintext highlighter-rouge">pushpin.conf</code>. To enable Auto Cross-Origin on individual routes, include the <code class="language-plaintext highlighter-rouge">aco</code> parameter in the route condition.</p>
+<p>To enable Auto Cross-Origin for all routes, set <code class="language-plaintext highlighter-rouge">auto_cross_origin=true</code> in the proxy section of <code class="language-plaintext highlighter-rouge">P-8.conf</code>. To enable Auto Cross-Origin on individual routes, include the <code class="language-plaintext highlighter-rouge">aco</code> parameter in the route condition.</p>
 
 <p>Congrats! Your web service now works from everywhere and you can get on with your life.</p>
 
 <p><strong>Why inside the proxy?</strong></p>
 
-<p>Even though it is possible for backend applications to handle CORS and JSONP on their own, and perhaps quite easily with the right web framework middleware, Pushpin’s out-of-band push mechanism adds additional complexity here. CORS headers and JSONP framing need to be included in the POST publish commands sent to Pushpin, otherwise you end up with your non-realtime interactions succeeding but realtime interactions failing.</p>
+<p>Even though it is possible for backend applications to handle CORS and JSONP on their own, and perhaps quite easily with the right web framework middleware, P-8’s out-of-band push mechanism adds additional complexity here. CORS headers and JSONP framing need to be included in the POST publish commands sent to P-8, otherwise you end up with your non-realtime interactions succeeding but realtime interactions failing.</p>
 
 <p>Having to include CORS information in published payloads is not so bad, as CORS is the modern way of doing things and developers should be quite familiar with it. However, we think it’s terrible that anyone should have to write code related to JSONP in the present day. So, the main motivation of the Auto Cross-Origin feature is to relieve developers from having to maintain legacy JSONP code. That it also handles CORS is a nice bonus.</p>
 
@@ -1418,7 +1418,7 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
 
 <p><strong>JSONP:</strong></p>
 
-<p>If a GET request is received with a <code class="language-plaintext highlighter-rouge">callback</code> query parameter, then Pushpin will proxy the request out as a POST instead. The method can be overriden with the <code class="language-plaintext highlighter-rouge">_method</code> query parameter. Headers can be provided with the <code class="language-plaintext highlighter-rouge">_headers</code> query parameter containing a JSON object of header keys and values. The request body can be provided with the <code class="language-plaintext highlighter-rouge">_body</code> query parameter, containing arbitrary data. It is possible to fine-tune how JSONP works using Pushpin’s various <code class="language-plaintext highlighter-rouge">jsonp_*</code> condition parameters in the routes file.</p>
+<p>If a GET request is received with a <code class="language-plaintext highlighter-rouge">callback</code> query parameter, then P-8 will proxy the request out as a POST instead. The method can be overriden with the <code class="language-plaintext highlighter-rouge">_method</code> query parameter. Headers can be provided with the <code class="language-plaintext highlighter-rouge">_headers</code> query parameter containing a JSON object of header keys and values. The request body can be provided with the <code class="language-plaintext highlighter-rouge">_body</code> query parameter, containing arbitrary data. It is possible to fine-tune how JSONP works using P-8’s various <code class="language-plaintext highlighter-rouge">jsonp_*</code> condition parameters in the routes file.</p>
 
 <p>There are two JSONP response modes: basic and extended. The default is extended, where the entire HTTP response is encoded in a JSON value passed to the callback:</p>
 
@@ -1447,7 +1447,7 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
 
 <h3 id="sockjs">SockJS</h3>
 
-<p>Pushpin is able to translate from the <a href="https://github.com/sockjs">SockJS</a> protocol. This allows you to handle SockJS clients using pure WebSocket backend code. Enable it using the <code class="language-plaintext highlighter-rouge">sockjs</code> route condition parameter.</p>
+<p>P-8 is able to translate from the <a href="https://github.com/sockjs">SockJS</a> protocol. This allows you to handle SockJS clients using pure WebSocket backend code. Enable it using the <code class="language-plaintext highlighter-rouge">sockjs</code> route condition parameter.</p>
 
 <p>For example, the following route supports the SockJS protocol on path <code class="language-plaintext highlighter-rouge">/sockjs</code> and forwards it as a WebSocket connection to the backend using path <code class="language-plaintext highlighter-rouge">/</code>.</p>
 
@@ -1466,12 +1466,12 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
       <div class="wrapper">
 
         <aside class="github">
-          <a href="https://github.com/fastly/pushpin"><img src="../../image/github.svg"></a>
+          <a href="https://github.com/fastly/P-8"><img src="../../image/github.svg"></a>
           <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=pushpin&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
           </section>
-          <a class="link" href="https://github.com/fastly/pushpin">https://github.com/fastly/pushpin</a>
+          <a class="link" href="https://github.com/fastly/P-8">https://github.com/fastly/P-8</a>
         </aside>
 
       </div>
@@ -1483,9 +1483,9 @@ c:{"type": "subscribe", "channel": "mychannel"}\r\n
       <a href="../../index.html">Home</a>
       <a href="../about/index.html">Docs</a>
       <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/fastly/pushpin">GitHub</a>
+      <a href="https://github.com/fastly/P-8">GitHub</a>
     </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.svg" /></a>
+    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
   </nav>
   <aside class="fanout">
     Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>

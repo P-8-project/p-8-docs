@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pushpin</title>
+    <title>P-8</title>
     <description>Reverse proxy for realtime APIs.</description>
-    <link>https://pushpin.org/</link>
-    <atom:link href="https://pushpin.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>https://P-8.org/</link>
+    <atom:link href="https://P-8.org/feed.xml" rel="self" type="application/rss+xml"/>
     <pubDate>Mon, 28 Apr 2025 22:12:05 +0000</pubDate>
     <lastBuildDate>Mon, 28 Apr 2025 22:12:05 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
