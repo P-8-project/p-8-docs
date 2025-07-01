@@ -1,260 +1,213 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>P-8 | Reverse proxy for realtime APIs</title>
-  <meta name="description" content="Reverse proxy for realtime APIs.">
-  <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="P-8" href="feed.xml" />
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- open graph info -->
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="Solvio: Next-Gen Vector Search Engine" name="twitter:title">
-  <meta content="Solvio powers AI applications with a robust vector search engine and database, offering semantic matching, advanced filtering, and scalable performance."
-        name="twitter:description">
-  <meta content="https://p-8.dev/image/embed.png" name="twitter:image">
-  <meta content="@YourTwitterHandle" name="twitter:site">
-
-  <link rel="icon" type="image/png" href="image/favicon.png">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-
-  <!-- APIs -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Merriweather:300,400" rel="stylesheet">
-
-  <!-- jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>P-8 | Reverse proxy for realtime APIs</title>
+<meta content="Reverse proxy for realtime APIs." name="description"/>
+<link href="index.html" rel="canonical"/>
+<link href="feed.xml" rel="alternate" title="P-8" type="application/rss+xml">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- open graph info -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Solvio: Next-Gen Vector Search Engine" name="twitter:title"/>
+<meta content="Solvio powers AI applications with a robust vector search engine and database, offering semantic matching, advanced filtering, and scalable performance." name="twitter:description"/>
+<meta content="https://p-8.dev/image/embed.png" name="twitter:image"/>
+<meta content="@YourTwitterHandle" name="twitter:site"/>
+<link href="image/favicon.png" rel="icon" type="image/png"/>
+<!-- Stylesheets -->
+<link href="css/main.css" rel="stylesheet"/>
+<!-- APIs -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Merriweather:300,400" rel="stylesheet"/>
+<!-- jQuery -->
+<script crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <script src="js/handlebars.js"></script>
-  <script src="js/tabbed-examples.js"></script>
-</head>
-
-  <body>
-    <header class="primary wrapper">
-  <nav class="primary" role="navigation" id="top">
-    <aside class="logo">
-      <a href="index.html"><img src="image/logo.png" /></a>
-    </aside>
-    <aside class="links">
-      <a href="docs/about/index.html">Docs</a>
-      <a href="https://github.com/P-8-project/P-8">Code</a>
-      <a href="docs/about/index.html#support">Community</a>
-    </aside>
-    <img class="mobile-handle" src="image/mobile-handle.svg" />
-  </nav>
+<script src="js/handlebars.js"></script>
+<script src="js/tabbed-examples.js"></script>
+</link></head>
+<body>
+<header class="primary wrapper">
+<nav class="primary" id="top" role="navigation">
+<aside class="logo">
+<a href="index.html"><img src="image/logo.png"/></a>
+</aside>
+<aside class="links">
+<a href="docs/about/index.html">Docs</a>
+<a href="https://github.com/P-8-project/P-8">Code</a>
+<a href="docs/about/index.html#support">Community</a>
+</aside>
+<img class="mobile-handle" src="image/mobile-handle.svg"/>
+</nav>
 </header>
-
 <div class="consent-box" id="consent-box">
-  <div class="width">
-    <p>We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our <a href="https://fanout.io/legal/privacy-policy/">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.</p>
-    <button href="#" class="button ghost" id="consent-ok">OK</button>
-  </div>
+<div class="width">
+<p>We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our <a href="https://fanout.io/legal/privacy-policy/">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.</p>
+<button class="button ghost" href="#" id="consent-ok">OK</button>
 </div>
-
-    <div style="display: none;"><img src="image/dots-full.svg" /></div>
-
+</div>
+<div style="display: none;"><img src="image/dots-full.svg"/></div>
 <section class="hero">
-  <div class="content">
-    <img src="image/symbol.png" style="
-    width: 100px;
-" />
-    <h1>Add push to your API</h1>
-    <p>P-8 is a proxy server that pins client connections open, making it easy to build realtime API endpoints.</p>
-    <aside class="github">
-      <a class="github-button" href="https://github.com/P-8-project/p-8" data-size="large" data-show-count="true" aria-label="Star fastly/P-8 on GitHub">Stars</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="github-button" href="https://github.com/P-8-project/p-8/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork fastly/P-8 on GitHub">Forks</a>
-    </aside>
-    <a href="docs/install/index.html" class="button">Download Now</a>
-    <img src="image/arrow-down.svg" />
-  </div>
+<div class="content">
+<img src="image/symbol.png" style="
+    width: 160px;
+"/>
+<h1>Add push to your API</h1>
+<p>P-8 is a proxy server that pins client connections open, making it easy to build realtime API endpoints.</p>
+<aside class="github">
+<a aria-label="Star fastly/P-8 on GitHub" class="github-button" data-show-count="true" data-size="large" href="https://github.com/P-8-project/p-8">Stars</a>    
+      <a aria-label="Fork fastly/P-8 on GitHub" class="github-button" data-icon="octicon-repo-forked" data-show-count="true" data-size="large" href="https://github.com/P-8-project/p-8/fork">Forks</a>
+</aside>
+<a class="button" href="docs/install/index.html">Download Now</a>
+<img src="image/arrow-down.svg"/>
+</div>
 </section>
-
 <section class="points wrapper">
-
-  <article class="api-solution">
-    <aside class="circle-area"><img src="image/point-check.svg" /></aside>
-    <h2>Full featured realtime API solution.</h2>
-    <ul>
-      <li>
-        <h3>Protocol Rich<img src="image/protocol.svg" /></h3>
-        <p>P-8 supports HTTP streaming, HTTP long-polling, and WebSockets. For compatibility with older browsers, it can also translate from SockJS.
-      </li>
-      <li>
-        <h3>Transparent to Clients<img src="image/transparent.svg" /></h3>
-        <p>Clients communicate using your API contract. P-8 is a server-side implementation detail. An existing realtime API can be migrated to or away from P-8 without breaking clients.</p>
-      </li>
-    </ul>
-  </article><!-- api solution -->
-
-  <article class="plug-n-play">
-    <aside class="circle-area"><img src="image/point-plug-n-play.svg" /></aside>
-    <h2>Plug-n-play with your current stack.</h2>
-    <ul>
-      <li>
-        <h3>Any Language and Framework<img src="image/language.svg" /></h3>
-        <p>Since P-8 is a proxy server, the backend can be written in any language. <a href="docs/usage/index.html#libraries">Convenience libraries</a> are available to make integration easy.</p>
-      </li>
-      <li>
-        <h3>API Management<img src="image/management.svg" /></h3>
-        <p>With P-8, API management systems can manage realtime endpoints. Authentication, analytics, etc. work as you'd expect.</p>
-        <img src="image/management-companies.png" />
-      </li>
-    </ul>
-  </article><!-- plug-n-play -->
-
+<article class="api-solution">
+<aside class="circle-area"><img src="image/point-check.svg"/></aside>
+<h2>Full featured realtime API solution.</h2>
+<ul>
+<li>
+<h3>Protocol Rich<img src="image/protocol.svg"/></h3>
+<p>P-8 supports HTTP streaming, HTTP long-polling, and WebSockets. For compatibility with older browsers, it can also translate from SockJS.
+      </p></li>
+<li>
+<h3>Transparent to Clients<img src="image/transparent.svg"/></h3>
+<p>Clients communicate using your API contract. P-8 is a server-side implementation detail. An existing realtime API can be migrated to or away from P-8 without breaking clients.</p>
+</li>
+</ul>
+</article><!-- api solution -->
+<article class="plug-n-play">
+<aside class="circle-area"><img src="image/point-plug-n-play.svg"/></aside>
+<h2>Plug-n-play with your current stack.</h2>
+<ul>
+<li>
+<h3>Any Language and Framework<img src="image/language.svg"/></h3>
+<p>Since P-8 is a proxy server, the backend can be written in any language. <a href="docs/usage/index.html#libraries">Convenience libraries</a> are available to make integration easy.</p>
+</li>
+<li>
+<h3>API Management<img src="image/management.svg"/></h3>
+<p>With P-8, API management systems can manage realtime endpoints. Authentication, analytics, etc. work as you'd expect.</p>
+<img src="image/management-companies.png"/>
+</li>
+</ul>
+</article><!-- plug-n-play -->
 </section><!-- points (primary) -->
-
 <div class="div"></div>
-
 <section class="quickstart wrapper">
-
-  <header>
-    <h1>Getting started</h1>
-    <p>Make an HTTP streaming endpoint in 5 minutes:</p>
-  </header>
-
-  <span class="div"></span>
-
-  <aside class="steps">
-    <ol class="steps highlight">
-      <li>
-        <strong>Put P-8 in front of your web service.</strong>
-        <p>P-8 listens on port 7999. Edit the <code class="highlighter-rouge">routes</code> file to point traffic to your backend:</p>
-        <code class="language-sh highlight" data-lang="http">
+<header>
+<h1>Getting started</h1>
+<p>Make an HTTP streaming endpoint in 5 minutes:</p>
+</header>
+<span class="div"></span>
+<aside class="steps">
+<ol class="steps highlight">
+<li>
+<strong>Put P-8 in front of your web service.</strong>
+<p>P-8 listens on port 7999. Edit the <code class="highlighter-rouge">routes</code> file to point traffic to your backend:</p>
+<code class="language-sh highlight" data-lang="http">
           * localhost:8000
         </code>
-      </li>
-      <li>
-        <strong>Make an endpoint on the backend that responds with instructional HTTP headers.</strong>
-        <code class="language-sh highlight" data-lang="http">
-          <span class="na">Grip-Hold</span><span class="p">:</span> <span class="s">stream</span><br />
-          <span class="na">Grip-Channel</span><span class="p">:</span> <span class="s">test</span><br />
+</li>
+<li>
+<strong>Make an endpoint on the backend that responds with instructional HTTP headers.</strong>
+<code class="language-sh highlight" data-lang="http">
+<span class="na">Grip-Hold</span><span class="p">:</span> <span class="s">stream</span><br/>
+<span class="na">Grip-Channel</span><span class="p">:</span> <span class="s">test</span><br/>
+</code>
+<p>P-8 will interpret the headers but not expose them to the client.</p>
+</li>
+<li>
+<strong>Publish data.</strong>
+<code class="language-sh highlight trigger" data-lang="http">
+<span class="na">$</span> P-8-publish test "hello world"
         </code>
-        <p>P-8 will interpret the headers but not expose them to the client.</p>
-      </li>
-      <li>
-        <strong>Publish data.</strong>
-        <code class="language-sh highlight trigger" data-lang="http">
-          <span class="na">$</span> P-8-publish test "hello world"
-        </code>
-      </li>
-    </ol>
-  </aside><!-- steps -->
-
-  <aside class="console highlight">
-    <code class="language-sh highlight" data-lang="http">
-    </code>
-  </aside><!-- console -->
-
-  <footer>
-    <p>This is just a simple example. P-8 can do a lot more.</p>
-  </footer>
-
+</li>
+</ol>
+</aside><!-- steps -->
+<aside class="console highlight">
+<code class="language-sh highlight" data-lang="http">
+</code>
+</aside><!-- console -->
+<footer>
+<p>This is just a simple example. P-8 can do a lot more.</p>
+</footer>
 </section><!-- quickstart -->
-
 <div class="div"></div>
-
 <section class="points grid wrapper">
-  <header>
-    <img src="image/symbol.png" />
-    <h2>A better way to realtime.</h2>
-  </header>
-  <ul>
-    <li>
-      <h3>Keep your API logic in one place<img src="image/shuffle.svg" /></h3>
-      <p>No need to write a separate backend in a different language just for realtime.</p>
-    </li>
-    <li>
-      <h3>Perfect for microservices<img src="image/microservices.svg" /></h3>
-      <p>Forget centralized message brokers. Give each microservice its own P-8 instance.</p>
-    </li>
-    <li>
-      <h3>Stateless development<img src="image/stateless.svg" /></h3>
-      <p>P-8 keeps track of state so you don't have to. This works great with serverless backends, too.</p>
-    </li>
-    <li>
-      <h3>Scalable beyond your needs<img src="image/scale.svg" /></h3>
-      <p>P-8 is horizontally scalable. When you need to grow, just add more instances.</p>
-    </li>
-  </ul>
+<header>
+<img src="image/symbol.png" style="
+    width: 200px;
+"/>
+<h2>A better way to realtime.</h2>
+</header>
+<ul>
+<li>
+<h3>Keep your API logic in one place<img src="image/shuffle.svg"/></h3>
+<p>No need to write a separate backend in a different language just for realtime.</p>
+</li>
+<li>
+<h3>Perfect for microservices<img src="image/microservices.svg"/></h3>
+<p>Forget centralized message brokers. Give each microservice its own P-8 instance.</p>
+</li>
+<li>
+<h3>Stateless development<img src="image/stateless.svg"/></h3>
+<p>P-8 keeps track of state so you don't have to. This works great with serverless backends, too.</p>
+</li>
+<li>
+<h3>Scalable beyond your needs<img src="image/scale.svg"/></h3>
+<p>P-8 is horizontally scalable. When you need to grow, just add more instances.</p>
+</li>
+</ul>
 </section><!-- a better way to realtime -->
-
 <div class="div"></div>
-
 <section class="trusted wrapper">
-  <h2>Trusted across the industry</h2>
-  <article class="logos">
-    <img src="image/customer/triathlon.png" />
-    <img src="image/customer/appbase.png" />
-    <img src="image/customer/mozilla.png" />
-    <img src="image/customer/medium.png" />
-  </article><!-- logos -->
-
-  <span class="div"></span>
-
-  <article class="testimonial">
-
-    <img src="image/customer/siddharth.jpg" />
-    <p>“P-8 enables us to keep HTTP requests open for streaming at scale.”</p>
-    <small>Siddharth Kothari<br />Co-Founder of Appbase</small>
-
-  </article><!-- testimonial -->
-
+<h2>Trusted across the industry</h2>
+<article class="logos">
+<img src="image/customer/triathlon.png"/>
+<img src="image/customer/appbase.png"/>
+<img src="image/customer/mozilla.png"/>
+<img src="image/customer/medium.png"/>
+</article><!-- logos -->
+<span class="div"></span>
+<article class="testimonial">
+<img src="image/customer/siddharth.jpg"/>
+<p>“P-8 enables us to keep HTTP requests open for streaming at scale.”</p>
+<small>Siddharth Kothari<br/>Co-Founder of Appbase</small>
+</article><!-- testimonial -->
 </section><!-- trusted -->
-
 <div class="div cta"></div>
-
 <section class="cta">
-  <div class="wrapper">
-
-    <h1>Make your API realtime today</h1>
-
-    <aside class="github">
-      Get the <a href="https://github.com/P-8-project/P-8" target="_blank">Source Code</a> on <a href="https://github.com/P-8-project/P-8" target="_blank"><img src="image/githubSymbol.svg" /></a>
-    </aside>
-
-    <a href="docs/install/index.html" class="button">Download Now</a>
-
-    <a href="docs/about/index.html" class="docs">Read the Docs</a></aside>
-
-  </div>
+<div class="wrapper">
+<h1>Make your API realtime today</h1>
+<aside class="github">
+      Get the <a href="https://github.com/P-8-project/P-8" target="_blank">Source Code</a> on <a href="https://github.com/P-8-project/P-8" target="_blank"><img src="image/githubSymbol.svg"/></a>
+</aside>
+<a class="button" href="docs/install/index.html">Download Now</a>
+<a class="docs" href="docs/about/index.html">Read the Docs</a>
+</div>
 </section><!-- cta -->
+<footer class="primary wrapper">
+<nav class="primary" id="top" role="navigation">
+<aside class="links">
+<a href="index.html">Home</a>
+<a href="docs/about/index.html">Docs</a>
+<a href="docs/about/index.html#support">Community</a>
+<a href="https://github.com/P-8-project/P-8">GitHub</a>
+</aside>
+<a class="logo" href="index.html"><img src="image/logo.png"/></a>
+</nav>
 
-    <footer class="primary wrapper">
-  <nav class="primary" role="navigation" id="top">
-    <aside class="links">
-      <a href="index.html">Home</a>
-      <a href="docs/about/index.html">Docs</a>
-      <a href="docs/about/index.html#support">Community</a>
-      <a href="https://github.com/P-8-project/P-8">GitHub</a>
-    </aside>
-    <a class="logo" href="index.html"><img src="image/logo.png" /></a>
-  </nav>
-  <aside class="fanout">
-    Brought to you by <a href="https://fastly.com"><img src="image/fastly.svg" /></a>
-    <small>&copy; 2025 Fastly, Inc.</small>
-  </aside>
 </footer>
 <script src="js/main.js"></script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  </body>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+</body>
 </html>

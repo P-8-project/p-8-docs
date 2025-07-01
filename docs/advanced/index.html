@@ -1,285 +1,139 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>P-8 | Documentation | Advanced topics</title>
-  <meta name="description" content="Get started with realtime using our developer guide. ">
-  <link rel="canonical" href="index.html">
-  <link rel="alternate" type="application/rss+xml" title="P-8" href="../../feed.xml" />
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- open graph info -->
-  <meta property="og:title" content="P-8 | Documentation | Advanced topics">
-  <meta property="og:site_name" content="P-8">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Get started with realtime using our developer guide.">
-  <meta property="og:image" content="https://P-8.org/image/icon-300x300.png">
-  <meta name="twitter:image" content="https://P-8.org/image/icon-300x300.png" />
-
-  <link rel="icon" type="image/png" href="../../image/favicon.png">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../css/main.css">
-
-  <!-- APIs -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Merriweather:300,400" rel="stylesheet">
-
-  <!-- jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>P-8 | Documentation | Advanced topics</title>
+<meta content="Get started with realtime using our developer guide. " name="description"/>
+<link href="index.html" rel="canonical"/>
+<link href="../../feed.xml" rel="alternate" title="P-8" type="application/rss+xml">
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- open graph info -->
+<meta content="P-8 | Documentation | Advanced topics" property="og:title"/>
+<meta content="P-8" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="Get started with realtime using our developer guide." property="og:description"/>
+<meta content="https://P-8.org/image/icon-300x300.png" property="og:image"/>
+<meta content="https://P-8.org/image/icon-300x300.png" name="twitter:image">
+<link href="../../image/favicon.png" rel="icon" type="image/png"/>
+<!-- Stylesheets -->
+<link href="../../css/main.css" rel="stylesheet"/>
+<!-- APIs -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400|Merriweather:300,400" rel="stylesheet"/>
+<!-- jQuery -->
+<script crossorigin="anonymous" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <script src="../../js/handlebars.js"></script>
-  <script src="../../js/tabbed-examples.js"></script>
-</head>
-
-  <body class="page docs">
-    <div style="display: none;"><img src="../../image/dots-div.svg" /></div>
-
-    <header class="primary wrapper">
-  <nav class="primary" role="navigation" id="top">
-    <aside class="logo">
-      <a href="../../index.html"><img src="../../image/logo.png" /></a>
-    </aside>
-    <aside class="links">
-      <a href="../about/index.html">Docs</a>
-      <a href="https://github.com/P-8-project/P-8">Code</a>
-      <a href="../about/index.html#support">Community</a>
-    </aside>
-    <img class="mobile-handle" src="../../image/mobile-handle.svg" />
-  </nav>
+<script src="../../js/handlebars.js"></script>
+<script src="../../js/tabbed-examples.js"></script>
+</meta></link></head>
+<body class="page docs">
+<div style="display: none;"><img src="../../image/dots-div.svg"/></div>
+<header class="primary wrapper">
+<nav class="primary" id="top" role="navigation">
+<aside class="logo">
+<a href="../../index.html"><img src="../../image/logo.png"/></a>
+</aside>
+<aside class="links">
+<a href="../about/index.html">Docs</a>
+<a href="https://github.com/P-8-project/P-8">Code</a>
+<a href="../about/index.html#support">Community</a>
+</aside>
+<img class="mobile-handle" src="../../image/mobile-handle.svg"/>
+</nav>
 </header>
-
 <div class="consent-box" id="consent-box">
-  <div class="width">
-    <p>We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our <a href="https://fanout.io/legal/privacy-policy/">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.</p>
-    <button href="#" class="button ghost" id="consent-ok">OK</button>
-  </div>
+<div class="width">
+<p>We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our <a href="https://fanout.io/legal/privacy-policy/">Privacy Policy</a>. By continuing to browse our website, you agree to our use of cookies.</p>
+<button class="button ghost" href="#" id="consent-ok">OK</button>
 </div>
-
-
-    <header class="page-header"><h1>Documentation</h1></header>
-    <div class="div"></div>
-
-    <div class="content wrapper" style="position: relative;">
-      <nav class="sidebar">
-        <ul>
-          
-          
-          <li><a href="../about/index.html">About</a></li>
-          
-            <ul>
-              
-              <li><a href="../about/index.html#introduction">Introduction</a></li>
-              
-              
-              <li><a href="../about/index.html#how-it-works">How it works</a></li>
-              
-              
-              <li><a href="../about/index.html#support">Support</a></li>
-              
-              
-              <li><a href="../about/index.html#license">License</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../install/index.html">Install</a></li>
-          
-            <ul>
-              
-              <li><a href="../install/index.html#packages">Packages</a></li>
-              
-              
-              <li><a href="../install/index.html#building-from-source">Building from source</a></li>
-              
-              
-              <li><a href="../install/index.html#running">Running</a></li>
-              
-              
-              <li><a href="../install/index.html#upgrading">Upgrading</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../getting-started/index.html">Getting started</a></li>
-          
-            <ul>
-              
-              <li><a href="../getting-started/index.html#quickstart">Quickstart</a></li>
-              
-              
-              <li><a href="../getting-started/index.html#video-walkthrough">Video walkthrough</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../configuration/index.html">Configuration</a></li>
-          
-            <ul>
-              
-              <li><a href="../configuration/index.html#config-files">Config files</a></li>
-              
-              
-              <li><a href="../configuration/index.html#routes">Routes</a></li>
-              
-              
-              <li><a href="../configuration/index.html#proxying">Proxying</a></li>
-              
-              
-              <li><a href="../configuration/index.html#ssl">SSL</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../usage/index.html">Usage</a></li>
-          
-            <ul>
-              
-              <li><a href="../usage/index.html#subscribing">Subscribing</a></li>
-              
-              
-              <li><a href="../usage/index.html#publishing">Publishing</a></li>
-              
-              
-              <li><a href="../usage/index.html#transports">Transports</a></li>
-              
-              
-              <li><a href="../usage/index.html#libraries">Libraries</a></li>
-              
-              
-              <li><a href="../usage/index.html#browser-features">Browser features</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li>Advanced topics</li>
-          
-            <ul>
-              
-              <li><a href="index.html#sequence-ids">Sequence IDs</a></li>
-              
-              
-              <li><a href="index.html#message-de-duping">Message de-duping</a></li>
-              
-              
-              <li><a href="index.html#keep-alives">Keep-alives</a></li>
-              
-              
-              <li><a href="index.html#commands">Commands</a></li>
-              
-              
-              <li><a href="index.html#stats-socket">Stats socket</a></li>
-              
-              
-              <li><a href="index.html#message-filtering">Message filtering</a></li>
-              
-              
-              <li><a href="index.html#paged-streaming">Paged streaming</a></li>
-              
-              
-              <li><a href="index.html#reliability">Reliability</a></li>
-              
-              
-              <li><a href="index.html#message-queues">Message queues</a></li>
-              
-              
-              <li><a href="index.html#subscription-forwarding">Subscription forwarding</a></li>
-              
-              
-              <li><a href="index.html#multiple-processes">Multiple processes</a></li>
-              
-              
-              <li><a href="index.html#proxy-chaining">Proxy chaining</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../examples/index.html">Examples</a></li>
-          
-            <ul>
-              
-              <li><a href="../examples/index.html#headline">Headline</a></li>
-              
-              
-              <li><a href="../examples/index.html#leaderboard">Leaderboard</a></li>
-              
-              
-              <li><a href="../examples/index.html#chat">Chat</a></li>
-              
-              
-              <li><a href="../examples/index.html#todo-list">Todo list</a></li>
-              
-              
-              <li><a href="../examples/index.html#live-text-editor">Live text editor</a></li>
-              
-              
-              <li><a href="../examples/index.html#webhookinbox">WebhookInbox</a></li>
-              
-              
-              <li><a href="../examples/index.html#audio-stream">Audio stream</a></li>
-              
-              
-            </ul>
-          
-          
-          
-          <li><a href="../protocols/index.html">Protocols</a></li>
-          
-            <ul>
-              
-              <li><a href="../protocols/grip/index.html">Generic Realtime Intermediary Protocol</a></li>
-              
-              
-              <li><a href="../protocols/websocket-over-http/index.html">WebSocket-over-HTTP</a></li>
-              
-              
-              <li><a href="https://rfc.zeromq.org/spec:33/ZHTTP/">ZHTTP</a></li>
-              
-              
-            </ul>
-          
-          
-        </ul>
-      </nav>
-
-      <nav class="navbar-mobile-handle">Docs Menu</nav>
-
-      <section class="docs">
-      <h1 id="advanced">Advanced</h1>
-
+</div>
+<header class="page-header"><h1>Documentation</h1></header>
+<div class="div"></div>
+<div class="content wrapper" style="position: relative;">
+<nav class="sidebar">
+<ul>
+<li><a href="../about/index.html">About</a></li>
+<ul>
+<li><a href="../about/index.html#introduction">Introduction</a></li>
+<li><a href="../about/index.html#how-it-works">How it works</a></li>
+<li><a href="../about/index.html#support">Support</a></li>
+<li><a href="../about/index.html#license">License</a></li>
+</ul>
+<li><a href="../install/index.html">Install</a></li>
+<ul>
+<li><a href="../install/index.html#packages">Packages</a></li>
+<li><a href="../install/index.html#building-from-source">Building from source</a></li>
+<li><a href="../install/index.html#running">Running</a></li>
+<li><a href="../install/index.html#upgrading">Upgrading</a></li>
+</ul>
+<li><a href="../getting-started/index.html">Getting started</a></li>
+<ul>
+<li><a href="../getting-started/index.html#quickstart">Quickstart</a></li>
+<li><a href="../getting-started/index.html#video-walkthrough">Video walkthrough</a></li>
+</ul>
+<li><a href="../configuration/index.html">Configuration</a></li>
+<ul>
+<li><a href="../configuration/index.html#config-files">Config files</a></li>
+<li><a href="../configuration/index.html#routes">Routes</a></li>
+<li><a href="../configuration/index.html#proxying">Proxying</a></li>
+<li><a href="../configuration/index.html#ssl">SSL</a></li>
+</ul>
+<li><a href="../usage/index.html">Usage</a></li>
+<ul>
+<li><a href="../usage/index.html#subscribing">Subscribing</a></li>
+<li><a href="../usage/index.html#publishing">Publishing</a></li>
+<li><a href="../usage/index.html#transports">Transports</a></li>
+<li><a href="../usage/index.html#libraries">Libraries</a></li>
+<li><a href="../usage/index.html#browser-features">Browser features</a></li>
+</ul>
+<li>Advanced topics</li>
+<ul>
+<li><a href="index.html#sequence-ids">Sequence IDs</a></li>
+<li><a href="index.html#message-de-duping">Message de-duping</a></li>
+<li><a href="index.html#keep-alives">Keep-alives</a></li>
+<li><a href="index.html#commands">Commands</a></li>
+<li><a href="index.html#stats-socket">Stats socket</a></li>
+<li><a href="index.html#message-filtering">Message filtering</a></li>
+<li><a href="index.html#paged-streaming">Paged streaming</a></li>
+<li><a href="index.html#reliability">Reliability</a></li>
+<li><a href="index.html#message-queues">Message queues</a></li>
+<li><a href="index.html#subscription-forwarding">Subscription forwarding</a></li>
+<li><a href="index.html#multiple-processes">Multiple processes</a></li>
+<li><a href="index.html#proxy-chaining">Proxy chaining</a></li>
+</ul>
+<li><a href="../examples/index.html">Examples</a></li>
+<ul>
+<li><a href="../examples/index.html#headline">Headline</a></li>
+<li><a href="../examples/index.html#leaderboard">Leaderboard</a></li>
+<li><a href="../examples/index.html#chat">Chat</a></li>
+<li><a href="../examples/index.html#todo-list">Todo list</a></li>
+<li><a href="../examples/index.html#live-text-editor">Live text editor</a></li>
+<li><a href="../examples/index.html#webhookinbox">WebhookInbox</a></li>
+<li><a href="../examples/index.html#audio-stream">Audio stream</a></li>
+</ul>
+<li><a href="../protocols/index.html">Protocols</a></li>
+<ul>
+<li><a href="../protocols/grip/index.html">Generic Realtime Intermediary Protocol</a></li>
+<li><a href="../protocols/websocket-over-http/index.html">WebSocket-over-HTTP</a></li>
+<li><a href="https://rfc.zeromq.org/spec:33/ZHTTP/">ZHTTP</a></li>
+</ul>
+</ul>
+</nav>
+<nav class="navbar-mobile-handle">Docs Menu</nav>
+<section class="docs">
+<h1 id="advanced">Advanced</h1>
 <h2 id="sequence-ids">Sequence IDs</h2>
-
 <p>Published messages are delivered in the order they are received (per channel), so if you want clients to receive messages in-order then all you need to do is publish messages to P-8 in-order.</p>
-
 <p>However, publishing messages to P-8 in-order may not be easy if you publish from multiple threads or servers. To make in-order delivery easier in those situations, P-8 can reorder messages for you, if you include sequence IDs in your messages:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mychannel"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the ID for this item"</span><span class="p">,</span><span class="w">
@@ -289,15 +143,10 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>The <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">prev-id</code> values of a message are arbitrary strings, that P-8 uses to sort out the ordering of messages. If P-8 receives a message with a <code class="language-plaintext highlighter-rouge">prev-id</code> that it doesn’t recognize, then it buffers it until it receives a message whose <code class="language-plaintext highlighter-rouge">id</code> matches the value, at which point it sends out both messages in the right order. If the expected message is never received, the buffered message will eventually be delivered anyway (around 5-10 seconds later).</p>
-
 <p>Note that while using sequence IDs can improve the in-order delivery of messages that P-8 receives out of order, they alone do not guarantee in-order delivery. The first message received for a newly subscribed channel is always delivered immediately, regardless of <code class="language-plaintext highlighter-rouge">prev-id</code> value. Also, as mentioned above, if expected messages aren’t received in time then buffered out-of-order messages will be sent anyway.</p>
-
 <p>To absolutely guarantee in-order delivery without any gaps, you need to use sequence IDs along with <a href="index.html#reliability">Reliability</a>.</p>
-
 <p>If you are already publishing messages in-order to P-8 and are only concerned about gaps, then you may want to disable sequence buffering by setting <code class="language-plaintext highlighter-rouge">no-seq</code> to <code class="language-plaintext highlighter-rouge">true</code>:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mychannel"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"the ID for this item"</span><span class="p">,</span><span class="w">
@@ -308,69 +157,42 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>This way, sequence IDs can be used for <a href="index.html#reliability">Reliability</a>, and messages that follow publish gaps won’t be delayed in processing.</p>
-
 <h2 id="message-de-duping">Message de-duping</h2>
-
 <p>By default, P-8 caches message IDs for a short period of time, and will drop a message if its ID is found in the cache. To use this feature, all you need to do is set an ID on each message (see <a href="index.html#sequence-ids">Sequence IDs</a>). It is not necessary to set a Previous ID.</p>
-
 <p>This feature is mainly useful if you have an architecture with redundant publish paths. For example, you could set up two message brokers behind P-8 and send each message through both brokers for high availability. P-8 would receive each message twice, but only process each message once. If one of the brokers fails, messages would still be received from the other.</p>
-
 <h2 id="keep-alives">Keep-alives</h2>
-
 <p>For HTTP streaming and WebSocket connections, it is usually desirable to send keep-alive packets periodically, so that idle connections aren’t timed out by clients or routers. P-8 has built-in support for sending such packets.</p>
-
 <p>For HTTP streaming, include a <code class="language-plaintext highlighter-rouge">Grip-Keep-Alive</code> response header:</p>
-
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Grip-Hold</span><span class="p">:</span> <span class="s">stream</span>
 <span class="na">Grip-Channel</span><span class="p">:</span> <span class="s">mychannel</span>
 <span class="na">Grip-Keep-Alive</span><span class="p">:</span> <span class="s">\n; format=cstring; timeout=30</span>
 </code></pre></div></div>
-
 <p>For example, the above response would tell P-8 to send a newline whenever the stream has been idle for 30 seconds. The <code class="language-plaintext highlighter-rouge">format</code> field can be set to <code class="language-plaintext highlighter-rouge">raw</code> (data sent as-is; this is the default if omitted), <code class="language-plaintext highlighter-rouge">cstring</code> (data is backslash-escaped, useful for sending lines or multi-lines), or <code class="language-plaintext highlighter-rouge">base64</code> (data is Base64 encoded, useful for sending binary data).</p>
-
 <aside><header>Note</header>When <code class="highlighter-rouge">cstring</code> format is used from a language that itself uses C-like strings, be sure to escape the backslash when using a string literal (e.g. <code class="highlighter-rouge">"\\n"</code>).</aside>
-
 <p>For WebSockets, send a control message of type <code class="language-plaintext highlighter-rouge">keep-alive</code>:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:{"type": "keep-alive", "content": "{}", "timeout": 30}
 </code></pre></div></div>
-
 <p>For example, the above control message would tell P-8 to send a message containing <code class="language-plaintext highlighter-rouge">{}</code> whenever the connection has been idle for 30 seconds. To send binary content, set <code class="language-plaintext highlighter-rouge">content-bin</code> to a Base64-encoded value instead of setting <code class="language-plaintext highlighter-rouge">content</code>. To send message types other than <code class="language-plaintext highlighter-rouge">TEXT</code>, set <code class="language-plaintext highlighter-rouge">message-type</code> to <code class="language-plaintext highlighter-rouge">binary</code>, <code class="language-plaintext highlighter-rouge">ping</code>, or <code class="language-plaintext highlighter-rouge">pong</code>. To turn keep-alives off, send the control message with the <code class="language-plaintext highlighter-rouge">content</code> and <code class="language-plaintext highlighter-rouge">content-bin</code> parameters omitted.</p>
-
 <p>Keep-alives can also be sent on an interval, regardless of whether the connection has been idle or not. To enable this, set the <code class="language-plaintext highlighter-rouge">mode</code> parameter to <code class="language-plaintext highlighter-rouge">interval</code>.</p>
-
 <p>HTTP streaming example using interval timeout:</p>
-
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Grip-Hold</span><span class="p">:</span> <span class="s">stream</span>
 <span class="na">Grip-Channel</span><span class="p">:</span> <span class="s">mychannel</span>
 <span class="na">Grip-Keep-Alive</span><span class="p">:</span> <span class="s">\n; format=cstring; timeout=30; mode=interval</span>
 </code></pre></div></div>
-
 <p>WebSocket example using interval timeout:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:{"type": "keep-alive", "content": "{}", "timeout": 30, "mode": "interval"}
 </code></pre></div></div>
-
 <h2 id="commands">Commands</h2>
-
 <p>Publishing is just one of several commands supported by P-8. Commands are available over ZeroMQ and/or HTTP.</p>
-
 <p>To call commands over ZeroMQ, connect to P-8’s REP command socket (port 5563 by default). Requests are tnetstring-encoded, containing a <code class="language-plaintext highlighter-rouge">method</code> field. If a command requires arguments, set them using the <code class="language-plaintext highlighter-rouge">args</code> field (containing an object of named arguments). If you may make multiple requests over the same connection using a DEALER socket, then you should also set the <code class="language-plaintext highlighter-rouge">id</code> field so that it is possible to match replies.</p>
-
 <h3 id="publish">Publish</h3>
-
 <p>As a command, publishing is supported over HTTP or ZeroMQ.</p>
-
 <p>Note that the typical way to publish via ZeroMQ is to connect to P-8’s PULL or SUB sockets. These inputs are not considered to be “commands” because they are not request/response. See <a href="../usage/index.html#publishing">Publishing</a>.</p>
-
 <p>However, it is possible to publish via ZeroMQ as an acknowledged command if you really want to:</p>
-
 <p>Request:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"publish"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -382,29 +204,20 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>Response:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <h3 id="get-zeromq-uris">Get ZeroMQ URIs</h3>
-
 <p>Discover P-8’s ZeroMQ socket addresses. This command is supported over ZeroMQ only.</p>
-
 <p>P-8 binds on many ZeroMQ socket addresses, and having to configure your application with all of them can be cumbersome. With this command, your application only needs to know the address of the command socket, which it can then use to discover the others.</p>
-
 <p>Request:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get-zmq-uris"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>Response:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -414,49 +227,34 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <h3 id="recover">Recover</h3>
-
 <p>Cause all <a href="index.html#reliability">reliable</a> connections to enter a recovery state. This command is supported over both HTTP and ZeroMQ.</p>
-
 <p>Use this command if your publisher has recently crashed, to speed up subscription recovery time.</p>
-
 <p>HTTP request:</p>
-
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/recover</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="p">:</span> <span class="s">localhost:5561</span>
 
 (empty body)
 </code></pre></div></div>
-
 <p>HTTP response</p>
-
 <div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
 <span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/plain</span>
 
 Updated
 </code></pre></div></div>
-
 <p>ZeroMQ request:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recover"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <h3 id="refresh">Refresh</h3>
-
 <p>Cause WebSocket-over-HTTP sessions to make requests. Sessions can be identified by connection ID or subscribed channel. This command is supported over ZeroMQ only.</p>
-
 <p>This command requires either an argument <code class="language-plaintext highlighter-rouge">cid</code> containing a connection ID or an argument <code class="language-plaintext highlighter-rouge">channel</code> containing a channel. For <code class="language-plaintext highlighter-rouge">cid</code>, the value should be the same as the <code class="language-plaintext highlighter-rouge">Connection-ID</code> header present in received WebSocket-over-HTTP requests.</p>
-
 <p>Request:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"refresh"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -464,20 +262,14 @@ Updated
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <h3 id="connection-check">Connection check</h3>
-
 <p>Check if one or more connections are still present. This command is supported over ZeroMQ only.</p>
-
 <p>This command requires an argument <code class="language-plaintext highlighter-rouge">ids</code> containing a list of connection IDs to look up. Theses IDs should be the same as those received over the <a href="index.html#stats-socket">Stats socket</a>. The command returns the IDs that are still present.</p>
-
 <p>Request:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conncheck"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -488,9 +280,7 @@ Updated
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>Response:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -498,176 +288,154 @@ Updated
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <h2 id="stats-socket">Stats socket</h2>
-
 <p>P-8 exposes various events using a ZeroMQ PUB socket. Each message is prefixed with an event type followed by a space, then a tnetstring-encoded payload prefixed with the letter <code class="language-plaintext highlighter-rouge">T</code>. By default, the stats socket is at <code class="language-plaintext highlighter-rouge">ipc://{rundir}/P-8-stats</code>, but this can be changed using the <code class="language-plaintext highlighter-rouge">stats_spec</code> configuration option.</p>
-
 <p>For example, a received message might look like this: (lines wrapped for readability)</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>message T88:4:from,21:P-8-handler_18537,7:channel,4:test,
 9:transport,11:http-stream,5:count,1:1#}
 </code></pre></div></div>
-
 <p>The following events are defined:</p>
-
 <p><strong>Connection:</strong></p>
-
 <p>Connection (<code class="language-plaintext highlighter-rouge">conn</code>) events indicate when connections come and go. They may contain the following fields:</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">id</code>: The connection ID.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">type</code>: Either <code class="language-plaintext highlighter-rouge">http</code> or <code class="language-plaintext highlighter-rouge">ws</code>.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">peer-address</code>: The IP address of the client.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">ttl</code>: Duration (in seconds) that this information remains valid.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">unavailable</code>: Set to true if the connection has gone away.</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">id</code>: The connection ID.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">type</code>: Either <code class="language-plaintext highlighter-rouge">http</code> or <code class="language-plaintext highlighter-rouge">ws</code>.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">peer-address</code>: The IP address of the client.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">ttl</code>: Duration (in seconds) that this information remains valid.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">unavailable</code>: Set to true if the connection has gone away.</p>
+</li>
 </ul>
-
 <p><strong>Subscription:</strong></p>
-
 <p>Subscription (<code class="language-plaintext highlighter-rouge">sub</code>) events indicate when subscriptions come and go. They may contain the following fields:</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">mode</code>: The type of subscription. Either <code class="language-plaintext highlighter-rouge">stream</code>, <code class="language-plaintext highlighter-rouge">response</code>, or <code class="language-plaintext highlighter-rouge">ws</code>.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">channel</code>: The channel being subscribed or unsubscribed.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">ttl</code>: Duration (in seconds) that this information remains valid.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">subscribers</code>: The number of receivers subscribed to the channel.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">unavailable</code>: Set to true if the subscription has gone away.</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">mode</code>: The type of subscription. Either <code class="language-plaintext highlighter-rouge">stream</code>, <code class="language-plaintext highlighter-rouge">response</code>, or <code class="language-plaintext highlighter-rouge">ws</code>.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">channel</code>: The channel being subscribed or unsubscribed.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">ttl</code>: Duration (in seconds) that this information remains valid.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">subscribers</code>: The number of receivers subscribed to the channel.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">unavailable</code>: Set to true if the subscription has gone away.</p>
+</li>
 </ul>
-
 <p><strong>Message:</strong></p>
-
 <p>Message (<code class="language-plaintext highlighter-rouge">message</code>) events indicate when one or more messages have been delivered to receivers. They may contain the following fields:</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">channel</code>: The channel that was sent to.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">count</code>: The number of messages sent.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">blocks</code>: The total number of blocks used by all of the messages sent (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">transport</code>: The transport used to deliver the messages. Either <code class="language-plaintext highlighter-rouge">http-stream</code>, <code class="language-plaintext highlighter-rouge">http-response</code>, or <code class="language-plaintext highlighter-rouge">ws-message</code>.</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">channel</code>: The channel that was sent to.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">count</code>: The number of messages sent.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">blocks</code>: The total number of blocks used by all of the messages sent (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">transport</code>: The transport used to deliver the messages. Either <code class="language-plaintext highlighter-rouge">http-stream</code>, <code class="language-plaintext highlighter-rouge">http-response</code>, or <code class="language-plaintext highlighter-rouge">ws-message</code>.</p>
+</li>
 </ul>
-
 <p><strong>Activity:</strong></p>
-
 <p>Activity (<code class="language-plaintext highlighter-rouge">activity</code>) events indicate the aggregate activity level of various activities. They can be used as a rough way of determining how busy the connections are, excluding published messages. An activity is counted for each new request or connection, for every keep-alive sent, and for every WebSocket message (non-published) sent within the last minute.</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">count</code>: The number of activities being reported.</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">count</code>: The number of activities being reported.</p>
+</li>
 </ul>
-
 <p><strong>Report:</strong></p>
-
 <p>Report (<code class="language-plaintext highlighter-rouge">report</code>) events indicate aggregate connection, message, and activity information. They are sent periodically.</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">connections</code>: The maximum concurrent connections measured since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">minutes</code>: The number of minutes that all connections have remained connected since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">received</code>: The number of published messages received since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">sent</code>: The number of messages delivered to receivers (of all transports) since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">http-response-sent</code>: The number of messages delivered to long-polling clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">duration</code>: Length of time (in milliseconds) that this report represents.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-header-bytes-received</code>: The number of header bytes received from clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-header-bytes-sent</code>: The number of header bytes sent to clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-content-bytes-received</code>: The number of body/message bytes received from clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-content-bytes-sent</code>: The number of body/message bytes sent to clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-messages-received</code>: The number of WebSocket messages received from clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">client-messages-sent</code>: The number of WebSocket messages sent to clients since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-header-bytes-received</code>: The number of header bytes received from backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-header-bytes-sent</code>: The number of header bytes sent to backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-content-bytes-received</code>: The number of body/message bytes received from backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-content-bytes-sent</code>: The number of body/message bytes sent to backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-messages-received</code>: The number of WebSocket messages received from backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">server-messages-sent</code>: The number of WebSocket messages sent to backend servers since the last report.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">blocks-received</code>: The total number of blocks used by all of the published messages received since the last report (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">blocks-sent</code>: The total number of blocks used by all of the messages sent since the last report (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">from</code>: A unique ID for the sending process (currently <code class="language-plaintext highlighter-rouge">P-8-handler_{pid}</code>).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">connections</code>: The maximum concurrent connections measured since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">minutes</code>: The number of minutes that all connections have remained connected since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">received</code>: The number of published messages received since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">sent</code>: The number of messages delivered to receivers (of all transports) since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">http-response-sent</code>: The number of messages delivered to long-polling clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">duration</code>: Length of time (in milliseconds) that this report represents.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-header-bytes-received</code>: The number of header bytes received from clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-header-bytes-sent</code>: The number of header bytes sent to clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-content-bytes-received</code>: The number of body/message bytes received from clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-content-bytes-sent</code>: The number of body/message bytes sent to clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-messages-received</code>: The number of WebSocket messages received from clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">client-messages-sent</code>: The number of WebSocket messages sent to clients since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-header-bytes-received</code>: The number of header bytes received from backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-header-bytes-sent</code>: The number of header bytes sent to backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-content-bytes-received</code>: The number of body/message bytes received from backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-content-bytes-sent</code>: The number of body/message bytes sent to backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-messages-received</code>: The number of WebSocket messages received from backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">server-messages-sent</code>: The number of WebSocket messages sent to backend servers since the last report.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">blocks-received</code>: The total number of blocks used by all of the published messages received since the last report (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">blocks-sent</code>: The total number of blocks used by all of the messages sent since the last report (only if <code class="language-plaintext highlighter-rouge">message_block_size</code> is configured).</p>
+</li>
 </ul>
-
 <p>Here’s a simple Python program that connects to the stats socket and prints the decoded messages:</p>
-
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">tnetstring</span>
 <span class="kn">import</span> <span class="nn">zmq</span>
@@ -686,49 +454,37 @@ Updated
     <span class="n">m</span> <span class="o">=</span> <span class="n">tnetstring</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">mdata</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
     <span class="k">print</span> <span class="s">'%s %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">mtype</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
 </code></pre></div></div>
-
 <p>The <code class="language-plaintext highlighter-rouge">zmq.SUBSCRIBE</code> option specifies a prefix filter on messages. If you only want to receive events of a certain type, you can set this to a non-empty string such as <code class="language-plaintext highlighter-rouge">'report '</code>.</p>
-
 <h2 id="message-filtering">Message filtering</h2>
-
 <p>P-8 contains filtering algorithms that can be used to modify or drop published messages depending on certain conditions. Filters can be assigned to subscriptions, and metadata can be assigned to subscriptions and published messages which filters use as input.</p>
-
 <p>The following filters are available:</p>
-
 <ul>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">skip-self</code>: Drop a message if the subscriber has a <code class="language-plaintext highlighter-rouge">user</code> meta value and the published message has a <code class="language-plaintext highlighter-rouge">sender</code> meta value, and these two values are equal.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">skip-users</code>: Drop a message if the subscriber has a <code class="language-plaintext highlighter-rouge">user</code> meta value and the published message has a <code class="language-plaintext highlighter-rouge">skip_users</code> meta value (containing a comma-separated list of user IDs), and the subscriber <code class="language-plaintext highlighter-rouge">user</code> is in the list of <code class="language-plaintext highlighter-rouge">skip_users</code>.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">require-sub</code>: Drop a message if the published message has a <code class="language-plaintext highlighter-rouge">require_sub</code> meta value, and the subscriber’s connection is not also subscribed to the channel specified by <code class="language-plaintext highlighter-rouge">require_sub</code>. This basically provides a way to publish to a “logical AND” of two channels, by publishing the message to one of the channels and setting <code class="language-plaintext highlighter-rouge">require_sub</code> to the other channel.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">var-subst</code>: Modify published message content with subscriber metadata. Any instances of <code class="language-plaintext highlighter-rouge">%(var)s</code> are replaced with the value of subscriber meta <code class="language-plaintext highlighter-rouge">var</code>. To send <code class="language-plaintext highlighter-rouge">%</code> in message content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
-  </li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">build-id</code>: Modify published message content and response content to include ID strings generated by P-8. The content is searched for <code class="language-plaintext highlighter-rouge">%I</code> or <code class="language-plaintext highlighter-rouge">%(format)I</code> directives and replaced with generated IDs based on the specified format (for <code class="language-plaintext highlighter-rouge">%I</code>, the format is the subscriber <code class="language-plaintext highlighter-rouge">id_format</code> meta value). The format may contain channel previous ID directives using the form <code class="language-plaintext highlighter-rouge">%(channel)s</code>. For example, if the format is <code class="language-plaintext highlighter-rouge">foo:%(mychannel)s:bar</code>, and the known previous ID of channel <code class="language-plaintext highlighter-rouge">mychannel</code> is <code class="language-plaintext highlighter-rouge">banana</code>, then P-8 would generate the ID <code class="language-plaintext highlighter-rouge">foo:banana:bar</code>. Optionally, IDs can be encoded by setting the subscriber <code class="language-plaintext highlighter-rouge">id_encoding</code> meta value to an encoding algorithm. Currently the only supported encoding algorithm is <code class="language-plaintext highlighter-rouge">hex</code>, in which case the generated ID is hex-encoded. To send <code class="language-plaintext highlighter-rouge">%</code> in message or response content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
-  </li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">skip-self</code>: Drop a message if the subscriber has a <code class="language-plaintext highlighter-rouge">user</code> meta value and the published message has a <code class="language-plaintext highlighter-rouge">sender</code> meta value, and these two values are equal.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">skip-users</code>: Drop a message if the subscriber has a <code class="language-plaintext highlighter-rouge">user</code> meta value and the published message has a <code class="language-plaintext highlighter-rouge">skip_users</code> meta value (containing a comma-separated list of user IDs), and the subscriber <code class="language-plaintext highlighter-rouge">user</code> is in the list of <code class="language-plaintext highlighter-rouge">skip_users</code>.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">require-sub</code>: Drop a message if the published message has a <code class="language-plaintext highlighter-rouge">require_sub</code> meta value, and the subscriber’s connection is not also subscribed to the channel specified by <code class="language-plaintext highlighter-rouge">require_sub</code>. This basically provides a way to publish to a “logical AND” of two channels, by publishing the message to one of the channels and setting <code class="language-plaintext highlighter-rouge">require_sub</code> to the other channel.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">var-subst</code>: Modify published message content with subscriber metadata. Any instances of <code class="language-plaintext highlighter-rouge">%(var)s</code> are replaced with the value of subscriber meta <code class="language-plaintext highlighter-rouge">var</code>. To send <code class="language-plaintext highlighter-rouge">%</code> in message content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
+</li>
+<li>
+<p><code class="language-plaintext highlighter-rouge">build-id</code>: Modify published message content and response content to include ID strings generated by P-8. The content is searched for <code class="language-plaintext highlighter-rouge">%I</code> or <code class="language-plaintext highlighter-rouge">%(format)I</code> directives and replaced with generated IDs based on the specified format (for <code class="language-plaintext highlighter-rouge">%I</code>, the format is the subscriber <code class="language-plaintext highlighter-rouge">id_format</code> meta value). The format may contain channel previous ID directives using the form <code class="language-plaintext highlighter-rouge">%(channel)s</code>. For example, if the format is <code class="language-plaintext highlighter-rouge">foo:%(mychannel)s:bar</code>, and the known previous ID of channel <code class="language-plaintext highlighter-rouge">mychannel</code> is <code class="language-plaintext highlighter-rouge">banana</code>, then P-8 would generate the ID <code class="language-plaintext highlighter-rouge">foo:banana:bar</code>. Optionally, IDs can be encoded by setting the subscriber <code class="language-plaintext highlighter-rouge">id_encoding</code> meta value to an encoding algorithm. Currently the only supported encoding algorithm is <code class="language-plaintext highlighter-rouge">hex</code>, in which case the generated ID is hex-encoded. To send <code class="language-plaintext highlighter-rouge">%</code> in message or response content, it must be escaped as <code class="language-plaintext highlighter-rouge">%%</code>.</p>
+</li>
 </ul>
-
 <p>The way to set up a filter depends on the transport.</p>
-
 <p>For HTTP transports, include one or more <code class="language-plaintext highlighter-rouge">filter</code> params on any <code class="language-plaintext highlighter-rouge">Grip-Channel</code> to assign filters, and include any number of <code class="language-plaintext highlighter-rouge">Grip-Set-Meta</code> headers to set subscriber meta values. For example:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Grip-Set-Meta: user=alice
 Grip-Channel: test; filter=skip-self
 </code></pre></div></div>
-
 <p>For WebSockets, the list of filters is passed as a single list rather than multiple filter params, and subscriber meta values are set using a separate control message <code class="language-plaintext highlighter-rouge">set-meta</code>. For example:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:{"type": "set-meta", "name": "user", "value": "alice"}
 c:{"type": "subscribe", "channel": "test", "filters": ["skip-self"]}
 </code></pre></div></div>
-
 <p>To set publish meta values, include a <code class="language-plaintext highlighter-rouge">meta</code> object in the message item, containing the values:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -744,11 +500,8 @@ c:{"type": "subscribe", "channel": "test", "filters": ["skip-self"]}
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>The <code class="language-plaintext highlighter-rouge">P-8-publish</code> tool has <code class="language-plaintext highlighter-rouge">--sender</code> and <code class="language-plaintext highlighter-rouge">--meta</code> options for easy experimenting.</p>
-
 <p>It is possible to limit delivery to subscriptions that have a particular message content filter set, by specifying <code class="language-plaintext highlighter-rouge">content-filters</code> on the format. For example:</p>
-
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"formats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -761,38 +514,24 @@ c:{"type": "subscribe", "channel": "test", "filters": ["skip-self"]}
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
-
 <p>This can be useful if not all subscribers for a particular channel are using the filter, and you want to avoid sending an unprocessed template to the subscribers that aren’t using it.</p>
-
 <h2 id="paged-streaming">Paged streaming</h2>
-
 <p>If the backend needs to return a lot of initial content for an HTTP streaming request, then it can return a portion of the content and have P-8 make a new request to fetch the next part. This is done by providing a <code class="language-plaintext highlighter-rouge">Grip-Link</code> header:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: text/plain
 Grip-Link: &lt;/stream/?after=nextID&gt;; rel=next
 
 {... first part of content ...}
 </code></pre></div></div>
-
 <aside><header>Note</header>The header is called <code class="highlighter-rouge">Grip-Link</code> rather than reusing <code class="highlighter-rouge">Link</code>, so that P-8 can remove the header before relaying to the client (as P-8 does with all such <code class="highlighter-rouge">Grip-*</code> headers).</aside>
-
 <p>Once P-8 has finished sending the current response data to the client, it will request the next link and send that response to the client as well (body only). This process will repeat until a response from the backend either omits a next link or sets <code class="language-plaintext highlighter-rouge">Grip-Hold</code>. If the response contains both <code class="language-plaintext highlighter-rouge">Grip-Hold</code> and a next link, then the request will enter a hold state and the next link may be used for data recovery (see <a href="index.html#reliability">Reliability</a>).</p>
-
 <p>There is a <a href="http://blog.fanout.io/2016/09/10/streaming-historical-data/">blog post</a> that walks through this feature.</p>
-
 <h2 id="reliability">Reliability</h2>
-
 <p>Publish-subscribe systems are unreliable by design. However, because P-8 interfaces with a backend server that likely has access to durable storage, it is possible for P-8 to leverage the backend in order to provide reliable transmission.</p>
-
 <p>Currently, this feature works for HTTP streaming and long-polling, but not WebSockets. Also, the way it is used depends on the transport. See below for per-transport details.</p>
-
 <p>There is a <a href="http://blog.fanout.io/2017/01/22/P-8-reliable-streaming/">blog post</a> that walks through this feature.</p>
-
 <h3 id="reliable-http-streaming">Reliable HTTP streaming</h3>
-
 <p>When creating a <code class="language-plaintext highlighter-rouge">stream</code> hold, any channel to be subscribed must include a <code class="language-plaintext highlighter-rouge">prev-id</code> value. A next link must also be provided:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: text/plain
 Grip-Hold: stream
@@ -801,40 +540,30 @@ Grip-Link: &lt;/fruit/?after=3&gt;; rel=next
 
 {... initial response ...}
 </code></pre></div></div>
-
 <p>P-8 will enter a hold state, and may request the next link in order to repair the data stream under the following conditions:</p>
-
 <ul>
-  <li>
-    <p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> value doesn’t match the last known ID published to the channel.</p>
-  </li>
-  <li>
-    <p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> of a published message does not match the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription.</p>
-  </li>
-  <li>
-    <p>If a message has not been published to the connection in awhile. This can be set using the <code class="language-plaintext highlighter-rouge">timeout</code> parameter of the <code class="language-plaintext highlighter-rouge">Grip-Link</code> header (default 120 seconds).</p>
-  </li>
-  <li>
-    <p>If the channel recently gained its first subscriber.</p>
-  </li>
+<li>
+<p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> value doesn’t match the last known ID published to the channel.</p>
+</li>
+<li>
+<p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> of a published message does not match the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription.</p>
+</li>
+<li>
+<p>If a message has not been published to the connection in awhile. This can be set using the <code class="language-plaintext highlighter-rouge">timeout</code> parameter of the <code class="language-plaintext highlighter-rouge">Grip-Link</code> header (default 120 seconds).</p>
+</li>
+<li>
+<p>If the channel recently gained its first subscriber.</p>
+</li>
 </ul>
-
 <p>If a published message’s <code class="language-plaintext highlighter-rouge">prev-id</code> matches the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription, then the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription is set to the published message’s <code class="language-plaintext highlighter-rouge">id</code> and the message is delivered. If it does not match, then the message is dropped and the next link is requested.</p>
-
 <p>When the next link is requested, the behavior is similar to <a href="index.html#paged-streaming">Paged streaming</a>, in that subsequent next links will be followed if provided, until a response contains <code class="language-plaintext highlighter-rouge">Grip-Hold</code> at which point the connection returns to a hold state.</p>
-
 <p>In each request, P-8 will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID received on a given channel. This should take precedence over whatever checkpoint information may have been encoded in the link.</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /fruit/?after=3 HTTP/1.1
 Grip-Last: fruit; last-id=7
 </code></pre></div></div>
-
 <p>For example, if the backend server received the above request, then the <code class="language-plaintext highlighter-rouge">last-id</code> of 7 would be used as the basis for determining the response content rather than the <code class="language-plaintext highlighter-rouge">after</code> query param.</p>
-
 <h3 id="reliable-http-long-polling">Reliable HTTP long-polling</h3>
-
 <p>When creating a <code class="language-plaintext highlighter-rouge">response</code> hold, any channel to be subscribed must include a <code class="language-plaintext highlighter-rouge">prev-id</code> value:</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
 Content-Type: text/plain
 Grip-Hold: response
@@ -842,55 +571,36 @@ Grip-Channel: fruit; prev-id=3
 
 {... timeout response ...}
 </code></pre></div></div>
-
 <aside><header>Note</header>The <code class="highlighter-rouge">Grip-Link</code> header is not used in long-polling mode, since in practice the URI of a long-polling request is always usable for recovery.</aside>
-
 <p>P-8 will enter a hold state, and may retry the request with the backend in order to repair the data stream under the following conditions:</p>
-
 <ul>
-  <li>
-    <p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> value doesn’t match the last known ID published to the channel.</p>
-  </li>
-  <li>
-    <p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> of a published message does not match the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription.</p>
-  </li>
-  <li>
-    <p>If the channel recently gained its first subscriber.</p>
-  </li>
+<li>
+<p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> value doesn’t match the last known ID published to the channel.</p>
+</li>
+<li>
+<p>If the <code class="language-plaintext highlighter-rouge">prev-id</code> of a published message does not match the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription.</p>
+</li>
+<li>
+<p>If the channel recently gained its first subscriber.</p>
+</li>
 </ul>
-
 <p>If a published message’s <code class="language-plaintext highlighter-rouge">prev-id</code> matches the last known <code class="language-plaintext highlighter-rouge">prev-id</code> of the subscription, then the message is delivered. If it does not match, then the message is dropped and the request is retried.</p>
-
 <p>In each retried request, P-8 will include a <code class="language-plaintext highlighter-rouge">Grip-Last</code> header indicating the last known ID set on each channel.</p>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /fruit/?after=3 HTTP/1.1
 Grip-Last: fruit; last-id=3
 </code></pre></div></div>
-
 <h2 id="message-queues">Message queues</h2>
-
 <p>In advanced architectures, you may want to route your messages through a message queue/broker, such as Redis, RabbitMQ, Kafka, etc. Perhaps you have a message queue already, and you want to expose the data it provides. Message queues also make it easier to relay data to multiple P-8 instances.</p>
-
-<p><img src="../../image/arch-tiered.png" alt="arch-tiered" /></p>
-
+<p><img alt="arch-tiered" src="../../image/arch-tiered.png"/></p>
 <p>When using a queue, your data sources would send messages to the queue rather than sending directly to P-8, and you’d want P-8 to receive messages from the queue.</p>
-
 <p>P-8 has no built-in support for connecting to specific queues/brokers. Instead, you can write a small worker program that runs alongside P-8, to receive from the queue and send to P-8. Often you’ll need to transform the data as well, and you can write any data transformation code in the same worker program.</p>
-
 <p>For inspiration, have a look at the <a href="https://github.com/fanout/kafka-sse-example">Kafka SSE Example</a>. It’s a Python/Django app that uses a background process to receive from Kafka.</p>
-
 <h2 id="subscription-forwarding">Subscription forwarding</h2>
-
 <p>If you have more than one P-8 instance, an issue arises: how do you know which P-8 instances to publish data to?</p>
-
 <p>The simplest answer is to publish every message to every P-8 instance. If a P-8 instance receives a message for which it has no subscribers, it will simply drop the message. However, this won’t scale if you need to publish lots of messages. Ideally, you’d want to send messages only to the P-8 instances that have applicable subscribers.</p>
-
 <p>The easiest way to achieve this is by publishing to P-8’s ZeroMQ SUB socket using a PUB socket. Behind the scenes, P-8’s SUB socket forwards its subscription information to the publishing process. The ZeroMQ library on the PUB side keeps track of the subscriptions of each peer and filters messages locally. See <a href="../usage/index.html#publishing">Publishing</a> for details about publishing via ZeroMQ.</p>
-
 <p>If you have a tiered architecture with a message queue/broker, and you want to forward subscriptions upstream, you can use an XPUB socket to monitor P-8 subscriptions. Then you can use that information to adjust subscriptions with the queue.</p>
-
 <p>For example, here’s some Python code that connects to P-8’s SUB socket and prints out the subscriptions:</p>
-
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">zmq</span>
 
 <span class="n">zmq_context</span> <span class="o">=</span> <span class="n">zmq</span><span class="p">.</span><span class="n">Context</span><span class="p">.</span><span class="n">instance</span><span class="p">()</span>
@@ -913,80 +623,52 @@ Grip-Last: fruit; last-id=3
     <span class="k">elif</span> <span class="n">mtype</span> <span class="o">==</span> <span class="s">'</span><span class="se">\x00</span><span class="s">'</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'UNSUB %s'</span> <span class="o">%</span> <span class="n">topic</span><span class="p">)</span>
 </code></pre></div></div>
-
 <h2 id="multiple-processes">Multiple processes</h2>
-
 <p>P-8 consists of four processes: <code class="language-plaintext highlighter-rouge">P-8-connmgr</code>, <code class="language-plaintext highlighter-rouge">P-8-proxy</code>, <code class="language-plaintext highlighter-rouge">P-8-handler</code>, and <code class="language-plaintext highlighter-rouge">P-8</code> (the “runner”). In a basic setup you don’t really need to think about this. Just run <code class="language-plaintext highlighter-rouge">P-8</code> to start everything up, and terminate the process (or Ctrl-C) to shut everything down.</p>
-
 <p>If you’d prefer to individually manage any of these processes yourself, then adjust the <code class="language-plaintext highlighter-rouge">services</code> field in <a href="../configuration/index.html#P-8conf-file">P-8.conf</a>. You can even choose to not use the runner at all. In that case, P-8’s own processes can be launched as follows:</p>
-
 <p>Proxy process:</p>
-
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-proxy <span class="nt">--config</span><span class="o">=</span>/path/to/P-8.conf
 </code></pre></div></div>
-
 <p>Handler process:</p>
-
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P-8-handler <span class="nt">--config</span><span class="o">=</span>/path/to/P-8.conf
 </code></pre></div></div>
-
 <p>The <code class="language-plaintext highlighter-rouge">P-8-connmgr</code> program takes its configuration via command line arguments. To find out what arguments ought to be used, first run <code class="language-plaintext highlighter-rouge">P-8</code> normally with debug-level logging to see the invocation used by the runner. Then run the program directly with the same arguments.</p>
-
 <h2 id="proxy-chaining">Proxy chaining</h2>
-
 <p>P-8 (or P-8/GRIP-compatible proxies) can be chained such that the proxy closest to the receiver handles the subscription and the remaining proxies act as passthroughs. This feature is mainly useful for performing a zero downtime migration between a self-hosted P-8 deployment and a P-8/GRIP-compatible service provider such as <a href="https://fanout.io/cloud/">Fanout Cloud</a>.</p>
-
 <p>For example, if you have P-8 running on your own server to power a realtime API, and later on you want to delegate connection handling to a provider, you can add the service provider to the network path without needing to remove P-8. Connections made directly to P-8 will still be handled by P-8. Connections made to the service provider will be handled by the provider. As long as you publish messages to both services, clients connected to either one will receive messages. The diagram below shows what a multiple proxy setup might look like:</p>
-
-<p><img src="../../image/grip-chain.png" alt="grip-chain" /></p>
-
+<p><img alt="grip-chain" src="../../image/grip-chain.png"/></p>
 <p>If you update your DNS settings to point to the provider, or back to your own server, there will be zero downtime during the transitions.</p>
-
 <p>The effect is analogous to caching layers and caching CDNs. Your server might have its own caching layer, but if you put a CDN in front of it then the CDN will end up being the preferred cache, and you can switch back and forth between using the CDN or not without downtime.</p>
-
 <p>The way P-8 proxy chaining works is a proxy authenticates itself to the service behind it by providing a <code class="language-plaintext highlighter-rouge">Grip-Sig</code> request header. If that service is a second proxy, then the second proxy may delegate any GRIP instructions to the first proxy if it considers the first proxy authorized to handle GRIP instructions.</p>
-
 <p>P-8 generates <code class="language-plaintext highlighter-rouge">Grip-Sig</code> headers using the key specified by the <code class="language-plaintext highlighter-rouge">sig_key</code> option. To authorize GRIP instruction delegation to a proxy in front of P-8, set <code class="language-plaintext highlighter-rouge">upstream_key</code> with the key of that proxy. In the case of delegating to Fanout Cloud, the the key to use is the “realm key” in Base64 format. Set <code class="language-plaintext highlighter-rouge">upstream_key=base64:{realm-key}</code>.</p>
+</section>
+</div><!-- content -->
+<div class="div"></div>
+<section class="cta">
+<div class="wrapper">
+<aside class="github">
+<a href="https://github.com/P-8-project/P-8"><img src="../../image/github.svg"/></a>
+<section class="meta">
+<iframe allowtransparency="true" frameborder="0" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=fanout&amp;repo=P-8&amp;type=watch&amp;count=true" width="110"></iframe>
+<iframe allowtransparency="true" frameborder="0" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=fanout&amp;repo=P-8&amp;type=fork&amp;count=true" width="95"></iframe>
+</section>
+<a class="link" href="https://github.com/P-8-project/P-8">https://github.com/P-8-project/P-8</a>
+</aside>
+</div>
+</section><!-- cta -->
+<footer class="primary wrapper">
+<nav class="primary" id="top" role="navigation">
+<aside class="links">
+<a href="../../index.html">Home</a>
+<a href="../about/index.html">Docs</a>
+<a href="../about/index.html#support">Community</a>
+<a href="https://github.com/P-8-project/P-8">GitHub</a>
+</aside>
+<a class="logo" href="../../index.html"><img src="../../image/logo.png"/></a>
+</nav>
 
-      </section>
-
-    </div><!-- content -->
-
-    <div class="div"></div>
-
-    <section class="cta">
-      <div class="wrapper">
-
-        <aside class="github">
-          <a href="https://github.com/P-8-project/P-8"><img src="../../image/github.svg"></a>
-          <section class="meta">
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=fanout&repo=P-8&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-          </section>
-          <a class="link" href="https://github.com/P-8-project/P-8">https://github.com/P-8-project/P-8</a>
-        </aside>
-
-      </div>
-    </section><!-- cta -->
-
-    <footer class="primary wrapper">
-  <nav class="primary" role="navigation" id="top">
-    <aside class="links">
-      <a href="../../index.html">Home</a>
-      <a href="../about/index.html">Docs</a>
-      <a href="../about/index.html#support">Community</a>
-      <a href="https://github.com/P-8-project/P-8">GitHub</a>
-    </aside>
-    <a class="logo" href="../../index.html"><img src="../../image/logo.png" /></a>
-  </nav>
-  <aside class="fanout">
-    Brought to you by <a href="https://fastly.com"><img src="../../image/fastly.svg" /></a>
-    <small>&copy; 2025 Fastly, Inc.</small>
-  </aside>
 </footer>
 <script src="../../js/main.js"></script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-
-
-  </body>
+<script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+</body>
 </html>
